@@ -4,10 +4,10 @@
   "author": "USWDS",
   "license": "CC0-1.0",
   "scripts": {
-    "init": "npm install && npm run jekyll-install",
-    "jekyll-install": "gem install bundler && bundle install",
-    "serve": "bundle exec jekyll serve --livereload --host=localhost",
-    "start": "concurrently \"npm:serve\" \"npm:watch\"",
+    "postinstall": "npm run jekyll:install",
+    "jekyll:install": "gem install bundler && bundle install",
+    "jekyll:serve": "bundle exec jekyll serve --livereload --host=localhost",
+    "start": "npm run jekyll:serve",
     "test": "snyk test"
   },
   "devDependencies": {

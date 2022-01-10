@@ -1,0 +1,77 @@
+<div class="usa-overlay"></div>
+<header class="usa-header usa-header--extended">
+  <div class="usa-navbar">
+    <div class="usa-logo" id="extended-logo">
+      <em class="usa-logo__text">
+        <a href="javascript:void(0)" title="{{ site.data.meta.project.name }}">
+          {{ site.data.meta.project.name }}
+        </a>
+      </em>
+    </div>
+    <button class="usa-menu-btn">Menu</button>
+  </div>
+  <nav aria-label="Primary navigation" class="usa-nav">
+    <div class="usa-nav__inner">
+      <button class="usa-nav__close">
+        <img src="{{ site.baseurl }}/assets/img/usa-icons/close.svg" role="img" alt="Close" />
+      </button>
+      <ul class="usa-nav__primary usa-accordion">
+        {% for item in site.data.nav.primary %}
+        <li class="usa-nav__primary-item">
+          {% if item.contents %}
+          {% assign button_id = item.name | slugify | prepend: "nav-" %}
+          <button
+            class="usa-accordion__button usa-nav__link usa-current"
+            aria-expanded="false"
+            aria-controls="{{ button_id }}"
+          >
+            <span>{{ item.name }}</span>
+          </button>
+          <ul id="{{ button_id }}" class="usa-nav__submenu">
+            {% for subsection in item.contents %}
+            <li class="usa-nav__submenu-item">
+              <a href="#">{{ subsection }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+          {% else %}
+          <a href="javascript:void(0)" class="usa-nav__link">
+            <span>{{ item.name }}</span>
+          </a>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+      <div class="usa-nav__secondary">
+        {% if site.data.nav.secondary %}
+        <ul class="usa-nav__secondary-links">
+          {% for item in site.data.nav.secondary %}
+          <li class="usa-nav__secondary-item">
+            <a href="">{{ item.name }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+
+        <form class="usa-search usa-search--small" role="search">
+          <label class="usa-sr-only" for="extended-search-field-en-small">
+            Search
+          </label>
+          <input
+            class="usa-input"
+            id="extended-search-field-en-small"
+            type="search"
+            name="search"
+          />
+          <button class="usa-button" type="submit">
+            <img
+              src="{{ site.baseurl }}/assets/img/usa-icons-bg/search--white.svg"
+              class="usa-search__submit-icon"
+              alt="Search"
+            />
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,11 @@
+_site
+.sass-cache
+.jekyll-metadata
+assets/img
+assets/css
+assets/fonts
+assets/js
+node_modules
+.gz
+.DS_Store
+.jekyll-cache

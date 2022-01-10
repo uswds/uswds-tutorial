@@ -1,0 +1,16 @@
+primary:
+  - name: Services
+    contents:
+      - Product studio
+      - Site analytics
+      - Consultations
+  - name: Community
+    contents:
+      - Slack
+      - GitHub
+      - Newsgroups and listserv
+  - name: Contact
+
+secondary:
+  - name: Design principles
+  - name: Log in

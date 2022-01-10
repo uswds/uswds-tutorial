@@ -1,5 +1,7 @@
-# USWDS Sandbox
-A Jekyll site for rapid web prototyping and testing new work with USWDS. This site is designed to run locally and on [Federalist](https://federalist.18f.gov).
+:warning: **In progress.** This repo is a work in progress. We'll be lauching it January 20, 2022.
+
+# USWDS Tutorial
+A tutorial project to learn about installing, compiling, and customizing with USWDS.
 
 ## Requirements
 - Node v16

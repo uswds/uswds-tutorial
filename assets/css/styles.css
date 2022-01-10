@@ -1,0 +1,100 @@
+:root {
+  --indigo-9: #496fd8; 
+  --yellow-7: #e5a000;
+}
+
+
+header {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  background: var(--grape-0);
+}
+
+.hero {
+  padding: var(--size-10);
+  display: grid;
+  gap: var(--size-5);
+}
+
+.hero-message {
+  display: grid;
+  grid-template-columns: max-content;
+  color: var(--gray-9);
+  line-height: var(--font-lineheight-0);
+}
+
+.hero-message > span {
+  display: block;
+}
+
+.hero-message > span:last-child {
+  color: var(--indigo-7);
+}
+
+.under-hero {
+  color: var(--gray-7);
+  font-size: var(--font-size-4);
+  margin-block-end: var(--size-3);
+}
+
+.button-list {
+  display: flex;
+  gap: var(--size-3);
+}
+
+a.button {
+  background: white;
+  color: var(--indigo-8);
+  font-size: var(--font-size-3);
+  padding-inline: var(--size-4);
+  padding-block: var(--size-3);
+  border-radius: var(--radius-2);
+  box-shadow: var(--shadow-2);
+}
+
+a.button:hover {
+  text-decoration: none;
+}
+
+a.button.primary {
+  background: var(--indigo-8);
+  text-shadow: 0 1px 0 var(--indigo-9);
+  color: white;
+}
+
+a.button.primary:hover {
+  background: var(--indigo-7);
+}
+
+.promo-art {
+  align-self: stretch;
+  background-color: var(--indigo-9);
+}
+
+.promo-art > img {
+  block-size: 100%;
+  object-fit: cover;
+}
+
+main {
+  padding: var(--size-10);
+  background-color: var(--yellow-7);
+  color: var(--gray-9);
+}
+
+main > h2 {
+  color: var(--gray-9);
+  line-height: var(--font-lineheight-0);
+}
+
+.subhed {
+  font-size: var(--font-size-5);
+  line-height: var(--font-lineheight-1);
+  padding-top: var(--size-2);
+}
+
+footer {
+  font-size: var(--font-size-2);
+  padding: var(--size-5) var(--size-10);
+}

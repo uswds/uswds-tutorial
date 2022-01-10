@@ -10,7 +10,7 @@ body:
       <span>Learn how to use</span>
       <span>USWDS</span>
     </h1>
-    <p class="under-hero">A tutorial project to learn about installing, compiling, and customizing with USWDS</p>
+    <p class="under-hero">A tutorial project to learn about installing, compiling, and customizing with the U.S. Web Design System</p>
     <div class="button-list">
       <a class="button primary" href="https://designsystem.digital.gov">Read the tutorial</a>
       <a class="button" href="https://github.com/uswds-tutorial">View source on GitHub</a>

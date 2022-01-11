@@ -78,20 +78,132 @@ a.button.primary:hover {
 }
 
 main {
-  padding: var(--size-10);
+  padding: 0;
   background-color: var(--yellow-7);
   color: var(--gray-9);
 }
 
-main > h2 {
+main > .part {
+  border-left: var(--border-size-5) solid var(--indigo-8);
+  padding: 0 var(--size-10) var(--size-10) var(--size-10);
+  padding-left: calc(var(--size-10) - var(--border-size-5));
+  border-top: var(--border-size-2) solid var(--gray-9);
+  counter-reset: steps-primary;
+}
+
+main > .part.intro {
+  padding-top: var(--size-4);
+}
+
+main > .part.one {
+  border-left-color: var(--green-8);
+}
+
+main > .part.two {
+  border-left-color: var(--orange-8);
+}
+
+main > .part.three {
+  border-left-color: var(--grape-8);
+}
+
+main h2 {
   color: var(--gray-9);
   line-height: var(--font-lineheight-0);
+  margin-top: 0;
+  padding-top: var(--size-9);
+  max-width: none;
+}
+
+main {
+  --step-indent: 3rem;
+}
+
+main h3 {
+  color: var(--gray-9);
+  line-height: var(--font-lineheight-0);
+  font-weight: normal;
+  margin-top: var(--size-6);
+  max-width: 64ex;
+  margin-left: var(--step-indent);
+  text-indent: calc(-1 * var(--step-indent));
+}
+
+.step:before {
+  counter-increment: steps-primary;
+  content: counter(steps-primary) ". ";
+  font-weight: bold;
+  display: inline-block;
+  width: var(--step-indent);
+  margin-left: 0;
+  text-indent: 0;
+}
+
+.step + p {
+  margin-left: var(--step-indent);
+}
+
+main p {
+  margin-top: var(--size-3);
+  font-size: var(--font-size-3);
+  max-width: 80ex;
+}
+
+main p a,
+main p a:visited {
+  color: var(--gray-9);
+  text-decoration: underline;
+  border-radius: var(--radius-1);
+}
+
+main p a:hover {
+  background-color: rgba(255,255,255,.5);
+}
+
+main p a:active {
+  background-color: rgba(255,255,255,.85);
 }
 
 .subhed {
   font-size: var(--font-size-5);
   line-height: var(--font-lineheight-1);
   padding-top: var(--size-2);
+}
+
+.terminal, 
+.editor {
+  font-size: var(--font-size-3);
+  padding: var(--size-3);
+  border-radius: var(--radius-2);
+  margin-top: var(--size-3);
+}
+
+.terminal pre,
+.editor pre {
+  white-space: pre-wrap;
+}
+
+pre.blur {
+  opacity: 0.5;
+}
+
+pre.feature {
+  font-weight: bold;
+}
+
+.terminal {
+  background-color: var(--gray-9);
+  color: var(--gray-2);
+}
+
+.editor {
+  background-color: rgba(255,255,255,.25);
+  color: var(--gray-9);
+}
+
+.terminal > pre:before {
+  content: "> ";
+  color: var(--red-8);
 }
 
 footer {

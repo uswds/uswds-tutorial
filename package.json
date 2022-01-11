@@ -11,6 +11,7 @@
     "test": "snyk test"
   },
   "devDependencies": {
+    "@uswds/compile": "github:uswds/uswds-gulp#jm-gulp-4",
     "snyk": "^1.704.0"
   }
 }

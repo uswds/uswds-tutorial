@@ -139,7 +139,7 @@ main h3 {
   text-indent: 0;
 }
 
-.step + p {
+.step-description {
   margin-left: var(--step-indent);
 }
 

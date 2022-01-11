@@ -62,24 +62,26 @@ body:
     </div>
     <h3 class="step">Then, add custom settings.</h3>
     <p class="step-description">The USWDS compiler's <a href="https://github.com/uswds/uswds-gulp/tree/jm-gulp-4#path-settings">settings</a> allow you to customize where you want to save both your USWDS files, and the styles you compile with the compiler. For example, use <strong>paths.dist.css</strong> to tell the compiler where to save your compiled styles. Each path variable should start with the constant you defined in the last step. (We've used <strong>uswds</strong> in our tutorial.) Paths are relative to the project root, the place where you made your gulpfile.</p>
+    <p class="step-description">In this tutorial we'll set the destination of our theme files to the <strong>./_theme/</strong> directory.</p>
     <div class="editor">
       <pre class="blur">/* gulpfile.js */
 
 const uswds = require('@uswds/compile');
-  </pre><pre class="feature">uswds.paths.dist.css = './assets/css/';
-uswds.paths.dist.sass = './stylesheets/';</pre>
+  </pre><pre class="feature">uswds.paths.dist.theme = './theme/';</pre>
     </div>
     <h3 class="step">Finally, define (or "export") the USWDS compile functions you want to use.</h3>
     <p class="step-description">The USWDS compiler has a number of <a href="https://github.com/uswds/uswds-gulp/tree/jm-gulp-4#functions">functions</a> available for compiling styles and scaffolding projects. To use these functions, you need to export them using the format we show below: <strong>exports.[customName] = uswds.[function]</strong>. You'll use any <strong>customName</strong> you just defined when you run the compiler in the next sections.</p>
+    <p class="step-description">In this tutorial, we'll set up three functions: <strong>init</strong>, <strong>compile</strong>, and <strong>watch</strong>.</p>
+    <p class="step-description">Save your new gulpfile when you're done.</p>
     <div class="editor">
       <pre class="blur">/* gulpfile.js */
 
 const uswds = require('@uswds/compile');
 
-uswds.paths.dist.css = './assets/css/';
-uswds.paths.dist.sass = './stylesheets/';
+uswds.paths.dist.theme = './_theme/';
   </pre><pre class="feature">exports.init = uswds.init;
-exports.compile = uswds.compile;</pre>
+exports.compile = uswds.compile;
+exports.watch = uswds.watch;</pre>
     </div>
   </section>
 

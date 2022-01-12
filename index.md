@@ -40,10 +40,17 @@ body:
     <div class="terminal">
       <pre>npm install uswds --save-dev</pre>
     </div>
+    <h3 class="step">Start up the tutorial site.</h3>
+    <p class="step-description">This will serve the tutorial Jekyll site from the current terminal window. You can use a web browser to see the site at <a href="http://localhost:4000/">http://localhost:4000/</a>.</p>
+    <div class="terminal">
+      <pre>npm start</pre>
+    </div>
+    <p class="step-description">Open a new terminal window and navigate to your tutorial project directory to continue.</p>
   </section>
 
   <section class="part two">
     <h2>Set up the USWDS compiler</h2>
+    <p>Now that the site is running and you have a new terminal window open, let's install the USWDS compiler.</p>
     <h3 class="step">Install the USWDS compiler package.</h3>
     <div class="terminal">
       <pre>npm install @uswds/compile --save-dev</pre>
@@ -87,12 +94,58 @@ exports.watch = uswds.watch;</pre>
 
   <section class="part three">
     <h2>Set up USWDS theme files and assets</h2>
-    <h3 class="step">Copy USWDS assets.</h3>
-    <p class="step-description">USWDS static assets — fonts, images, and (for the purposes of this tutorial) JavaScript — support USWDS styles. You'll need to copy them out of the <strong>uswds</strong> package to use them, since production applications may not have access to the <strong>node_modules</strong> directory.</p>
+    <h3 class="step">Initialize your USWDS installation.</h3>
+    <p class="step-description">Now we'll use the Gulp functions we set up in the last section to initialize our USWDS project. This process adds USWDS assets and theme files to your project, then compiles USWDS styles.</p>
+    <p class="step-description">USWDS static assets — fonts, images, and (for the purposes of this tutorial) JavaScript — support USWDS styles. Initialization copies them out of the <strong>uswds</strong> package, since sites may not have access to the <strong>node_modules</strong> directory in production.</p>
     <p class="step-description">We'll use the <strong>init</strong> function we defined in the last section to copy these assets and compile USWDS CSS.</p>
     <div class="terminal">
       <pre>npx gulp init</pre>
     </div>
+    <h3 class="step">Check for success.</h3>
+    <p class="step-description">After the script runs, you should have new USWDS assets in an <strong>./assets/uswds</strong> directory, theme files in a <strong>./_theme</strong> directory, and compiled CSS in the <strong>./assets/uswds/css</strong> directory.</p>
+  </section>
+  <section class="part four">
+    <h2>Add USWDS CSS and JavaScript to the site template</h2>
+    <p>Now that we've created the compiled CSS and JavaScript, we need to include them in our page templates.</p>
+    <h3 class="step">Add USWDS styles to the site head.</h3>
+    <p class="step-description">Add the compiled CSS after the existing site CSS.</p>
+    <div class="editor">
+      <pre class="blur">&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  ...
+  &lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/css/styles.css' | relative_url &rcub;&rcub;"&gt;</pre><pre class="feature">
+  &lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/uswds/css/styles.css' | relative_url &rcub;&rcub;"&gt;</pre><pre class="blur">
+</head>
+</pre>
+    </div>
+    <h3 class="step">Add USWDS initializer to the site head.</h3>
+    <p class="step-description">Add the USWDS initialization script at the end of the page <strong>head</strong>. This script prevent flashes of unstyled content while USWDS is loading.</p>
+    <div class="editor">
+      <pre class="blur">/* _includes/head.html */
+  
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  ...
+  &lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/css/styles.css' | relative_url &rcub;&rcub;"&gt;
+  &lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/uswds/css/styles.css' | relative_url &rcub;&rcub;"&gt;</pre><pre class="feature">
+  &lt;script src="&lcub;&lcub; '/assets/uswds/js/uswds-init.min.js' | relative_url &rcub;&rcub;"&gt;&lt;/script&gt;</pre><pre class="blur">
+</head>
+</pre>
+    </div>
+    <h3 class="step">Add USWDS JavaScript to the end of the page body.</h3>
+    <p class="step-description">Finally, add the USWDS JavaScript to the end of the page <strong>body</strong></p>
+    <div class="editor">
+      <pre class="blur">/* _layouts_/default.html */
+  
+...
+
+&lt;body class="&lcub;&lcub; page.body &rcub;&rcub;"&gt;
+  &lcub;&lcub; content }}</pre><pre class="feature">
+  &lt;script src="&lcub;&lcub; '/assets/uswds/js/uswds.min.js' | relative_url &rcub;&rcub;"&gt;&lt;/script&gt;</pre><pre class="blur">
+&lt;/body&gt;
+</pre>
+    </div>
+    <p class="step-description">At this point, you've added USWDS design system code to your project successfully! {{ ":tada:" | emojify }}</p>
   </section>
 </main>
 <footer>

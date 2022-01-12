@@ -84,7 +84,7 @@ main {
 }
 
 main > .part {
-  border-left: var(--border-size-5) solid var(--indigo-8);
+  border-left: var(--border-size-5) solid var(--yellow-7);
   padding: 0 var(--size-10) var(--size-10) var(--size-10);
   padding-left: calc(var(--size-10) - var(--border-size-5));
   border-top: var(--border-size-2) solid var(--gray-9);
@@ -105,6 +105,10 @@ main > .part.two {
 
 main > .part.three {
   border-left-color: var(--grape-8);
+}
+
+main > .part.four {
+  border-left-color: var(--cyan-8);
 }
 
 main h2 {

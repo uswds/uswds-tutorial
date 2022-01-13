@@ -5,8 +5,8 @@
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
   <link rel="stylesheet" href="{{ "/assets/uswds/css/styles.css" | relative_url }}">
-  <link rel="stylesheet" href="https://unpkg.com/open-props"/>
+  <link rel="stylesheet" href="{{ "/assets/css/open-props.css" | relative_url }}">
   <link rel="stylesheet" href="{{ "/assets/css/normalize.css" | relative_url }}">
-  <!-- <link rel="stylesheet" href="{{ "/assets/css/styles.css" | relative_url }}"> -->
+  <link rel="stylesheet" href="{{ "/assets/css/styles.css" | relative_url }}">
   <script src="{{ "/assets/uswds/js/uswds-init.min.js" | relative_url }}"></script>
 </head>

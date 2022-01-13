@@ -220,3 +220,15 @@ footer {
   background-color: var(--gray-9);
   color: white;
 }
+
+footer a {
+  color: var(--blue-2)
+}
+
+footer a:hover {
+  color: var(--blue-3)
+}
+
+footer a:visited {
+  color: var(--indigo-3)
+}

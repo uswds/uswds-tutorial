@@ -54,11 +54,11 @@
   color: var(--text-1);
 }
 
-:is(a[href]) {
+:is(a) {
   color: var(--link);
 }
 
-:is(a[href]):visited {
+:is(a):visited {
   color: var(--link-visited);
 }
 
@@ -86,11 +86,11 @@
   background-origin: border-box;
   background-repeat: no-repeat;
   margin: 0;
+}
 
-  &:is(:not(fieldset)) {
-    border-width: 0;
-    border-style: solid;
-  }
+*:is(:not(fieldset)) {
+  border-width: 0;
+  border-style: solid;
 }
 
 :is(html) {
@@ -147,7 +147,7 @@
   text-underline-offset: 1px;
 }
 
-:is(a[href], area, button, input, label[for], select, summary, textarea, [tabindex]:not([tabindex*="-"])) {
+:is(a, area, button, input, label[for], select, summary, textarea, [tabindex]:not([tabindex*="-"])) {
   cursor: pointer;
   touch-action: manipulation;
 }
@@ -157,18 +157,15 @@
   margin-inline: calc(var(--size-1) * -1);
   padding-block: var(--size-1);
   margin-block: calc(var(--size-1) * -1);
+  text-decoration-color: var(--indigo-2);
+}
 
-  &:is([href]) {
-    text-decoration-color: var(--indigo-2);
+:is(a):is(:visited) {
+  text-decoration-color: var(--grape-2);
+}
 
-    &:is(:visited) {
-      text-decoration-color: var(--grape-2);
-    }
-  }
-
-  &:is(:not(:hover)) {
-    text-decoration: inherit;
-  }
+:is(a):is(:not(:hover)) {
+  text-decoration: inherit;
 }
 
 :is(button) {
@@ -214,17 +211,17 @@
 :is(svg) {
   stroke: none;
   fill: currentColor;
+}
 
-  &:is(:not([fill])) {
-    stroke: currentColor;
-    fill: none;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
+:is(svg):is(:not([fill])) {
+  stroke: currentColor;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
-  &:is(:not([width])) {
-    inline-size: var(--size-10);
-  }
+:is(svg):is(:not([width])) {
+  inline-size: var(--size-10);
 }
 
 :is(code, kbd, samp, pre) { font-family: var(--font-mono) }
@@ -279,10 +276,10 @@
   display: grid;
   gap: var(--size-2);
   place-items: center;
+}
 
-  & > :is(figcaption) {
-    font-size: var(--font-size-1);
-  }
+:is(figure) > :is(figcaption) {
+  font-size: var(--font-size-1);
 }
 
 :is(blockquote, :not(blockquote) > cite) {

@@ -4,7 +4,7 @@
   "author": "USWDS",
   "license": "CC0-1.0",
   "scripts": {
-    "federalist": "npm start",
+    "federalist": "npm install && npm start",
     "postinstall": "npm run jekyll:install",
     "jekyll:install": "gem install bundler && bundle install",
     "jekyll:serve": "bundle exec jekyll serve --livereload --incremental --host=localhost",

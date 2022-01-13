@@ -11,7 +11,7 @@
     "start": "npm run jekyll:serve",
     "test": "snyk test"
   },
-  "devDependencies": {
+  "dependencies": {
     "@uswds/compile": "github:uswds/uswds-gulp#jm-gulp-4",
     "snyk": "^1.704.0",
     "uswds": "^2.13.0"

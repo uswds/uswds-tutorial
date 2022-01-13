@@ -153,30 +153,27 @@ body:
     <h3 class="step">In the new gulpfile you just created, import the USWDS compiler package.</h3>
     <p class="step-description">This connects your gulpfile to USWDS compiler's <a href="https://github.com/uswds/uswds-gulp/tree/jm-gulp-4#functions">settings and functions</a>.</p>
     <div class="editor">
-      <pre class="blur">/* gulpfile.js */
-
-</pre><pre class="feature">const uswds = require('@uswds/compile');</pre>
+      <h4 class="filename"><span class="material-icons">description</span> gulpfile.js</h4>
+      <pre class="add">const uswds = require('@uswds/compile');</pre>
     </div>
     <h3 class="step">Then, add custom settings.</h3>
     <p class="step-description">The USWDS compiler's <a href="https://github.com/uswds/uswds-gulp/tree/jm-gulp-4#path-settings">settings</a> allow you to customize where you want to save both your USWDS files, and the styles you compile with the compiler. For example, use <strong>paths.dist.css</strong> to tell the compiler where to save your compiled styles. Each path variable should start with the constant you defined in the last step. (We've used <strong>uswds</strong> in our tutorial.) Paths are relative to the project root, the place where you made your gulpfile.</p>
     <p class="step-description">In this tutorial we'll set the destination of our theme files to the <strong>./_theme/</strong> directory.</p>
     <div class="editor">
-      <pre class="blur">/* gulpfile.js */
-
-const uswds = require('@uswds/compile');
-  </pre><pre class="feature">uswds.paths.dist.theme = './theme';</pre>
+      <h4 class="filename"><span class="material-icons">description</span> gulpfile.js</h4>
+      <pre class="blur">const uswds = require('@uswds/compile');
+  </pre><pre class="add">uswds.paths.dist.theme = './theme';</pre>
     </div>
     <h3 class="step">Finally, define (or "export") the USWDS compile functions you want to use.</h3>
     <p class="step-description">The USWDS compiler has a number of <a href="https://github.com/uswds/uswds-gulp/tree/jm-gulp-4#functions">functions</a> available for compiling styles and scaffolding projects. To use these functions, you need to export them using the format we show below: <strong>exports.[customName] = uswds.[function]</strong>. You'll use any <strong>customName</strong> you just defined when you run the compiler in the next sections.</p>
     <p class="step-description">In this tutorial, we'll set up three functions: <strong>init</strong>, <strong>compile</strong>, and <strong>watch</strong>.</p>
     <p class="step-description">Save your new gulpfile when you're done.</p>
     <div class="editor">
-      <pre class="blur">/* gulpfile.js */
-
-const uswds = require('@uswds/compile');
+      <h4 class="filename"><span class="material-icons">description</span> gulpfile.js</h4>
+      <pre class="blur">const uswds = require('@uswds/compile');
 
 uswds.paths.dist.theme = './_theme';
-  </pre><pre class="feature">exports.init = uswds.init;
+  </pre><pre class="add">exports.init = uswds.init;
 exports.compile = uswds.compile;
 exports.watch = uswds.watch;</pre>
     </div>
@@ -198,26 +195,28 @@ exports.watch = uswds.watch;</pre>
     <h2>Add USWDS CSS and JavaScript to the site template</h2>
     <p>Now that we've created the compiled CSS and JavaScript, we need to include them in our page templates.</p>
     <h3 class="step">Add USWDS styles to the site head.</h3>
-    <p class="step-description">Add the compiled CSS after the existing site CSS.</p>
+    <p class="step-description">Add the compiled CSS before the existing site CSS.</p>
     <div class="editor">
+      <h4 class="filename"><span class="material-icons">description</span> _includes/head.html</h4>
       <pre class="blur">&lt;head&gt;
   &lt;meta charset="utf-8"&gt;
   ...
-  &lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/css/styles.css' | relative_url &rcub;&rcub;"&gt;</pre><pre class="feature">
+  &lt;link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"&gt;</pre><pre class="add">
   &lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/uswds/css/styles.css' | relative_url &rcub;&rcub;"&gt;</pre><pre class="blur">
-</head>
-</pre>
+  &lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/css/open-props.css' | relative_url &rcub;&rcub;"&gt;
+  ...</pre>
     </div>
     <h3 class="step">Add USWDS initializer to the site head.</h3>
     <p class="step-description">Add the USWDS initialization script at the end of the page <strong>head</strong>. This script prevent flashes of unstyled content while USWDS is loading.</p>
     <div class="editor">
-      <pre class="blur">/* _includes/head.html */
-  
-&lt;head&gt;
+      <h4 class="filename"><span class="material-icons">description</span> _includes/head.html</h4>
+      <pre class="blur">&lt;head&gt;
   &lt;meta charset="utf-8"&gt;
   ...
-  &lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/css/styles.css' | relative_url &rcub;&rcub;"&gt;
-  &lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/uswds/css/styles.css' | relative_url &rcub;&rcub;"&gt;</pre><pre class="feature">
+  &lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/uswds/css/styles.css' | relative_url &rcub;&rcub;"&gt;
+  &lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/css/open-props.css' | relative_url &rcub;&rcub;"&gt;
+  &lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/css/normalize.css' | relative_url &rcub;&rcub;"&gt;
+  &lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/css/styles.css' | relative_url &rcub;&rcub;"&gt;</pre><pre class="add">
   &lt;script src="&lcub;&lcub; '/assets/uswds/js/uswds-init.min.js' | relative_url &rcub;&rcub;"&gt;&lt;/script&gt;</pre><pre class="blur">
 </head>
 </pre>
@@ -225,12 +224,11 @@ exports.watch = uswds.watch;</pre>
     <h3 class="step">Add USWDS JavaScript to the end of the page body.</h3>
     <p class="step-description">Finally, add the USWDS JavaScript to the end of the page <strong>body</strong></p>
     <div class="editor">
-      <pre class="blur">/* _layouts_/default.html */
-  
-...
+      <h4 class="filename"><span class="material-icons">description</span> ./_layouts_/default.html</h4>
+      <pre class="blur">...
 
 &lt;body class="&lcub;&lcub; page.body &rcub;&rcub;"&gt;
-  &lcub;&lcub; content }}</pre><pre class="feature">
+  &lcub;&lcub; content }}</pre><pre class="add">
   &lt;script src="&lcub;&lcub; '/assets/uswds/js/uswds.min.js' | relative_url &rcub;&rcub;"&gt;&lt;/script&gt;</pre><pre class="blur">
 &lt;/body&gt;
 </pre>
@@ -325,8 +323,10 @@ exports.watch = uswds.watch;</pre>
     </div>
     <h3 class="step">Update image paths.</h3>
     <p class="step-description">TK</p>
-    <div class="terminal">
-      <pre>touch _theme/_uswds-theme.scss</pre>
+    <div class="editor">
+      <h4 class="filename"><span class="material-icons">description</span> document_name.html</h4>
+      <pre class="remove">touch _theme/_uswds-theme.scss</pre>
+      <pre class="add">touch _theme/_uswds-theme.scss</pre>
     </div>
   </section>
 </main>

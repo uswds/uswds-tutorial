@@ -184,18 +184,32 @@ main p a:active {
   font-size: var(--font-size-3);
   padding: var(--size-3);
   border-radius: var(--radius-2);
-  margin-top: var(--size-3);
+  margin-top: var(--size-4);
+  margin-bottom: var(--size-4);
   position: relative;
 }
 
+.terminal {
+  background-color: var(--gray-9);
+  color: var(--gray-2);
+}
+
 .editor {
+  background-color: rgba(255,255,255,.25);
+  color: var(--gray-9);
   padding-top: var(--size-9);
 }
 
 .terminal pre,
 .editor pre {
-  white-space: pre-wrap;
   padding: 0 var(--size-5);
+  white-space: pre-wrap;
+}
+
+.terminal pre {
+}
+
+.editor pre {
 }
 
 pre.blur {
@@ -206,28 +220,35 @@ pre.feature {
   font-weight: bold;
 }
 
+.editor > .add,
+.editor > .remove {
+  text-indent: calc(-1 * var(--size-5));
+}
+
 .editor > .add {
   font-weight: bold;
+}
+
+.editor > .remove {
+  color: var(--red-8);
+}
+
+.editor > .add:before,
+.editor > .remove:before {
+  width: var(--size-5);
+  display: inline-flex;
+  text-indent: 0;
+  font-weight: normal;
 }
 
 .editor > .add:before {
   content: "+ ";
   color: var(--blue-8);
-  font-weight: normal;
-}
-
-.editor > .remove {
-  color: var(--red-8);
-  margin-left: calc(-1 * var(--size-5));
-  text-indent: var(--size-5);
 }
 
 .editor > .remove:before {
   content: "- ";
   color: var(--red-8);
-  width: var(--size-5);
-  display: inline-flex;
-  text-indent: 0;
 }
 
 .editor .filename {
@@ -247,16 +268,6 @@ pre.feature {
 
 .editor .filename span {
   padding-right: 0.4em;
-}
-
-.terminal {
-  background-color: var(--gray-9);
-  color: var(--gray-2);
-}
-
-.editor {
-  background-color: rgba(255,255,255,.25);
-  color: var(--gray-9);
 }
 
 .terminal > pre:before {

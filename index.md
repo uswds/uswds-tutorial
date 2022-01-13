@@ -235,23 +235,96 @@ exports.watch = uswds.watch;</pre>
 &lt;/body&gt;
 </pre>
     </div>
-    <p class="step-description">At this point, you've added USWDS design system code to your project successfully!</p>
-    <p class="step-description">However, you may have noticed that the site looks different. The font has changed! The headers look different! What happened? Let's fix these issues in the next section.</p>
+    <p class="step-description">At this point, you've added USWDS design system code to your project successfully! Now we can add some components.</p>
   </section>
   <section class="part five">
-    <h2>Harmonizing USWDS</h2>
-    <h3 class="step">Create a project theme file.</h3>
-    <p class="step-description">Now we'll use the Gulp functions we set up in the last section to initialize our USWDS project. This process adds USWDS assets and theme files to your project, then compiles USWDS styles.</p>
+    <h2>Add the USWDS Banner</h2>
+    <h3 class="step">Open the tutorial index file.</h3>
+    <p class="step-description">TK</p>
     <div class="terminal">
       <pre>touch _theme/_uswds-theme.scss</pre>
     </div>
-    <h3 class="step">Watch for changes and recomile USWDS styles.</h3>
-    <p class="step-description">Now we'll use the Gulp functions we set up in the last section to initialize our USWDS project. This process adds USWDS assets and theme files to your project, then compiles USWDS styles.</p>
+    <h3 class="step">Get the USWDS Banner HTML.</h3>
+    <p class="step-description">TK</p>
     <div class="terminal">
       <pre>npx gulp watch</pre>
     </div>
-    <h3 class="step">Update settings.</h3>
-    <p class="step-description">Now we'll use the Gulp functions we set up in the last section to initialize our USWDS project. This process adds USWDS assets and theme files to your project, then compiles USWDS styles.</p>
+    <h3 class="step">Add the Banner HTML into the tutorial markup.</h3>
+    <p class="step-description">TK</p>
+    <div class="terminal">
+      <pre>touch _theme/_uswds-theme.scss</pre>
+    </div>
+    <h3 class="step">Update image paths.</h3>
+    <p class="step-description">TK</p>
+    <div class="terminal">
+      <pre>touch _theme/_uswds-theme.scss</pre>
+    </div>
+  </section>
+  <section class="part six">
+    <h2>Add the USWDS Identifier</h2>
+    <h3 class="step">Open the tutorial index file.</h3>
+    <p class="step-description">TK</p>
+    <div class="terminal">
+      <pre>touch _theme/_uswds-theme.scss</pre>
+    </div>
+    <h3 class="step">Get the USWDS Identifier HTML.</h3>
+    <p class="step-description">TK</p>
+    <div class="terminal">
+      <pre>npx gulp watch</pre>
+    </div>
+    <h3 class="step">Add the Identifier HTML into the tutorial markup.</h3>
+    <p class="step-description">TK</p>
+    <div class="terminal">
+      <pre>touch _theme/_uswds-theme.scss</pre>
+    </div>
+    <h3 class="step">Update image paths.</h3>
+    <p class="step-description">TK</p>
+    <div class="terminal">
+      <pre>touch _theme/_uswds-theme.scss</pre>
+    </div>
+  </section>
+  <section class="part seven">
+    <h2>Integrate project CSS into USWDS Sass</h2>
+    <h3 class="step">Open the tutorial index file.</h3>
+    <p class="step-description">TK</p>
+    <div class="terminal">
+      <pre>touch _theme/_uswds-theme.scss</pre>
+    </div>
+    <h3 class="step">Get the USWDS Identifier HTML.</h3>
+    <p class="step-description">TK</p>
+    <div class="terminal">
+      <pre>npx gulp watch</pre>
+    </div>
+    <h3 class="step">Add the Identifier HTML into the tutorial markup.</h3>
+    <p class="step-description">TK</p>
+    <div class="terminal">
+      <pre>touch _theme/_uswds-theme.scss</pre>
+    </div>
+    <h3 class="step">Update image paths.</h3>
+    <p class="step-description">TK</p>
+    <div class="terminal">
+      <pre>touch _theme/_uswds-theme.scss</pre>
+    </div>
+  </section>
+  <section class="part eight">
+    <h2>Customize settings</h2>
+    <h3 class="step">Open the tutorial index file.</h3>
+    <p class="step-description">TK</p>
+    <div class="terminal">
+      <pre>touch _theme/_uswds-theme.scss</pre>
+    </div>
+    <h3 class="step">Get the USWDS Identifier HTML.</h3>
+    <p class="step-description">TK</p>
+    <div class="terminal">
+      <pre>npx gulp watch</pre>
+    </div>
+    <h3 class="step">Add the Identifier HTML into the tutorial markup.</h3>
+    <p class="step-description">TK</p>
+    <div class="terminal">
+      <pre>touch _theme/_uswds-theme.scss</pre>
+    </div>
+    <h3 class="step">Update image paths.</h3>
+    <p class="step-description">TK</p>
     <div class="terminal">
       <pre>touch _theme/_uswds-theme.scss</pre>
     </div>

@@ -4,11 +4,11 @@
 }
 
 
-header {
+.opener {
   display: grid;
   align-items: center;
   grid-template-columns: 1fr 1fr;
-  background: var(--grape-0);
+  background: white;
 }
 
 .hero {
@@ -43,7 +43,7 @@ header {
   gap: var(--size-3);
 }
 
-a.button {
+.hero .button {
   background: white;
   color: var(--indigo-8);
   font-size: var(--font-size-3);
@@ -53,18 +53,22 @@ a.button {
   box-shadow: var(--shadow-2);
 }
 
-a.button:hover {
+.hero .button:hover {
   text-decoration: none;
 }
 
-a.button.primary {
+.hero .button.primary {
   background: var(--indigo-8);
   text-shadow: 0 1px 0 var(--indigo-9);
   color: white;
 }
 
-a.button.primary:hover {
+.hero .button.primary:hover {
   background: var(--indigo-7);
+}
+
+.hero .button.secondary {
+  background: var(--grape-0);
 }
 
 .promo-art {

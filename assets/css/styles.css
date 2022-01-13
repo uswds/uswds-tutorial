@@ -185,6 +185,11 @@ main p a:active {
   padding: var(--size-3);
   border-radius: var(--radius-2);
   margin-top: var(--size-3);
+  position: relative;
+}
+
+.editor {
+  padding-top: var(--size-9);
 }
 
 .terminal pre,
@@ -223,6 +228,25 @@ pre.feature {
   width: var(--size-5);
   display: inline-flex;
   text-indent: 0;
+}
+
+.editor .filename {
+  font-family: var(--font-mono);
+  font-weight: normal;
+  font-size: var(--font-size-2);
+  display: flex;
+  position: absolute;
+  padding: var(--size-2) var(--size-3) var(--size-2) var(--size-2);
+  line-height: var(--font-lineheight-1);
+  background: var(--blue-8);
+  border-top-left-radius: var(--radius-2);
+  top: 0;
+  left: 0;
+  align-items: center;
+}
+
+.editor .filename span {
+  padding-right: 0.4em;
 }
 
 .terminal {

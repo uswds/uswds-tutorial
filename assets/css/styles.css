@@ -201,23 +201,26 @@ pre.feature {
   font-weight: bold;
 }
 
+.editor > .add {
+  font-weight: bold;
+}
+
 .editor > .add:before {
   content: "+ ";
   color: var(--blue-8);
+  font-weight: normal;
 }
 
 .editor > .remove {
   color: var(--red-8);
-  text-decoration: line-through;
-  margin-left: calc(-1 * var(--size-3));
-  text-indent: var(--size-3);
+  margin-left: calc(-1 * var(--size-5));
+  text-indent: var(--size-5);
 }
 
 .editor > .remove:before {
   content: "- ";
   color: var(--red-8);
-  text-decoration: none;
-  width: var(--size-3);
+  width: var(--size-5);
   display: inline-flex;
   text-indent: 0;
 }

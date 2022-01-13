@@ -1,0 +1,13 @@
+  <section class="part three">
+    <h2>Set up USWDS theme files and assets</h2>
+    <h3 class="step">Initialize your USWDS installation.</h3>
+    <p class="step-description">Now we'll use the Gulp functions we set up in the last section to initialize our USWDS project. This process adds USWDS assets and theme files to your project, then compiles USWDS styles.</p>
+    <p class="step-description">USWDS static assets — fonts, images, and (for the purposes of this tutorial) JavaScript — support USWDS styles. Initialization copies them out of the <strong>uswds</strong> package, since sites may not have access to the <strong>node_modules</strong> directory in production.</p>
+    <p class="step-description">We'll use the <strong>init</strong> function we defined in the last section to copy these assets and compile USWDS CSS.</p>
+    <div class="terminal">
+      <pre>npx gulp init</pre>
+    </div>
+    <h3 class="step">Check for success.</h3>
+    <p class="step-description">After the script runs, you should have new USWDS assets in an <strong>./assets/uswds</strong> directory, theme files in a <strong>./_theme</strong> directory, and compiled CSS in the <strong>./assets/uswds/css</strong> directory.</p>
+    <p class="step-description">They're there? Nice!</p>
+  </section>

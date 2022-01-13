@@ -97,23 +97,35 @@ main > .part.intro {
 }
 
 main > .part.one {
-  border-left-color: var(--green-8);
+  border-left-color: var(--gray-9);
 }
 
 main > .part.two {
-  border-left-color: var(--orange-8);
+  border-left-color: var(--teal-9);
 }
 
 main > .part.three {
-  border-left-color: var(--grape-8);
+  border-left-color: var(--teal-7);
 }
 
 main > .part.four {
-  border-left-color: var(--cyan-8);
+  border-left-color: var(--teal-5);
 }
 
 main > .part.five {
-  border-left-color: var(--pink-8);
+  border-left-color: var(--teal-3);
+}
+
+main > .part.six {
+  border-left-color: var(--teal-2);
+}
+
+main > .part.seven {
+  border-left-color: var(--teal-1);
+}
+
+main > .part.eight {
+  border-left-color: white;
 }
 
 main h2 {
@@ -198,6 +210,7 @@ main p a:active {
   background-color: rgba(255,255,255,.25);
   color: var(--gray-9);
   padding-top: var(--size-9);
+  padding-bottom: var(--size-5);
 }
 
 .terminal pre,

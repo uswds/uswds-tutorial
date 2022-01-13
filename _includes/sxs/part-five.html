@@ -1,0 +1,42 @@
+<section class="part five">
+  <h2>Add the USWDS Banner</h2>
+  <h3 class="step">Get the USWDS Banner HTML.</h3>
+  <p class="step-description">Head over to the <a href="https://designsystem.digital.gov/components/banner">USWDS Banner component page</a>. Expand the <strong>Component code</strong> accordion and copy the first section of markup, from <strong>&lt;section class="usa-banner"...&gt;</strong> to <strong>&lt;/section&gt;</strong></p>
+  <h3 class="step">Add the Banner HTML into the tutorial markup.</h3>
+  <p class="step-description">Paste the Banner markup into the top of the tutorial index file (<strong>index.md</strong>), right after the front matter.</p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons">description</span> index.md</h4>
+    <pre class="blur">---
+layout: default
+title: USWDS Tutorial
+---
+</pre><pre class=add>
+&lt;section class="usa-banner" aria-label="Official government website"&gt;
+  &lt;div class="usa-accordion"&gt;
+    &lt;header class="usa-banner__header"&gt;
+    ...
+    &lt;/header"&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</pre><pre class="blur">
+&lt;header class="opener"&gt;</pre>
+  </div>
+  <h3 class="step">Update image paths.</h3>
+  <p class="step-description">Now the banner is on your page. But when you look at it <a href="http://localhost:4000/">in the browser window</a>, it won't look right. The links are broken. That's because the image path in our tutorial is different from the image path on the USWDS website. Let's update all the image paths to our project path.</p>
+  <p class="step-description">In <strong>index.md</strong>, search for all instances of the broken path (<strong>/assets/img</strong>) and replace it with the USWDS image path in our project (<strong>/assets/uswds/img</strong>).</p>
+  <p class="step-description">The example shows a couple of these replacements. Use find/replace to replace all of them.</p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons">description</span> index.md</h4>
+    <pre class="remove">src="/assets/img/us_flag_small.png"</pre><pre class="add">
+src="/assets/uswds/img/us_flag_small.png"
+
+</pre>
+      <pre class="remove">src="/assets/img/icon-dot-gov.svg"</pre><pre class="add">
+src="/assets/uswds/img/icon-dot-gov.svg"
+
+</pre>
+      <pre class="remove">src="/assets/img/icon-https.svg"</pre><pre class="add">
+src="/assets/uswds/img/icon-https.svg"
+</pre>
+  </div>
+  <p class="step-description">Once you're updated all these image paths, your banner should look pretty good!</p>
+</section>

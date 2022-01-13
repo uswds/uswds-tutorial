@@ -157,8 +157,8 @@ main p {
   max-width: 80ex;
 }
 
-main p a,
-main p a:visited {
+main p a[href],
+main p a[href]:visited {
   color: var(--gray-9);
   text-decoration: underline;
   border-radius: var(--radius-1);

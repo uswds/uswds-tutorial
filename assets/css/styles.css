@@ -1,8 +1,5 @@
 :root {
-  --indigo-9: color("indigo-30v"); 
-  --yellow-7: color("gold-10v");
 }
-
 
 .opener {
   display: grid;
@@ -193,6 +190,7 @@ main p a:active {
 .terminal pre,
 .editor pre {
   white-space: pre-wrap;
+  padding: 0 var(--size-5);
 }
 
 pre.blur {
@@ -201,6 +199,27 @@ pre.blur {
 
 pre.feature {
   font-weight: bold;
+}
+
+.editor > .add:before {
+  content: "+ ";
+  color: var(--blue-8);
+}
+
+.editor > .remove {
+  color: var(--red-8);
+  text-decoration: line-through;
+  margin-left: calc(-1 * var(--size-3));
+  text-indent: var(--size-3);
+}
+
+.editor > .remove:before {
+  content: "- ";
+  color: var(--red-8);
+  text-decoration: none;
+  width: var(--size-3);
+  display: inline-flex;
+  text-indent: 0;
 }
 
 .terminal {

@@ -1,6 +1,10 @@
 :root {
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 .opener {
   display: grid;
   align-items: center;

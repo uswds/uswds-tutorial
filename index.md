@@ -96,7 +96,7 @@ title: USWDS Tutorial
 <header class="opener">
   {% include hero.html %}
 </header>
-<main>
+<main id="tutorial-start">
   {% include sxs/part-intro.html %}
   {% include sxs/part-one.html %}
   {% include sxs/part-two.html %}

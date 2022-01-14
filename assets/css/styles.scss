@@ -144,6 +144,10 @@ main > .part.intro {
   font-weight: normal;
 }
 
+.part.intro > h3 {
+  color: var(--yellow-7);
+}
+
 h2 > span {
   display: block;
   font-weight: normal;
@@ -377,4 +381,48 @@ footer a:visited {
 
 .alert p:first-child {
   margin-top: 0;
+}
+
+ul.contents {
+  list-style: none;
+  padding-left: 0;
+  padding-right: 0;
+  max-width: none;
+  margin-top: var(--size-5);
+}
+
+ul.contents li {
+  padding: 0;
+  margin: 0;
+  max-width: none;
+}
+
+a.contents-item {
+  display: flex;
+  padding: var(--size-3);
+  align-items: center;
+  border-left: var(--border-size-3) solid;
+  width: 100%;
+  margin-top: var(--size-2);
+  font-size: var(--font-size-4);
+  border-color: var(--indigo-7);
+  color: white;
+  margin-left: var(--size-1);
+  line-height: var(--font-lineheight-1);
+}
+
+a.contents-item:hover {
+  border-color: white;
+  text-decoration: none;
+  color: var(--yellow-7);
+}
+
+.contents-part {
+  padding-right: var(--size-3);
+  color: var(--indigo-4);
+  font-weight: bold;
+}
+
+.contents-item .material-icons {
+  margin-left: var(--size-1);
 }

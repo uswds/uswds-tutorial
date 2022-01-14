@@ -12,28 +12,28 @@ A tutorial project to learn about installing, compiling, and customizing with US
 
 ## Installation
 1. Clone the tutorial repo, either in the terminal or with GitHub's `Use this template` button near the top of the page. We recommend using the terminal and the command line. If you choose to clone using the terminal, open a terminal window, navigate to the directory where you'd like to put the `uswds-tutotial` directory and run:
-```
-git clone https://github.com/uswds/uswds-tutorial.git
-```
+    ```
+    git clone https://github.com/uswds/uswds-tutorial.git
+    ```
 
-This will create a `uswds-tutorial` directory with the tutorial files inside. Navigate to this new directory:
+    This will create a `uswds-tutorial` directory with the tutorial files inside. Navigate to this new directory:
 
-```
-cd uswds-tutorial
-```
+    ```
+    cd uswds-tutorial
+    ```
 
-2. Install the project dependencies:
+1. Install the project dependencies:
 
-```
-npm install
-```
+    ```
+    npm install
+    ```
 
-3. Start the tutorial server:
+1. Start the tutorial server:
 
-```
-npm start
-```
+    ```
+    npm start
+    ```
 
-4. Open your brower and head to [http://localhost:4000/](http://localhost:4000/) and follow the directions on the page!
+1. Open your brower and head to [http://localhost:4000/](http://localhost:4000/) and follow the directions on the page!
 
 

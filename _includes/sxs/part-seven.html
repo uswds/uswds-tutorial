@@ -1,11 +1,10 @@
 <section class="part seven" id="part-seven">
   <h2><span>Part seven</span> Integrate project CSS and USWDS Sass</h2>
   <p>So now that we've added a couple USWDS components, let's try to harmonize the codebase a little. At this point it's possible to use USWDS tokens, functions, and mixins in our project styles! All we need to do is connect USWDS to our project styles.</p>
-  <h3 class="step">Change the filetype of your project styles to <strong>.scss</strong>.</h3>
+  <h3 class="step">Make a copy of your project styles with a <strong>.scss</strong> filetype.</h3>
   <p class="step-description">USWDS uses a stylesheet language called <a href="https://sass-lang.com">Sass</a> to compose our styles. In order to use our existing project CSS with USWDS, we'll need to change the filetype of our project CSS file from <strong>.css</strong> to <strong>.scss</strong>. (Sass is a superset of CSS, so you don't need to change anything else about the existing CSS styles to make them work with Sass.)</p>
-  <p class="step-description">We'll change the filetype in the terminal, but you could do this any way you like — you're just changing the filename.</p>
   <div class="terminal">
-    <pre>mv assets/css/styles.css assets/css/styles.scss</pre>
+    <pre>cp assets/css/styles.css assets/css/styles.scss</pre>
   </div>
   <h3 class="step">Import your project styles into USWDS custom styles.</h3>
   <p class="step-description">In your text editor, open <strong>_theme/_uswds-theme-custom-styles.scss</strong>. We'll connect USWDS styles and our existing project styles by "importing" our project styles into the USWDS custom styles file.</p>
@@ -20,16 +19,16 @@
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> gulpfile.js</h4>
     <pre class="blur">const uswds = require('@uswds/compile');
 uswds.paths.dist.theme = './theme';</pre><pre class="add">
-uswds.paths.dist.projectSass = './assets/css';
+uswds.paths.src.projectSass = './assets/css';
 </pre>
   </div>
   <p class="step-description">Save and close this file.</p>
-  <h3 class="step">Compile and watch for changes.</h3>
-  <p class="step-description">In the open terminal window, run the <strong>watch</strong> script to compile and watch for changes. Now that USWDS and our project CSS are connected, they'll compile into a single file: the USWDS CSS file we added to the <strong>head</strong> in <a href="#part-four">Part Four</a>.</p>
+  <h3 class="step">Compile styles.</h3>
+  <p class="step-description">In the open terminal window, run the <strong>compile</strong> script to compile our combined styles. Now that USWDS and our project CSS are connected, they'll compile into a single file: the USWDS CSS file we added to the <strong>head</strong> in <a href="#part-four">Part Four</a>.</p>
+  <p class="step-description">You'll know it worked if you see an Autoprefixer warning after the USWDS compile notifications.</p>
   <div class="terminal">
-    <pre>npx gulp watch</pre>
+    <pre>npx gulp compile</pre>
   </div>
-  <p class="step-description">The <strong>watch</strong> script will continue to run in the terminal window, watching for changes to your files, and recompiling when you change something.</p>
   <h3 class="step">Remove the project styles CSS link from the page head.</h3>
   <p class="step-description">Since we're no longer using the separate project CSS file, we will remove it from the site <strong>head</strong>.</p>
   <div class="editor">
@@ -43,6 +42,17 @@ uswds.paths.dist.projectSass = './assets/css';
 </head></pre>
   </div>
 <p class="step-description">Save and close the file.</p>
+<h3 class="step">Delete the original project styles.</h3>
+<p class="step-description">Now that our styles are compiling properly, we can delete our original project CSS file (<strong>styles.css</strong>).</p>
+<p class="step-description"><strong>Note:</strong> We're copying and removing rather than simply renaming here just so we never break this tutorial site. If we simply renamed <strong>styles.css</strong> to <strong>styles.scss</strong>, then this site would lose its formatting and you couldn't follow the tutorial. In real-life applications, you could just rename!</p>
+<div class="terminal">
+  <pre>rm assets/css/styles.css</pre>
+</div>
+<h3 class="step">Use the watch script to watch for changes and recompile.</h3>
+<p class="step-description">In the open terminal window, run the <strong>compile</strong> script to compile our combined styles and watch for future changes.</p>
+<div class="terminal">
+  <pre>npx gulp watch</pre>
+</div>
 <h3 class="step">Use USWDS color tokens for project colors.</h3>
   <p class="step-description">Our tutorial project uses CSS custom properties (otherwise known as "CSS variables" or "custom props"). We can update the value of those custom properties to use USWDS design tokens.</p>
   <p class="step-description">We'll add our updated custom properties to a new <strong>:root</strong> element, and we'll assign each updated property a <a href="https://designsystem.digital.gov/design-tokens/color/system-tokens/">USWDS system color token</a>, accessed with the <a href="https://designsystem.digital.gov/design-tokens/color/system-tokens/#using-color-tokens">USWDS <strong>color()</strong> function</a>.</p>
@@ -77,7 +87,7 @@ html {
   scroll-behavior: smooth;
 }</pre>
   </div>
-  <p class="step-description">Save, wait for the Sass to compile, and do a hard reload, and you'll see the new colors!</p>
+  <p class="step-description">Save, wait for the Sass to compile, do a hard reload, and you'll see the new colors!</p>
   <h3 class="step">Use USWDS font tokens for project fonts.</h3>
   <p class="step-description">Similarly, we can use <a href="https://designsystem.digital.gov/design-tokens/typesetting/font-family/">USWDS font family tokens</a> with our CSS custom properties.</p>
   <div class="editor">

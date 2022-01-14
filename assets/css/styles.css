@@ -88,12 +88,32 @@ main > .part {
   border-left: var(--border-size-5) solid var(--yellow-7);
   padding: 0 var(--size-10) var(--size-10) var(--size-10);
   padding-left: calc(var(--size-10) - var(--border-size-5));
-  border-top: var(--border-size-2) solid var(--gray-9);
   counter-reset: steps-primary;
 }
 
 main > .part.intro {
+  color: var(--indigo-4);
   padding-top: var(--size-4);
+  background-color: var(--gray-9);
+  border-left-color: var(--gray-9);
+}
+
+.part.intro > h2 {
+  color: var(--yellow-7);
+  font-size: var(--font-size-8);
+  font-weight: normal;
+}
+
+h2 > span {
+  display: block;
+  font-weight: normal;
+  font-size: var(--font-size-4);
+  color: var(--red-9);
+  margin-bottom: var(--size-5);
+  padding-bottom: var(--size-2);
+  text-transform: uppercase;
+  letter-spacing: var(--font-letterspacing-2);
+  border-bottom: var(--border-size-2) solid;
 }
 
 main > .part.one {

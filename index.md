@@ -118,7 +118,7 @@ title: USWDS Tutorial
         <a href="javascript:void(0);" class="usa-identifier__logo">
           <img
             class="usa-identifier__logo-img"
-            src="/assets/img/circle-gray-20.svg"
+            src="/assets/uswds/img/circle-gray-20.svg"
             alt="&lt;Parent agency&gt; logo"
             role="img"
           />

@@ -339,7 +339,7 @@ footer a:visited {
 
 .alert {
   padding: var(--size-5);
-  background: white;
+  background: var(--yellow-1);
   border-radius: var(--radius-2);
 }
 

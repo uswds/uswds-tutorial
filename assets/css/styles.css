@@ -5,6 +5,10 @@ html {
 	scroll-behavior: smooth;
 }
 
+h1 {
+  margin: 0;
+}
+
 .opener {
   display: grid;
   align-items: center;
@@ -42,9 +46,10 @@ html {
 .button-list {
   display: flex;
   gap: var(--size-3);
+  margin-top: var(--size-3);
 }
 
-.hero .button {
+.button {
   background: white;
   color: var(--indigo-8);
   font-size: var(--font-size-3);
@@ -54,21 +59,21 @@ html {
   box-shadow: var(--shadow-2);
 }
 
-.hero .button:hover {
+.button:hover {
   text-decoration: none;
 }
 
-.hero .button.primary {
+.button.primary {
   background: var(--indigo-8);
   text-shadow: 0 1px 0 var(--indigo-9);
   color: white;
 }
 
-.hero .button.primary:hover {
+.button.primary:hover {
   background: var(--indigo-7);
 }
 
-.hero .button.secondary {
+.button.secondary {
   background: var(--grape-0);
 }
 
@@ -121,6 +126,7 @@ h2 > span {
 }
 
 main > .part.one {
+  padding-top: var(--size-5);
   border-left-color: var(--gray-9);
 }
 
@@ -168,7 +174,7 @@ main h3 {
   color: var(--gray-9);
   line-height: var(--font-lineheight-0);
   font-weight: normal;
-  margin-top: var(--size-6);
+  margin-top: var(--size-7);
   max-width: 64ex;
   margin-left: var(--step-indent);
   text-indent: calc(-1 * var(--step-indent));
@@ -329,4 +335,14 @@ footer a:hover {
 
 footer a:visited {
   color: var(--indigo-3)
+}
+
+.alert {
+  padding: var(--size-5);
+  background: white;
+  border-radius: var(--radius-2);
+}
+
+.alert p:first-child {
+  margin-top: 0;
 }

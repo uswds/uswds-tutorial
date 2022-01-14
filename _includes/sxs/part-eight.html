@@ -1,0 +1,87 @@
+<section class="part eight" id="part-eight">
+  <h2><span>Part eight</span> Customize USWDS settings</h2>
+  <p>In the final part, we'll bring it all home and customize USWDS to better fit with the original project. </p>
+  <h3 class="step">Stop the watch script.</h3>
+  <p class="step-description">Go the terminal window where the <strong>watch</strong> script is running and enter <strong>control-c</strong> to stop the script.</p>
+  <h3 class="step">Create a custom settings file.</h3>
+  <p class="step-description">We're going to make some custom <a href="https://designsystem.digital.gov/documentation/settings/">USWDS settings</a> for our project. To do this, we're going to use a custom settings file. Create this file in the USWDS theme directory.</p>
+  <div class="terminal">
+    <pre>touch _theme/_uswds-theme.scss</pre>
+  </div>
+  <h3 class="step">Activate custom settings.</h3>
+  <p class="step-description">Now, let's tell USWDS that this new settings file exists. We'll open the USWDS Sass entry point (<strong>_theme/styles.scss</strong>) and import this new settings file.</p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/styles.scss</h4>
+    <pre class="blur">// -------------------------------------
+// Import individual theme settings...
+</pre><pre class="remove">
+@import "uswds-theme-general";
+@import "uswds-theme-typography";
+@import "uswds-theme-spacing";
+@import "uswds-theme-color";
+@import "uswds-theme-utilities";
+@import "uswds-theme-components";</pre><pre class="blur">
+
+// ...or use a custom theme file.
+</pre><pre class="remove">
+// @import "my-custom-theme";</pre><pre class="add">
+@import "uswds-theme";</pre>
+  </div>
+  <h3 class="step">Start the watch script.</h3>
+  <div class="terminal">
+    <pre>npx gulp watch</pre>
+  </div>
+  <h3 class="step">Turn off compile notifications.</h3>
+  <p class="step-description">Now, let's turn off all the verbose notification messages we see each time USWDS compiles. We're reading these, right?</p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme.scss</h4>
+    <pre class="add">$theme-show-notifications: false;</pre>
+  </div>
+  <p class="step-description">Save the file. Now, when the watch script runs you won't see all the messages.</p>
+  <h3 class="step">Change the project font.</h3>
+  <p class="step-description">Let's use the same fonts we started with on this project: system fonts.</p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme.scss</h4>
+    <pre class="blur">$theme-show-notifications: false;</pre><pre class="add">
+$theme-font-type-sans: "system";</pre>
+  </div>
+  <p class="step-description">Save, recompile, and hard reload. Looking good!</p>
+  <p class="step-description">Now, for fun, let's try using Public Sans here. It's not too different from system fonts, it looks the same on all browsers, and it's a USWDS font.</p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme.scss</h4>
+    <pre class="blur">$theme-show-notifications: false;</pre><pre class="remove">
+$theme-font-type-sans: "system";</pre><pre class="add">
+$theme-font-type-sans: "public-sans";</pre>
+  </div>
+  <p class="step-description">We can also activate an extra bold font weight to better match the weight of the original fonts.</p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme.scss</h4>
+    <pre class="blur">$theme-show-notifications: false;</pre><pre class="blur">
+$theme-font-type-sans: "public-sans";</pre><pre class="add">
+$theme-font-weight-heavy: 800;</pre>
+  </div>
+  <h3 class="step">Customize the Banner.</h3>
+  <p class="step-description">Now we'll update some Banner settings to better match our site. We'll give the banner a dark background, use indigo for a link color, and widen it so the text starts further to the left.</p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme.scss</h4>
+    <pre class="blur">$theme-show-notifications: false;</pre><pre class="blur">
+$theme-font-type-sans: "public-sans";
+$theme-font-weight-heavy: 800;</pre><pre class="add">
+$theme-banner-background-color: "ink";
+$theme-banner-link-color: "indigo-30";
+$theme-banner-max-width: none;</pre>
+  </div>
+  <h3 class="step">Customize the Identifier.</h3>
+  <p class="step-description">Finally, we'll widen the Identifier to match the Banner!</p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme.scss</h4>
+    <pre class="blur">$theme-show-notifications: false;</pre><pre class="blur">
+$theme-font-type-sans: "public-sans";
+$theme-font-weight-heavy: 800;
+$theme-banner-background-color: "ink";
+$theme-banner-link-color: "indigo-30";
+$theme-banner-max-width: none;</pre><pre class="add">
+$theme-identifier-max-width: none;</pre>
+  </div>
+  <p class="step-description">Save the settings file, wait for compile, and hard reload — and you're done! You have a site that integrates USWDS, uses two key USWDS components, and adapts USWDS to fit your project tone.</p>
+</section>

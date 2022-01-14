@@ -1,44 +1,16 @@
 {
-  "name": "uswds-sandbox",
+  "name": "uswds-tutorial",
   "private": true,
   "author": "USWDS",
   "license": "CC0-1.0",
   "scripts": {
-    "federalist": "npm install && ./build.sh && npm run uswds-copy-assets && npm run uswds-build-sass",
-    "init": "npm install && npm update uswds && npm run jekyll-install && npm run uswds-copy-assets && npm run uswds-copy-theme && npm run uswds-build-sass",
-    "jekyll-install": "gem install bundler && bundle install",
-    "serve": "bundle exec jekyll serve --livereload --host=localhost",
-    "start": "concurrently \"npm:serve\" \"npm:watch\"",
-    "uswds-build-sass": "gulp build-sass",
-    "uswds-build-app": "gulp build-app",
-    "uswds-copy-assets": "npm run uswds-copy-js && npm run uswds-copy-fonts && npm run uswds-copy-img",
-    "uswds-copy-fonts": "gulp copy-uswds-fonts",
-    "uswds-copy-img": "gulp copy-uswds-images",
-    "uswds-copy-js": "gulp copy-uswds-js",
-    "uswds-copy-theme": "gulp copy-uswds-setup",
-    "uswds-update": "npm update uswds && ./build.sh",
-    "watch": "gulp watch",
+    "postinstall": "npm run jekyll:install",
+    "jekyll:install": "gem install bundler && bundle install",
+    "jekyll:serve": "bundle exec jekyll serve --livereload --host=localhost",
+    "start": "npm run jekyll:serve",
     "test": "snyk test"
   },
-  "dependencies": {
-    "autoprefixer": "^10.4.0",
-    "del": "^6.0.0",
-    "gulp": "^4.0.2",
-    "gulp-postcss": "^9.0.1",
-    "gulp-rename": "^2.0.0",
-    "gulp-replace": "^1.1.3",
-    "gulp-sass": "^5.0.0",
-    "gulp-sourcemaps": "^3.0.0",
-    "gulp-svg-sprite": "^1.5.0",
-    "postcss": "^8.4.5",
-    "postcss-csso": "^5.0.1",
-    "sass": "^1.45.0",
-    "uswds": "^2.13.0",
-    "uswds-gulp": "github:uswds/uswds-gulp"
-  },
   "devDependencies": {
-    "concurrently": "^6.4.0",
-    "nth-check": "^2.0.1",
     "snyk": "^1.704.0"
   }
 }

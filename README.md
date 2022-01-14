@@ -1,26 +1,39 @@
-# USWDS Sandbox
-A Jekyll site for rapid web prototyping and testing new work with USWDS. This site is designed to run locally and on [Federalist](https://federalist.18f.gov).
+:warning: **In progress.** This repo is a work in progress. We'll be lauching it January 20, 2022.
+
+# USWDS Tutorial
+A tutorial project to learn about installing, compiling, and customizing with USWDS.
 
 ## Requirements
 - Node v16
 - Ruby v3.0.2
+- Access to a terminal application
+- A text editor
+- A modern web browser
 
-## Running code locally
-After cloning the template repo, install USWDS, Jekyll, and any necessary dependencies using:
+## Installation
+1. Clone the tutorial repo, either in the terminal or with GitHub's `Use this template` button near the top of the page. We recommend using the terminal and the command line. If you choose to clone using the terminal, open a terminal window, navigate to the directory where you'd like to put the `uswds-tutotial` directory and run:
 ```
-npm run init
+git clone https://github.com/uswds/uswds-tutorial.git
 ```
-Then, to serve the site locally:
+
+This will create a `uswds-tutorial` directory with the tutorial files inside. Navigate to this new directory:
+
+```
+cd uswds-tutorial
+```
+
+2. Install the project dependencies:
+
+```
+npm install
+```
+
+3. Start the tutorial server:
+
 ```
 npm start
 ```
-If all goes well, visit the site at http://localhost:4000.
 
-USWDS assets are in `assets/fonts` and `assets/img`.
+4. Open your brower and head to [http://localhost:4000/](http://localhost:4000/) and follow the directions on the page!
 
-SASS files are kept in the `/_sass` directory. Running `npm start` will also watch these files and recompile when there are changes.
 
-## Templates
-- `default`: A blank-slate sandbox page
-- `basic-prose`: A page with a banner, basic header, footer, identifier, and a prose container 
-- `extended-prose`: A page with a banner, extended header, footer, identifier, and a prose container 

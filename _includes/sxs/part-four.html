@@ -1,0 +1,44 @@
+<section class="part four" id="part-four">
+  <h2><span>Part four</span> Add USWDS CSS and JavaScript to the site template</h2>
+  <p>Now that we've created the compiled CSS and JavaScript, we need to include them in our page templates.</p>
+  <h3 class="step">Add USWDS styles to the site head.</h3>
+  <p class="step-description">Add the compiled CSS before the existing site CSS.</p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _includes/head.html</h4>
+    <pre class="blur">&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  ...
+  &lt;link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"&gt;</pre><pre class="add">
+  &lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/uswds/css/styles.css' | relative_url &rcub;&rcub;"&gt;</pre><pre class="blur">
+  &lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/css/open-props.css' | relative_url &rcub;&rcub;"&gt;
+  ...</pre>
+    </div>
+    <h3 class="step">Add USWDS initializer to the site head.</h3>
+    <p class="step-description">Add the USWDS initialization script at the end of the page <strong>head</strong>. This script prevent flashes of unstyled content while USWDS is loading.</p>
+    <div class="editor">
+      <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _includes/head.html</h4>
+      <pre class="blur">&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  ...
+  &lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/uswds/css/styles.css' | relative_url &rcub;&rcub;"&gt;
+  &lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/css/open-props.css' | relative_url &rcub;&rcub;"&gt;
+  &lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/css/normalize.css' | relative_url &rcub;&rcub;"&gt;
+  &lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/css/styles.css' | relative_url &rcub;&rcub;"&gt;</pre><pre class="add">
+  &lt;script src="&lcub;&lcub; '/assets/uswds/js/uswds-init.min.js' | relative_url &rcub;&rcub;"&gt;&lt;/script&gt;</pre><pre class="blur">
+</head>
+</pre>
+  </div>
+  <h3 class="step">Add USWDS JavaScript to the end of the page body.</h3>
+  <p class="step-description">Finally, add the USWDS JavaScript to the end of the page <strong>body</strong>.</p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> ./_layouts_/default.html</h4>
+    <pre class="blur">...
+
+&lt;body class="&lcub;&lcub; page.body &rcub;&rcub;"&gt;
+  &lcub;&lcub; content }}</pre><pre class="add">
+  &lt;script src="&lcub;&lcub; '/assets/uswds/js/uswds.min.js' | relative_url &rcub;&rcub;"&gt;&lt;/script&gt;</pre><pre class="blur">
+&lt;/body&gt;
+</pre>
+  </div>
+  <p class="step-description">At this point, you've added USWDS design system code to your project successfully! Now we can add some components.</p>
+</section>

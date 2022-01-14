@@ -1,0 +1,35 @@
+<section class="part six" id="part-six">
+  <h2><span>Part six</span> Add the USWDS Identifier</h2>
+  <p>Now we'll add the USWDS Identifier, just as we did the Banner.</p>
+  <h3 class="step">Get the USWDS Identifier HTML.</h3>
+  <p class="step-description">Head over to the <a href="https://designsystem.digital.gov/components/identifier">USWDS Identifier component page</a>. Expand the <strong>Component code</strong> accordion and copy the first section of markup, from <strong>&lt;div class="usa-identifier"...&gt;</strong> to its closing <strong>&lt;/div&gt;</strong></p>
+  <h3 class="step">Add the Identifier HTML into the tutorial markup.</h3>
+  <p class="step-description">Paste the Identifier markup into the bottom of the tutorial index file (<strong>index.md</strong>), right after the footer.</p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> index.md</h4>
+    <pre class="blur">...
+&lt;/main&gt;
+&lcub;% include footer.html %&rcub;
+</pre><pre class=add>
+&lt;div class="usa-identifier"&gt;
+  &lt;section
+    class="usa-identifier__section usa-identifier__section--masthead"
+    aria-label="Agency identifier,"
+    &gt;
+
+  ...
+
+  &lt;/section&gt;
+&lt;/div&gt;
+</pre>
+  </div>
+  <h3 class="step">Update image paths.</h3>
+  <p class="step-description">Just like we did in <a href="part-five">Part Five</a>, we'll need to update the image paths. In <strong>index.md</strong>, search for all instances of the broken path (<strong>/assets/img</strong>) and replace it with the USWDS image path in our project (<strong>/assets/uswds/img</strong>).</p>
+  <p class="step-description">This time, there's only one path to replace.</p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> index.md</h4>
+    <pre class="remove">src="/assets/img/circle-gray-20.svg"</pre><pre class="add">
+src="/assets/uswds/img/circle-gray-20.svg"</pre>
+  </div>
+  <p class="step-description">And now you've got a working Identifier! It needs real data (which we won't add in this tutorial) but the formatting is all set.</p>
+</section>

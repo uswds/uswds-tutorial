@@ -1,0 +1,49 @@
+<section class="part two" id="part-two">
+  <h2><span>Part two</span> Set up the USWDS and the USWDS compiler</h2>
+  <p>Now that the site is running and you have a new terminal window open, let's install the USWDS compiler. If the tutorial site isn't running in a browser window, make sure you did everything in <a href="#part-one">Part One</a>.</p>
+  <h3 class="step">Open a new terminal window.</h3>
+  <p class="step-description">Open a new terminal window and navigate to the tutorial's root directory. In the following example, change <strong>path/to/uswds-tutorial</strong> to the actual path.</p>
+  <div class="terminal">
+    <pre>cd path/to/uswds-tutorial</pre>
+  </div>
+  <h3 class="step">Install the USWDS source code package.</h3>
+  <div class="terminal">
+    <pre>npm install uswds --save-dev</pre>
+  </div>
+  <h3 class="step">Install the USWDS compiler package.</h3>
+  <div class="terminal">
+    <pre>npm install @uswds/compile --save-dev</pre>
+  </div>
+  <h3 class="step">Add a gulpfile to create your compile settings.</h3>
+  <p class="step-description">The USWDS compiler uses a task runner called <a href="https://gulpjs.com">Gulp</a> to run its scripts and functions. You'll need what's called a "gulpfile" to tell the USWDS compiler how you'd like to use it.</p>
+  <div class="terminal">
+    <pre>touch gulpfile.js</pre>
+  </div>
+  <h3 class="step">In the new gulpfile you just created, import the USWDS compiler package.</h3>
+  <p class="step-description">This connects your gulpfile to USWDS compiler's <a href="https://github.com/uswds/uswds-gulp/tree/jm-gulp-4#functions">settings and functions</a>.</p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> gulpfile.js</h4>
+    <pre class="add">const uswds = require('@uswds/compile');</pre>
+  </div>
+  <h3 class="step">Then, add custom path settings.</h3>
+  <p class="step-description">The USWDS compiler's <a href="https://github.com/uswds/uswds-gulp/tree/jm-gulp-4#path-settings">path settings</a> allow you to customize where you want to save both your USWDS files, and the styles you compile with the compiler. For example, use <strong>paths.dist.css</strong> to tell the compiler where to save your compiled styles. Each path variable should start with the constant you defined in the last step. (We've used <strong>uswds</strong> in our tutorial.) Paths are relative to the project root, the place where you made your gulpfile.</p>
+  <p class="step-description">In this tutorial we'll set the destination of our theme files to the <strong>./_theme</strong> directory.</p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> gulpfile.js</h4>
+    <pre class="blur">const uswds = require('@uswds/compile');
+</pre><pre class="add">uswds.paths.dist.theme = './theme';</pre>
+  </div>
+  <h3 class="step">Finally, define (or "export") the USWDS compile functions you want to use.</h3>
+  <p class="step-description">The USWDS compiler has a number of <a href="https://github.com/uswds/uswds-gulp/tree/jm-gulp-4#functions">functions</a> available for compiling styles and scaffolding projects. To use these functions, you need to export them using the format we show below: <strong>exports.[customName] = uswds.[function]</strong>. You'll use any <strong>customName</strong> you just defined when you run the compiler in the next sections.</p>
+  <p class="step-description">In this tutorial, we'll set up three functions: <strong>init</strong>, <strong>compile</strong>, and <strong>watch</strong>.</p>
+  <p class="step-description">Save your new gulpfile when you're done.</p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> gulpfile.js</h4>
+    <pre class="blur">const uswds = require('@uswds/compile');
+
+uswds.paths.dist.theme = './_theme';
+  </pre><pre class="add">exports.init = uswds.init;
+exports.compile = uswds.compile;
+exports.watch = uswds.watch;</pre>
+  </div>
+</section>

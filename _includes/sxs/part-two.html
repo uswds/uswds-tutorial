@@ -13,14 +13,14 @@
   <h3 class="step">In the new gulpfile you just created, import the USWDS compiler package.</h3>
   <p class="step-description">This connects your gulpfile to USWDS compiler's <a href="https://github.com/uswds/uswds-gulp/tree/jm-gulp-4#functions">settings and functions</a>.</p>
   <div class="editor">
-    <h4 class="filename"><span class="material-icons">description</span> gulpfile.js</h4>
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> gulpfile.js</h4>
     <pre class="add">const uswds = require('@uswds/compile');</pre>
   </div>
   <h3 class="step">Then, add custom path settings.</h3>
   <p class="step-description">The USWDS compiler's <a href="https://github.com/uswds/uswds-gulp/tree/jm-gulp-4#path-settings">path settings</a> allow you to customize where you want to save both your USWDS files, and the styles you compile with the compiler. For example, use <strong>paths.dist.css</strong> to tell the compiler where to save your compiled styles. Each path variable should start with the constant you defined in the last step. (We've used <strong>uswds</strong> in our tutorial.) Paths are relative to the project root, the place where you made your gulpfile.</p>
   <p class="step-description">In this tutorial we'll set the destination of our theme files to the <strong>./_theme</strong> directory.</p>
   <div class="editor">
-    <h4 class="filename"><span class="material-icons">description</span> gulpfile.js</h4>
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> gulpfile.js</h4>
     <pre class="blur">const uswds = require('@uswds/compile');
 </pre><pre class="add">uswds.paths.dist.theme = './theme';</pre>
   </div>
@@ -29,7 +29,7 @@
   <p class="step-description">In this tutorial, we'll set up three functions: <strong>init</strong>, <strong>compile</strong>, and <strong>watch</strong>.</p>
   <p class="step-description">Save your new gulpfile when you're done.</p>
   <div class="editor">
-    <h4 class="filename"><span class="material-icons">description</span> gulpfile.js</h4>
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> gulpfile.js</h4>
     <pre class="blur">const uswds = require('@uswds/compile');
 
 uswds.paths.dist.theme = './_theme';

@@ -1,6 +1,6 @@
 <section class="part two" id="part-two">
-  <h2><span>Part two</span> Set up the USWDS and the USWDS compiler</h2>
-  <p>Now that the site is running and you have a new terminal window open, let's install the USWDS compiler. If the tutorial site isn't running in a browser window, make sure you did everything in <a href="#part-one">Part One</a>.</p>
+  <h2><span>Part two</span> Set up USWDS and the USWDS compiler</h2>
+  <p>Now that the site is running and you have a new terminal window open, let's install the USWDS and the USWDS compiler. If the tutorial site isn't running in a browser window, make sure you did everything in <a href="#part-one">Part One</a>.</p>
   <h3 class="step">Open a new terminal window.</h3>
   <p class="step-description">Open a new terminal window and navigate to the tutorial's root directory. In the following example, change <strong>path/to/uswds-tutorial</strong> to the actual path.</p>
   <div class="terminal">
@@ -31,7 +31,7 @@
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> gulpfile.js</h4>
     <pre class="blur">const uswds = require('@uswds/compile');
-</pre><pre class="add">uswds.paths.dist.theme = './theme';</pre>
+</pre><pre class="add">uswds.paths.dist.theme = './_theme';</pre>
   </div>
   <h3 class="step">Finally, define (or "export") the USWDS compile functions you want to use.</h3>
   <p class="step-description">The USWDS compiler has a number of <a href="https://github.com/uswds/uswds-gulp/tree/jm-gulp-4#functions">functions</a> available for compiling styles and scaffolding projects. To use these functions, you need to export them using the format we show below: <strong>exports.[customName] = uswds.[function]</strong>. You'll use any <strong>customName</strong> you just defined when you run the compiler in the next sections.</p>

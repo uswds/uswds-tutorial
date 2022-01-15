@@ -34,6 +34,6 @@ A tutorial project to learn about installing, compiling, and customizing with US
     npm start
     ```
 
-1. Open your brower and head to [http://localhost:4000/](http://localhost:4000/) and follow the directions on the page!
+1. Once the server is running, head to [http://localhost:4000/](http://localhost:4000/) and follow the directions on the page!
 
 

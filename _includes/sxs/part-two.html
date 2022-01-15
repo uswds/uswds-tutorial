@@ -14,6 +14,7 @@
   <div class="terminal">
     <pre>npm install @uswds/compile --save-dev</pre>
   </div>
+  <p class="step-description">Ignore the deprecation warnings, they're normal.</p>
   <h3 class="step">Add a gulpfile to create your compile settings.</h3>
   <p class="step-description">The USWDS compiler uses a task runner called <a href="https://gulpjs.com">Gulp</a> to run its scripts and functions. You'll need what's called a "gulpfile" to tell the USWDS compiler how you'd like to use it.</p>
   <div class="terminal">
@@ -31,6 +32,7 @@
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> gulpfile.js</h4>
     <pre class="blur">const uswds = require('@uswds/compile');
+      
 </pre><pre class="add">uswds.paths.dist.theme = './_theme';</pre>
   </div>
   <h3 class="step">Finally, define (or "export") the USWDS compile functions you want to use.</h3>

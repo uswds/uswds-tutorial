@@ -81,6 +81,10 @@ h1 {
   background: var(--grape-0);
 }
 
+.button.secondary:visited {
+  color: var(--indigo-8);
+}
+
 .promo-art {
   align-self: stretch;
   background-color: var(--indigo-9);

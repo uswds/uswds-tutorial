@@ -11,7 +11,7 @@ A tutorial project to learn about installing, compiling, and customizing with US
 - A modern web browser
 
 ## Installation
-1. Clone the tutorial repo, either in the terminal or with GitHub's `Use this template` button near the top of the page. We recommend using the terminal and the command line. If you choose to clone using the terminal, open a terminal window, navigate to the directory where you'd like to put the `uswds-tutorial` directory and run:
+1. Clone the tutorial repo, either in the terminal or with GitHub's `Use this template` button near the top of the page. **We recommend using the terminal and the command line.** If you choose to clone using the terminal, open a terminal window, navigate to the directory where you'd like to put the `uswds-tutorial` directory and run:
     ```
     git clone https://github.com/uswds/uswds-tutorial.git
     ```

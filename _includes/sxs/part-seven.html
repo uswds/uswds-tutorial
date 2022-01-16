@@ -34,11 +34,10 @@ uswds.paths.src.projectSass = './assets/css';
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _includes/head.html</h4>
     <pre class="blur">...
-&lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/uswds/css/styles.css' | relative_url &rcub;&rcub;"&gt;
-&lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/css/open-props.css' | relative_url &rcub;&rcub;"&gt;
-&lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/css/normalize.css' | relative_url &rcub;&rcub;"&gt;</pre><pre class="remove">
-&lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/css/styles.css' | relative_url &rcub;&rcub;"&gt;</pre><pre class="blur">
-&lt;script src="&lcub;&lcub; '/assets/uswds/js/uswds-init.min.js' | relative_url &rcub;&rcub;"&gt;&lt;/script&gt;
+  &lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/css/open-props.css' | relative_url &rcub;&rcub;"&gt;
+  &lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/uswds/css/styles.css' | relative_url &rcub;&rcub;"&gt;</pre><pre class="remove">
+  &lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/css/styles.css' | relative_url &rcub;&rcub;"&gt;</pre><pre class="blur">
+  &lt;script src="&lcub;&lcub; '/assets/uswds/js/uswds-init.min.js' | relative_url &rcub;&rcub;"&gt;&lt;/script&gt;
 </head></pre>
   </div>
 <p class="step-description">Save and close the file.</p>
@@ -83,9 +82,8 @@ uswds.paths.src.projectSass = './assets/css';
   --yellow-7: #{color("gold-30v")};
 }</pre><pre class="blur">
 
-html {
-  scroll-behavior: smooth;
-}</pre>
+:where(html) {
+  color-scheme: light;</pre>
   </div>
   <p class="step-description">Save, wait for the Sass to compile, do a hard reload, and you'll see the new colors!</p>
   <h3 class="step">Use USWDS font tokens for project fonts.</h3>

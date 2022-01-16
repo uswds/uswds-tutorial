@@ -1,6 +1,6 @@
 <section class="part two" id="part-two">
   <h2><span>Part two</span> Set up USWDS and the USWDS compiler</h2>
-  <p>Now that the site is running and you have a new terminal window open, let's install the USWDS and the USWDS compiler. If the tutorial site isn't running in a browser window, make sure you did everything in <a href="#part-one">Part One</a>.</p>
+  <p>Now that the site is running and you have a new terminal window open, let's install USWDS and the USWDS compiler.</p>
   <h3 class="step">Open a new terminal window.</h3>
   <p class="step-description">Open a new terminal window and navigate to the tutorial's root directory. In the following example, change <strong>path/to/uswds-tutorial</strong> to the actual path.</p>
   <div class="terminal">
@@ -14,6 +14,7 @@
   <div class="terminal">
     <pre>npm install @uswds/compile --save-dev</pre>
   </div>
+  <p class="step-description">Ignore the deprecation warnings, they're normal.</p>
   <h3 class="step">Add a gulpfile to create your compile settings.</h3>
   <p class="step-description">The USWDS compiler uses a task runner called <a href="https://gulpjs.com">Gulp</a> to run its scripts and functions. You'll need what's called a "gulpfile" to tell the USWDS compiler how you'd like to use it.</p>
   <div class="terminal">
@@ -31,6 +32,7 @@
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> gulpfile.js</h4>
     <pre class="blur">const uswds = require('@uswds/compile');
+      
 </pre><pre class="add">uswds.paths.dist.theme = './_theme';</pre>
   </div>
   <h3 class="step">Finally, define (or "export") the USWDS compile functions you want to use.</h3>

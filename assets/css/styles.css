@@ -1,3 +1,9 @@
+/* Adapted from Open Props
+ * https://github.com/argyleink/open-props
+ * Copyright (c) 2021 Adam Argyle
+ * MIT License
+ */
+
 :where(html) {
   color-scheme: light;
 
@@ -316,6 +322,8 @@
 :where(abbr) {
   text-decoration-color: var(--blue-5);
 }
+
+/* New code by USWDS, adapted from Open Props */
 
 html {
 	scroll-behavior: smooth;

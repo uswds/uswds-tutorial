@@ -1,5 +1,3 @@
-:warning: **In progress.** This repo is a work in progress. We'll be lauching it January 20, 2022.
-
 # USWDS Tutorial
 A tutorial project to learn about installing, compiling, and customizing with USWDS.
 

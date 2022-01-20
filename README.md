@@ -6,6 +6,7 @@ A tutorial project to learn about installing, compiling, and customizing with US
 ## Requirements
 - Node v16
 - Ruby v3.0.2
+- Git
 - Access to a terminal application
 - A text editor
 - A modern web browser

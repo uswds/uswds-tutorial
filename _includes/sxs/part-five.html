@@ -3,9 +3,9 @@
   <h3 class="step">Get the USWDS Banner HTML.</h3>
   <p class="step-description">Head over to the <a href="https://designsystem.digital.gov/components/banner">USWDS Banner component page</a>. Expand the <strong>Component code</strong> accordion and copy the first section of markup, from <strong>&lt;section class="usa-banner"...&gt;</strong> to <strong>&lt;/section&gt;</strong></p>
   <h3 class="step">Add the Banner HTML into the tutorial markup.</h3>
-  <p class="step-description">Paste the Banner markup into the top of the tutorial index file (<strong>index.md</strong>), right after the front matter.</p>
+  <p class="step-description">Paste the Banner markup into the top of the tutorial index file (<strong>index.html</strong>), right after the front matter.</p>
   <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> index.md</h4>
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> index.html</h4>
     <pre class="blur">---
 layout: default
 title: USWDS Tutorial
@@ -24,10 +24,10 @@ title: USWDS Tutorial
   </div>
   <h3 class="step">Update image paths.</h3>
   <p class="step-description">Now the banner is on your page. But when you look at it <a href="http://localhost:8080/">in the browser window</a>, it won't look right. The links are broken. That's because the image path in our tutorial is different from the image path on the USWDS website. Let's update all the image paths to our project path.</p>
-  <p class="step-description">In <strong>index.md</strong>, search for all instances of the broken path (<strong>/assets/img</strong>) and replace each one with the our project's USWDS image path (<strong>/assets/uswds/img</strong>).</p>
+  <p class="step-description">In <strong>index.html</strong>, search for all instances of the broken path (<strong>/assets/img</strong>) and replace each one with the our project's USWDS image path (<strong>/assets/uswds/img</strong>).</p>
   <p class="step-description">The example shows each of these replacements. Use find/replace to replace all of them.</p>
   <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> index.md</h4>
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> index.html</h4>
     <pre class="remove">src="/assets/img/us_flag_small.png"</pre><pre class="add">
 src="/assets/uswds/img/us_flag_small.png"
 

@@ -59,8 +59,9 @@ uswds.paths.src.projectSass = './assets/css';
   <p class="step-description">To use these USWDS functions, we'll first tell Sass where to find USWDS functions, and that's in a package called <strong>uswds-core</strong>. We'll add a Sass <strong>use</strong> directive to make this connection.</p>
   <p class="step-description"><strong>Advanced note:</strong> If you're already familiar with Sass and functions, you'll see that when writing CSS custom properties, you need to use <a href="https://sass-lang.com/documentation/interpolation">Sass interpolation syntax</a> instead of regular functions. Anywhere else in the codebase, you can use regular functions, but custom properties require Sass interpolation.</p>
   <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/styles.scss</h4>
-    <pre class="add">@use "uswds-core" as *;
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme-custom-styles.scss</h4>
+    <pre class="blur">@use "uswds-core" as *;
+@forward "../assets/css/styles.scss";</pre><pre class="add">
 :root {
   --blue-2: #{color("blue-warm-20v")};
   --blue-3: #{color("blue-warm-30v")};
@@ -83,16 +84,13 @@ uswds.paths.src.projectSass = './assets/css';
   --teal-2: #{color("mint-30v")};
   --yellow-1: #{color("gold-10v")};
   --yellow-7: #{color("gold-30v")};
-}</pre><pre class="blur">
-
-:where(html) {
-  color-scheme: light;</pre>
+}</pre>
   </div>
   <p class="step-description">Save, wait for the Sass to compile, do a hard reload, and you'll see the new colors!</p>
   <h3 class="step">Use USWDS font tokens for project fonts.</h3>
   <p class="step-description">Similarly, we can use <a href="https://designsystem.digital.gov/design-tokens/typesetting/font-family/">USWDS font family tokens</a> with our CSS custom properties.</p>
   <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/styles.scss</h4>
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme-custom-styles.scss</h4>
     <pre class="blur">:root {
   ...
   --yellow-1: #{color("gold-10v")};

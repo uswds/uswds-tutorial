@@ -94,10 +94,6 @@
   font-family: var(--font-sans);
   line-height: var(--font-lineheight-3);
   -webkit-text-size-adjust: none; /* https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
-
-  @media (prefers-reduced-motion: no-preference) {
-    scroll-behavior: smooth;
-  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -324,10 +320,6 @@
 }
 
 /* New code by USWDS, adapted from Open Props */
-
-html {
-	scroll-behavior: smooth;
-}
 
 h1 {
   margin: 0;

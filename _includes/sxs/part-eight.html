@@ -3,157 +3,103 @@
   <p>In the final part, we'll bring it all home and customize USWDS to better fit with the original project. </p>
   <h3 class="step">Stop the watch script.</h3>
   <p class="step-description">Go the terminal window where the <strong>watch</strong> script is running and enter <strong>control-c</strong> to stop the script.</p>
-  <h3 class="step">Create a custom settings file.</h3>
-  <p class="step-description">We're going to make some custom <a href="https://designsystem.digital.gov/documentation/settings/">USWDS settings</a> for our project. To do this, we're going to use a custom settings file. Create this file in the USWDS theme directory.</p>
-  <div class="terminal">
-    <pre>touch _theme/_uswds-theme.scss</pre>
-  </div>
-  <h3 class="step">Activate custom settings.</h3>
-  <p class="step-description">Now, let's tell USWDS that this new settings file exists. We'll open the USWDS Sass entry point (<strong>_theme/styles.scss</strong>) and import this new settings file.</p>
+  <h3 class="step">Activate theme settings.</h3>
+  <p class="step-description">We're going to add some custom <a href="https://designsystem.digital.gov/documentation/settings/">USWDS settings</a> to our project. To do this, we're going to add them to our custom settings file: <strong>_theme/_uswds-theme.scss</strong>.</p>
+  <p class="step-description">In <strong>_theme/_uswds-theme.scss</strong>, uncomment lines 11-14</p>
   <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/styles.scss</h4>
-    <pre class="blur">// -------------------------------------
-// Import individual theme settings...
-</pre><pre class="remove">
-@import "uswds-theme-general";
-@import "uswds-theme-typography";
-@import "uswds-theme-spacing";
-@import "uswds-theme-color";
-@import "uswds-theme-utilities";
-@import "uswds-theme-components";</pre><pre class="blur">
-
-// ...or use a custom theme file.
-</pre><pre class="remove">
-// @import "my-custom-theme";</pre><pre class="add">
-@import "uswds-theme";</pre>
-  </div>
-  <h3 class="step">Start the watch script.</h3>
-  <div class="terminal">
-    <pre>npx gulp watch</pre>
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme.scss</h4>
+    <pre class="remove">//  @use "uswds-core" with (
+//    $setting: value,
+//    $setting: value
+//  );</pre><pre class="add">
+@use "uswds-core" with (
+  $setting: value,
+  $setting: value
+);</pre>
   </div>
   <h3 class="step">Turn off compile notifications.</h3>
   <p class="step-description">Now, let's turn off all the verbose notification messages we see each time USWDS compiles. We're reading these, right?</p>
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme.scss</h4>
-    <pre class="add">$theme-show-notifications: false;</pre>
+    <pre class="blur">@use "uswds-core" with (</pre><pre class="remove">
+  $setting: value,
+  $setting: value</pre><pre class="add">
+  $theme-show-notifications: false,
+</pre><pre class="blur">
+);</pre>
   </div>
   <p class="step-description">Save the file. Now, when the watch script runs you won't see all the messages.</p>
+  <p class="step-description">So let's run the watch script again.</p>
+  <div class="terminal">
+    <pre>npx gulp watch</pre>
+  </div>  
   <h3 class="step">Change the project font.</h3>
   <p class="step-description">Let's use the same fonts we started with on this project: system fonts.</p>
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme.scss</h4>
-    <pre class="blur">$theme-show-notifications: false;</pre><pre class="add">
-$theme-font-type-sans: "system";</pre>
+    <pre class="blur">@use "uswds-core" with (
+  $theme-show-notifications: false,</pre><pre class="add">
+  $theme-font-type-sans: "system",</pre><pre class="blur">
+);</pre>
   </div>
   <p class="step-description">Save, recompile, and hard reload. Looking good!</p>
   <p class="step-description">Now, for fun, let's try using Public Sans here. It's not too different from system fonts, it looks the same on all browsers, and it's a USWDS font.</p>
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme.scss</h4>
-    <pre class="blur">$theme-show-notifications: false;</pre><pre class="remove">
-$theme-font-type-sans: "system";</pre><pre class="add">
-$theme-font-type-sans: "public-sans";</pre>
-  </div>
+    <pre class="blur">@use "uswds-core" with (
+  $theme-show-notifications: false,</pre><pre class="remove">
+  $theme-font-type-sans: "system",</pre><pre class="add">
+  $theme-font-type-sans: "public-sans",</pre><pre class="blur">
+);</pre>
+      </div>
   <p class="step-description">We can also activate an extra bold font weight to better match the weight of the original fonts.</p>
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme.scss</h4>
-    <pre class="blur">$theme-show-notifications: false;</pre><pre class="blur">
-$theme-font-type-sans: "public-sans";</pre><pre class="add">
-$theme-font-weight-heavy: 900;</pre>
+    <pre class="blur">@use "uswds-core" with (
+  $theme-show-notifications: false,
+  $theme-font-type-sans: "public-sans",</pre><pre class="add">
+  $theme-font-weight-heavy: 900,</pre><pre class="blur">
+);</pre>
   </div>
   <h3 class="step">Customize the Banner.</h3>
-  <p class="step-description">Now we'll update some Banner settings to better match our site. We'll give the banner a dark background, use indigo for a link color, and widen the Banner so the text starts further to the left.</p>
+  <p class="step-description">Now we'll update some <a href="https://designsystem.digital.gov/documentation/settings/#banner">Banner settings</a> to better match our site. We'll give the banner a dark background, use indigo for a link color, and widen the Banner so the text starts further to the left.</p>
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme.scss</h4>
-    <pre class="blur">$theme-show-notifications: false;</pre><pre class="blur">
-$theme-font-type-sans: "public-sans";
-$theme-font-weight-heavy: 900;</pre><pre class="add">
-$theme-banner-background-color: "ink";
-$theme-banner-link-color: "indigo-30";
-$theme-banner-max-width: none;</pre>
+    <pre class="blur">@use "uswds-core" with (
+  $theme-show-notifications: false,
+  $theme-font-type-sans: "public-sans",
+  $theme-font-weight-heavy: 900,</pre><pre class="add">
+  $theme-banner-background-color: "ink",
+  $theme-banner-link-color: "indigo-30",
+  $theme-banner-max-width: none,</pre><pre class="blur">
+);</pre>
   </div>
   <h3 class="step">Customize the Identifier.</h3>
   <p class="step-description">Finally, we'll widen the Identifier to match the Banner!</p>
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme.scss</h4>
-    <pre class="blur">$theme-show-notifications: false;</pre><pre class="blur">
-$theme-font-type-sans: "public-sans";
-$theme-font-weight-heavy: 900;
-$theme-banner-background-color: "ink";
-$theme-banner-link-color: "indigo-30";
-$theme-banner-max-width: none;</pre><pre class="add">
-$theme-identifier-max-width: none;</pre>
-  </div>
+    <pre class="blur">@use "uswds-core" with (
+  $theme-show-notifications: false,
+  $theme-font-type-sans: "public-sans",
+  $theme-font-weight-heavy: 900,
+  $theme-banner-background-color: "ink",
+  $theme-banner-link-color: "indigo-30",
+  $theme-banner-max-width: none,</pre><pre class="add">
+  $theme-identifier-max-width: none,</pre><pre class="blur">
+);</pre>
+      </div>
   <p class="step-description">Save the settings file, wait for compile, and hard reload if needed.</p>
   <h3 class="step">Remove unnecessary styles.</h3>
-  <p class="step-description">Now we've added the Banner and Identifier, but if we look at the size of our compiled CSS, it's quite large — over 400 KB! We can greatly reduce the size by using USWDS packages.</p>
-  <p class="step-description">Let's open up the USWDS Sass entry point (<strong>_theme/styles.scss</strong>), uncomment the packages we need, and comment out the main <strong>uswds</strong> package.</p>
+  <p class="step-description">Now we've added the Banner and Identifier, but if we look at the size of our compiled CSS, it's quite large — over 400 KB! We can greatly reduce the size by using <a href="https://designsystem.digital.gov/components/packages/">USWDS packages</a>.</p>
+  <p class="step-description">Let's open up the USWDS Sass entry point (<strong>_theme/styles.scss</strong>), remove the main <strong>uswds</strong> package, and add both the <strong>usa-banner</strong> and the <strong>usa-identifier</strong> packages.</p>
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/styles.scss</h4>
-    <pre class="blur">// -------------------------------------
-// Import individual USWDS packages...
-// See https://designsystem.digital.gov/components/
-
-// First import required and global packages...</pre><pre class="remove">
-// @import 'packages/required';
-// @import 'packages/global';</pre><pre class="add">
-@import 'packages/required';
-@import 'packages/global';  
-</pre><pre class="blur">
-
-// Then import individual component packages...
-// @import 'packages/form-controls';
-// @import 'packages/form-templates';
-// @import 'packages/layout-grid';
-// @import 'packages/typography';
-// @import 'packages/validation';
-// @import 'packages/usa-accordion';
-// @import 'packages/usa-alert';</pre><pre class="remove">
-// @import 'packages/usa-banner';</pre><pre class="add">
-@import 'packages/usa-banner';</pre><pre class="blur">
-// @import 'packages/usa-breadcrumb';
-// @import 'packages/usa-button-group';
-// @import 'packages/usa-button';
-// @import 'packages/usa-card';
-// @import 'packages/usa-checklist';
-// @import 'packages/usa-collection';
-// @import 'packages/usa-footer';
-// @import 'packages/usa-header';
-// @import 'packages/usa-hero';
-// @import 'packages/usa-icon-list';
-// @import 'packages/usa-icon';</pre><pre class="remove">
-// @import 'packages/usa-identifier';</pre><pre class="add">
-@import 'packages/usa-identifier';</pre><pre class="blur">
-// @import 'packages/usa-layout';
-// @import 'packages/usa-link';
-// @import 'packages/usa-media-block';
-// @import 'packages/usa-megamenu';
-// @import 'packages/usa-modal';
-// @import 'packages/usa-nav-container';
-// @import 'packages/usa-nav';
-// @import 'packages/usa-navbar';
-// @import 'packages/usa-pagination';
-// @import 'packages/usa-process-list';
-// @import 'packages/usa-search';
-// @import 'packages/usa-section';
-// @import 'packages/usa-sidenav';
-// @import 'packages/usa-site-alert';
-// @import 'packages/usa-skipnav';
-// @import 'packages/usa-step-indicator';
-// @import 'packages/usa-summary-box';
-// @import 'packages/usa-table';
-// @import 'packages/usa-tag';
-
-// or package sets...
-// @import 'packages/uswds-components';
-// @import 'packages/uswds-utilities';
-
-// -------------------------------------
-// ...or import the complete USWDS kit
-
-</pre><pre class="remove">
-@import "uswds";</pre><pre class="add">
-// @import "uswds";</pre>
+    <pre class="blur">@forward "uswds-theme";</pre><pre class="remove">
+@forward "uswds";</pre><pre class="add">
+@forward "usa-banner";
+@forward "usa-identifier";</pre><pre class="blur">
+@forward "uswds-theme-custom-styles";</pre>
   </div>
-  <p class="step-description">After you recompile, you'll see that the CSS size drops down to 59 KB — over 80% smaller.</p>
+  <p class="step-description">After you recompile, you'll see that the CSS size drops down to 59 KB — over 80% smaller. And it compiles in less than a second!</p>
   <p class="step-description">Congratulations! You now have a site that integrates USWDS, uses two key USWDS components, adapts USWDS to fit your project tone, and uses less extraneous code.</p>
 </section>

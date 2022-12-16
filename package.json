@@ -4,13 +4,12 @@
   "author": "USWDS",
   "license": "CC0-1.0",
   "scripts": {
-    "postinstall": "npm run jekyll:install",
-    "jekyll:install": "gem install bundler && bundle install",
-    "jekyll:serve": "bundle exec jekyll serve --host=localhost",
-    "start": "npm run jekyll:serve",
+    "start": "npx @11ty/eleventy --serve",
+    "serve": "npx @11ty/eleventy --serve",
     "test": "snyk test"
   },
   "devDependencies": {
-    "snyk": "^1.996.0"
+    "snyk": "^1.1069.0",
+    "@11ty/eleventy": "^2.0.0-canary.18"
   }
 }

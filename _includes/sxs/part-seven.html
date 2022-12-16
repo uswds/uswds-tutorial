@@ -10,7 +10,8 @@
   <p class="step-description">In your text editor, open <strong>_theme/_uswds-theme-custom-styles.scss</strong>. We'll connect USWDS styles and our existing project styles by "importing" our project styles into the USWDS custom styles file.</p>
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme-custom-styles.scss</h4>
-    <pre class="add">@import "../assets/css/styles.scss";</pre>
+    <pre class="blur">@use "uswds-core" as *;</pre><pre class="add">
+@forward "../assets/css/styles.scss";</pre>
   </div>
   <p class="step-description">Once you've updated this file, you can save and close it.</p>
   <h3 class="step">Add our project Sass source directory to the gulpfile.</h3>
@@ -34,10 +35,10 @@ uswds.paths.src.projectSass = './assets/css';
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _includes/head.html</h4>
     <pre class="blur">...
-  &lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/css/open-props.css' | relative_url &rcub;&rcub;"&gt;
-  &lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/uswds/css/styles.css' | relative_url &rcub;&rcub;"&gt;</pre><pre class="remove">
-  &lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/css/styles.css' | relative_url &rcub;&rcub;"&gt;</pre><pre class="blur">
-  &lt;script src="&lcub;&lcub; '/assets/uswds/js/uswds-init.min.js' | relative_url &rcub;&rcub;"&gt;&lt;/script&gt;
+  &lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/css/open-props.css' | url &rcub;&rcub;"&gt;
+  &lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/uswds/css/styles.css' | url &rcub;&rcub;"&gt;</pre><pre class="remove">
+  &lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/css/styles.css' | url &rcub;&rcub;"&gt;</pre><pre class="blur">
+  &lt;script src="&lcub;&lcub; '/assets/uswds/js/uswds-init.min.js' | url &rcub;&rcub;"&gt;&lt;/script&gt;
 </head></pre>
   </div>
 <p class="step-description">Save and close the file.</p>
@@ -48,17 +49,20 @@ uswds.paths.src.projectSass = './assets/css';
   <pre>rm assets/css/styles.css</pre>
 </div>
 <h3 class="step">Use the watch script to watch for changes and recompile.</h3>
-<p class="step-description">In the open terminal window, run the <strong>compile</strong> script to compile our combined styles and watch for future changes.</p>
+<p class="step-description">In the open terminal window, run the <strong>watch</strong> script to compile our combined styles and watch for future changes.</p>
 <div class="terminal">
   <pre>npx gulp watch</pre>
 </div>
 <h3 class="step">Use USWDS color tokens for project colors.</h3>
   <p class="step-description">Our tutorial project uses CSS custom properties (otherwise known as "CSS variables" or "custom props"). We can update the value of those custom properties to use USWDS design tokens.</p>
   <p class="step-description">We'll add our updated custom properties to a new <strong>:root</strong> element, and we'll assign each updated property a <a href="https://designsystem.digital.gov/design-tokens/color/system-tokens/">USWDS system color token</a>, accessed with the <a href="https://designsystem.digital.gov/design-tokens/color/system-tokens/#using-color-tokens">USWDS <strong>color()</strong> function</a>.</p>
+  <p class="step-description">To use these USWDS functions, we'll first tell Sass where to find USWDS functions, and that's in a package called <strong>uswds-core</strong>. We'll add a Sass <strong>use</strong> directive to make this connection.</p>
   <p class="step-description"><strong>Advanced note:</strong> If you're already familiar with Sass and functions, you'll see that when writing CSS custom properties, you need to use <a href="https://sass-lang.com/documentation/interpolation">Sass interpolation syntax</a> instead of regular functions. Anywhere else in the codebase, you can use regular functions, but custom properties require Sass interpolation.</p>
   <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/styles.scss</h4>
-    <pre class="add">:root {
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme-custom-styles.scss</h4>
+    <pre class="blur">@use "uswds-core" as *;
+@forward "../assets/css/styles.scss";</pre><pre class="add">
+:root {
   --blue-2: #{color("blue-warm-20v")};
   --blue-3: #{color("blue-warm-30v")};
   --blue-8: #{color("blue-warm-50v")};
@@ -80,16 +84,13 @@ uswds.paths.src.projectSass = './assets/css';
   --teal-2: #{color("mint-30v")};
   --yellow-1: #{color("gold-10v")};
   --yellow-7: #{color("gold-30v")};
-}</pre><pre class="blur">
-
-:where(html) {
-  color-scheme: light;</pre>
+}</pre>
   </div>
   <p class="step-description">Save, wait for the Sass to compile, do a hard reload, and you'll see the new colors!</p>
   <h3 class="step">Use USWDS font tokens for project fonts.</h3>
   <p class="step-description">Similarly, we can use <a href="https://designsystem.digital.gov/design-tokens/typesetting/font-family/">USWDS font family tokens</a> with our CSS custom properties.</p>
   <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/styles.scss</h4>
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme-custom-styles.scss</h4>
     <pre class="blur">:root {
   ...
   --yellow-1: #{color("gold-10v")};

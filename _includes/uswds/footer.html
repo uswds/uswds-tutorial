@@ -8,7 +8,7 @@
         <div class="tablet:grid-col-8">
           <nav class="usa-footer__nav" aria-label="Footer navigation,,">
             <div class="grid-row grid-gap-4">
-              {% for item in site.data.nav.primary %}
+              {% for item in nav.primary %}
               <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
                 <section
                   class="usa-footer__primary-content usa-footer__primary-content--collapsible"
@@ -58,7 +58,7 @@
             />
           </div>
           <div class="mobile-lg:grid-col-auto">
-            <p class="usa-footer__logo-heading">{{ site.data.meta.project.agency }}</p>
+            <p class="usa-footer__logo-heading">{{ meta.project.agency }}</p>
           </div>
         </div>
         <div class="usa-footer__contact-links mobile-lg:grid-col-6">

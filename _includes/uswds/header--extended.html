@@ -3,8 +3,8 @@
   <div class="usa-navbar">
     <div class="usa-logo" id="extended-logo">
       <em class="usa-logo__text">
-        <a href="javascript:void(0)" title="{{ site.data.meta.project.name }}">
-          {{ site.data.meta.project.name }}
+        <a href="javascript:void(0)" title="{{ meta.project.name }}">
+          {{ meta.project.name }}
         </a>
       </em>
     </div>
@@ -16,7 +16,7 @@
         <img src="{{ site.baseurl }}/assets/img/usa-icons/close.svg" role="img" alt="Close" />
       </button>
       <ul class="usa-nav__primary usa-accordion">
-        {% for item in site.data.nav.primary %}
+        {% for item in nav.primary %}
         <li class="usa-nav__primary-item">
           {% if item.contents %}
           {% assign button_id = item.name | slugify | prepend: "nav-" %}
@@ -43,9 +43,9 @@
         {% endfor %}
       </ul>
       <div class="usa-nav__secondary">
-        {% if site.data.nav.secondary %}
+        {% if nav.secondary %}
         <ul class="usa-nav__secondary-links">
-          {% for item in site.data.nav.secondary %}
+          {% for item in nav.secondary %}
           <li class="usa-nav__secondary-item">
             <a href="">{{ item.name }}</a>
           </li>

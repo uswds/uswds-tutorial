@@ -10,7 +10,8 @@
   <p class="step-description">In your text editor, open <strong>_theme/_uswds-theme-custom-styles.scss</strong>. We'll connect USWDS styles and our existing project styles by "importing" our project styles into the USWDS custom styles file.</p>
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme-custom-styles.scss</h4>
-    <pre class="add">@forward "../assets/css/styles.scss";</pre>
+    <pre class="blur">@use "uswds-core" as *;</pre><pre class="add">
+@forward "../assets/css/styles.scss";</pre>
   </div>
   <p class="step-description">Once you've updated this file, you can save and close it.</p>
   <h3 class="step">Add our project Sass source directory to the gulpfile.</h3>

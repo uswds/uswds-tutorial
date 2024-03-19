@@ -426,18 +426,19 @@ main {
   color: var(--gray-9);
 }
 
-main > .part {
+main .part {
   border-left: var(--border-size-5) solid var(--yellow-7);
   padding: 0 var(--size-10) var(--size-10) var(--size-10);
   padding-left: calc(var(--size-10) - var(--border-size-5));
   counter-reset: steps-primary;
 }
 
-main > .part.intro {
+main  .part.intro {
   color: var(--indigo-4);
   padding-top: var(--size-4);
   background-color: var(--gray-9);
   border-left-color: var(--gray-9);
+  width: 100%;
 }
 
 .part.intro > h2 {
@@ -462,37 +463,50 @@ h2 > span {
   border-bottom: var(--border-size-2) solid;
 }
 
-main > .part.one {
+main .part.one {
   padding-top: var(--size-5);
   border-left-color: var(--gray-9);
 }
 
-main > .part.two {
+main .part.two {
   border-left-color: var(--teal-9);
 }
 
-main > .part.three {
+main .part.three {
   border-left-color: var(--teal-7);
 }
 
-main > .part.four {
+main .part.four {
   border-left-color: var(--teal-5);
 }
 
-main > .part.five {
+main .part.five {
   border-left-color: var(--teal-3);
 }
 
-main > .part.six {
+main .part.six {
   border-left-color: var(--teal-2);
 }
 
-main > .part.seven {
+main .part.seven {
   border-left-color: var(--teal-1);
 }
 
-main > .part.eight {
+main .part.eight {
   border-left-color: white;
+}
+
+main .section-one-end {
+  border-left-color: var(--gray-9);
+}
+
+main .grid-container {
+  max-width: 100%;
+  padding: 0;
+}
+
+main .demo-display {
+  background-color: var(--gray-9);
 }
 
 main h2 {

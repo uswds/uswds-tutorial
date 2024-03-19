@@ -3,7 +3,7 @@ layout: default
 title: USWDS Tutorial
 permalink: build
 hero:
-  heading_alt: "Learn how to use"
+  heading_alt: "Extending"
   heading: "USWDS"
   body: "A tutorial project to learn about installing, compiling, and customizing with the U.S. Web Design System"
   button_group:
@@ -13,10 +13,24 @@ hero:
     href": "https://github.com/uswds/uswds-tutorial"
 ---
 
+{% include "uswds/banner.html" %}
 <header class="opener">
   {% include "hero.html" with page.hero %}
 </header>
 <main id="tutorial-start">
-  We'll include Building exercises here.
+  <div class="grid-container maxw-full">
+    <div class="grid-row">
+      {% include "sxs/02-extending/part-intro.html" %}
+      <div class="grid-col-7">
+        {% include "sxs/02-extending/part-one.html" %}
+        {% include "sxs/02-extending/part-two.html" %}
+        {% include "sxs/02-extending/part-three.html" %}
+      </div>
+      <div class="demo-display grid-col-5">
+        {% include "sxs/02-extending/card.html" %}
+      </div>
+    </div>
+  </div>
 </main>
 {% include "footer.html" %}
+{% include "uswds/identifier.html" %}

@@ -1,0 +1,9 @@
+@use "uswds-core" as *;
+
+.ut-card .usa-card__container {
+//   @include u-text("indigo-30");
+//   @include u-bg("indigo-70v");
+
+@include set-text-and-bg("indigo-70v", "indigo-20")
+
+}

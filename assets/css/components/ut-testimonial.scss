@@ -7,8 +7,7 @@ $ut-testimonial-icon-color: color("indigo-30");
 }
 
 .ut-testimonial__icon {
-  height: 50px;
-  width: 50px;
+  @include u-square(7);
   fill: $ut-testimonial-icon-color;
   stroke: $ut-testimonial-icon-color;
 }
@@ -19,17 +18,16 @@ $ut-testimonial-icon-color: color("indigo-30");
 }
 
 .ut-testimonial__footer {
-  display: flex;
-  flex-direction: row;
+  @include u-display("flex");
+  @include u-flex("row");
 }
 
 .ut-testimonial img {
-  height: 75px;
-  width: 75px;
+  @include u-circle(10);
 }
 
 .ut-testimonial__profile {
-  margin-left: 1rem;
+  @include u-margin-left(2);
 }
 
 .ut-testimonial__profile-name {
@@ -37,6 +35,6 @@ $ut-testimonial-icon-color: color("indigo-30");
 }
 
 .ut-testimonial__profile-title {
-  font-size: 1rem;
-  margin-top: 0;
+  @include u-margin-top(0);
+  font-size: font-size("body", 5);
 }

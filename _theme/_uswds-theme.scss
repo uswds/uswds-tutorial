@@ -7,9 +7,13 @@ in the form $setting: value,
 ----------------------------------------
 */
 
-//
-//  @use "uswds-core" with (
-//    $setting: value,
-//    $setting: value
-//  );
-//
+
+@use "uswds-core" with (
+
+  $theme-card-border-color: "indigo-30",
+  $theme-card-border-radius: 3,
+  $theme-card-border-width: 1,
+  // TODO: Change up updating sans font family to public-sans
+  // $theme-card-font-family: "serif",
+  $theme-card-header-typeset: "sans" "xl" 3
+  );

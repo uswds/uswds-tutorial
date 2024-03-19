@@ -1,0 +1,41 @@
+@use "uswds-core" as *;
+
+$ut-testimonial-icon-color: color("indigo-30");
+
+.ut-testimonial .usa-card__container {
+  @include set-text-and-bg("indigo-70v", "indigo-20");
+}
+
+.ut-testimonial__icon {
+  height: 50px;
+  width: 50px;
+  fill: $ut-testimonial-icon-color;
+  stroke: $ut-testimonial-icon-color;
+}
+
+.ut-testimonial__quote p {
+  @include u-font('serif', 'xl');
+}
+
+.ut-testimonial__footer {
+  display: flex;
+  flex-direction: row;
+}
+
+.ut-testimonial img {
+  height: 75px;
+  width: 75px;
+}
+
+.ut-testimonial__profile {
+  margin-left: 1rem;
+}
+
+.ut-testimonial__profile-name {
+  @include u-text("indigo-10v");
+}
+
+.ut-testimonial__profile-title {
+  font-size: 1rem;
+  margin-top: 0;
+}

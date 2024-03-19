@@ -14,7 +14,8 @@ $ut-testimonial-icon-color: color("indigo-30");
 }
 
 .ut-testimonial__quote p {
-  @include u-font('serif', 'xl');
+  @include u-font-size("heading", "xl");
+  font-weight: font-weight("bold");
 }
 
 .ut-testimonial__footer {

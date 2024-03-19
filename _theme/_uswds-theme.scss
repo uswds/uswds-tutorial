@@ -7,7 +7,6 @@ in the form $setting: value,
 ----------------------------------------
 */
 
-
 @use "uswds-core" with (
   $theme-show-notifications: false,
   $theme-font-type-sans: "public-sans",
@@ -17,11 +16,14 @@ in the form $setting: value,
   $theme-banner-max-width: none,
   $theme-identifier-max-width: none,
 
-  // New styles for part two. Will be completed by the user.
-  $theme-card-border-color: "indigo-30",
-  $theme-card-border-radius: 3,
-  $theme-card-border-width: 1,
+  //
+  // Part two.
+  // ! Will be completed by the user.
+  //
+  // $theme-card-border-color: "indigo-30",
+  // $theme-card-border-radius: 3,
+  // $theme-card-border-width: 1,
   // TODO: Change up updating sans font family to public-sans
   // $theme-card-font-family: "serif",
-  $theme-card-header-typeset: "sans" "xl" 3
+  // $theme-card-header-typeset: "sans" "xl" 3
 );

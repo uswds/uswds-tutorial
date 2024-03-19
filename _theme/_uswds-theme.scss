@@ -7,9 +7,14 @@ in the form $setting: value,
 ----------------------------------------
 */
 
-//
-//  @use "uswds-core" with (
-//    $setting: value,
-//    $setting: value
-//  );
-//
+
+@use "uswds-core" with (
+  $theme-show-notifications: false,
+  $theme-font-type-sans: "public-sans",
+  $theme-font-weight-heavy: 900,
+  $theme-banner-background-color: "ink",
+  $theme-banner-link-color: "indigo-30",
+  $theme-banner-max-width: none,
+  $theme-identifier-max-width: none,
+);
+

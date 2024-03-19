@@ -23,6 +23,7 @@ i.e.
 @use "uswds-core" as *;
 @forward "../assets/css/styles.scss";
 @forward "../assets/css/components/ut-card.scss";
+@forward "../assets/css/components/ut-testimonial.scss";
 
 :root {
    --blue-2: #{color("blue-warm-20v")};

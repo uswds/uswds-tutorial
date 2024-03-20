@@ -3,11 +3,11 @@
 $ut-testimonial-icon-color: color("indigo-30");
 
 .ut-testimonial {
-  @include u-bg("indigo-10");
-  @include u-padding(3);
   @include u-margin-x(1);
   @include u-border($theme-card-border-width);
   @include u-radius($theme-card-border-radius);
+  background-color: color("indigo-10");
+  padding: units(3);
 }
 
 .ut-testimonial__icon {
@@ -26,6 +26,9 @@ $ut-testimonial-icon-color: color("indigo-30");
   @include u-display("flex");
   @include u-flex("row");
   @include u-margin-top(3);
+  display: flex;
+  flex-direction: row;
+  margin-top: units(3);
 }
 
 .ut-testimonial img {
@@ -33,14 +36,14 @@ $ut-testimonial-icon-color: color("indigo-30");
 }
 
 .ut-testimonial__profile {
-  @include u-margin-left(2);
+  margin-left: units(3)
 }
 
 .ut-testimonial__profile-name {
-  @include u-text("indigo-70v");
+  color: color("indigo-70v");
 }
 
 .ut-testimonial__profile-title {
-  @include u-margin-top(0);
+  margin-top: units(0);
   font-size: font-size("body", 5);
 }

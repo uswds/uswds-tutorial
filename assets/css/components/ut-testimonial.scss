@@ -2,8 +2,12 @@
 
 $ut-testimonial-icon-color: color("indigo-30");
 
-.ut-testimonial .usa-card__container {
-  @include set-text-and-bg("indigo-70v", "indigo-20");
+.ut-testimonial {
+  @include u-bg("indigo-10");
+  @include u-padding(3);
+  @include u-margin-x(1);
+  @include u-border($theme-card-border-width);
+  @include u-radius($theme-card-border-radius);
 }
 
 .ut-testimonial__icon {
@@ -20,6 +24,7 @@ $ut-testimonial-icon-color: color("indigo-30");
 .ut-testimonial__footer {
   @include u-display("flex");
   @include u-flex("row");
+  @include u-margin-top(3);
 }
 
 .ut-testimonial img {
@@ -31,7 +36,7 @@ $ut-testimonial-icon-color: color("indigo-30");
 }
 
 .ut-testimonial__profile-name {
-  @include u-text("indigo-10v");
+  @include u-text("indigo-70v");
 }
 
 .ut-testimonial__profile-title {

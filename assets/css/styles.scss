@@ -428,7 +428,7 @@ main {
 
 main .part {
   border-left: var(--border-size-5) solid var(--yellow-7);
-  padding: 0 var(--size-10) var(--size-10) var(--size-10);
+  padding: 0 var(--size-8) var(--size-10) var(--size-10);
   padding-left: calc(var(--size-10) - var(--border-size-5));
   counter-reset: steps-primary;
 }
@@ -506,7 +506,7 @@ main .grid-container {
 }
 
 main .demo-display {
-  background-color: var(--gray-9);
+  background-color: var(--yellow-7);
 }
 
 main h2 {

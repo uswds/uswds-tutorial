@@ -2,8 +2,12 @@
 
 $ut-testimonial-icon-color: color("indigo-30");
 
-.ut-testimonial .usa-card__container {
-  @include set-text-and-bg("indigo-70v", "indigo-20");
+.ut-testimonial {
+  @include u-margin-x(1);
+  @include u-border($theme-card-border-width);
+  @include u-radius($theme-card-border-radius);
+  background-color: color("indigo-10");
+  padding: units(3);
 }
 
 .ut-testimonial__icon {
@@ -12,14 +16,16 @@ $ut-testimonial-icon-color: color("indigo-30");
   stroke: $ut-testimonial-icon-color;
 }
 
-.ut-testimonial__quote p {
+.ut-testimonial__body p {
   @include u-font-size("heading", "xl");
   font-weight: font-weight("bold");
+  text-align: center;
 }
 
 .ut-testimonial__footer {
-  @include u-display("flex");
-  @include u-flex("row");
+  display: flex;
+  flex-direction: row;
+  margin-top: units(3);
 }
 
 .ut-testimonial img {
@@ -27,14 +33,14 @@ $ut-testimonial-icon-color: color("indigo-30");
 }
 
 .ut-testimonial__profile {
-  @include u-margin-left(2);
+  margin-left: units(3);
 }
 
 .ut-testimonial__profile-name {
-  @include u-text("indigo-10v");
+  color: color("indigo-70v");
 }
 
 .ut-testimonial__profile-title {
-  @include u-margin-top(0);
+  margin-top: units(0);
   font-size: font-size("body", 5);
 }

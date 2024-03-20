@@ -16,7 +16,7 @@ $ut-testimonial-icon-color: color("indigo-30");
   stroke: $ut-testimonial-icon-color;
 }
 
-.ut-testimonial__quote p {
+.ut-testimonial__body p {
   @include u-font-size("heading", "xl");
   font-weight: font-weight("bold");
   text-align: center;

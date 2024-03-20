@@ -594,6 +594,7 @@ main p a:active {
 .terminal {
   background-color: var(--gray-9);
   color: var(--gray-2);
+  overflow: scroll;
 }
 
 .editor {

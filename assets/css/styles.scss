@@ -441,6 +441,15 @@ main  .part.intro {
   width: 100%;
 }
 
+.part.intro > h1 {
+  padding-top: var(--size-10)
+}
+
+.part.intro > h1 + h2 {
+  padding-top: var(--size-2)
+}
+
+
 .part.intro > h2 {
   color: var(--yellow-7);
   font-size: var(--font-size-8);

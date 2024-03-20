@@ -1,10 +1,11 @@
 @forward "uswds-theme";
 @forward "usa-banner";
 @forward "usa-identifier";
+@forward "usa-layout-grid";
+@forward "uswds-utilities";
 @forward "uswds-theme-custom-styles";
 
+
 // Needed for part 2
-@forward "usa-layout-grid";
-@forward "usa-card";
-@forward "uswds-utilities";
 @forward "usa-button";
+@forward "usa-card";

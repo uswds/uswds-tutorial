@@ -19,6 +19,7 @@ $ut-testimonial-icon-color: color("indigo-30");
 .ut-testimonial__quote p {
   @include u-font-size("heading", "xl");
   font-weight: font-weight("bold");
+  text-align: center;
 }
 
 .ut-testimonial__footer {

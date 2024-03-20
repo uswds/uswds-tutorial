@@ -590,6 +590,7 @@ main p a:active {
 .editor {
   background-color: rgba(255,255,255,.25);
   color: var(--gray-9);
+  overflow: scroll;
   padding-top: var(--size-9);
   padding-bottom: var(--size-5);
 }
@@ -597,7 +598,6 @@ main p a:active {
 .terminal pre,
 .editor pre {
   padding: 0 var(--size-5);
-  white-space: pre-wrap;
 }
 
 .terminal pre {

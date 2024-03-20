@@ -18,35 +18,37 @@
     Let's start but updating the border to remove the border and give the card a rounder border radius.
   </p>
   <p class="step-description">
-    We want to give our card... TKTKTKTKTKTKT
+    We want to give our card a border radius of 2 units. To do that we'll set the value of the border radius to <strong>lg</strong> then set the value of the large border radius to 2.
   </p>
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme.scss</h4>
 <pre class="blur">@use "uswds-core" with (
   ...
-</pre><pre class="add">  $theme-card-border-radius: 2,
-  $theme-card-border-width: 0</pre>
+</pre><pre class="add">  $theme-border-radius-lg: 2,
+  $theme-card-border-radius: "lg",
+  $theme-card-border-width: 0,
+</pre>
 <pre class="blur">);</pre>
   </div>
   <h3 class="step">Customize type settings</h3>
   <p class="step-description">
-    Next lets update the typeset of our header to use a <strong>sans</strong> font and increase the size.
+    Next lets update the typesetting of our header to use a <strong>sans</strong> font, increase the size ("xl"), and use a tight line height (2).
   </p>
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme.scss</h4>
 <pre class="blur">@use "uswds-core" with (
   ...
-  $theme-card-border-color: "indigo-30",
-  $theme-card-border-radius: 3,
-  $theme-card-border-width: 1,</pre>
-<pre class="add">  $theme-card-header-typeset: "sans" "xl" 3
+  $theme-border-radius-lg: 2,
+  $theme-card-border-radius: "lg",
+  $theme-card-border-width: 0,</pre>
+<pre class="add">  $theme-card-header-typeset: ("sans", "xl", 2),
 </pre><pre class="blur">);</pre>
   </div>
   <p class="step-description">
-    Save, wait for he Sass to compile, and do a hard reload and you'll see the the updated border and font settings shape the card component! All without having to write any custom CSS.
+    Save, wait for the Sass to compile, and reload. You'll see the the updated border and font settings shape the card component! All without having to write any custom CSS.
   </p>
   
   <p class="step-description">
-    Maybe there are additional changes your team would like to make that are not available in theme settings. In the next section we'll take a look at adding custom styles to USWDS.
+    But maybe there are additional changes your team would like to make that are not available in theme settings. In the next section we'll take a look at adding custom styles.
   </p>
 </section>

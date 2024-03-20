@@ -1,4 +1,10 @@
 <section class="part one" id="part-one">
+  <div class="alert margin-y-3">
+    <p><strong>Heads up!</strong> If you haven't completed part one of this tutorial you will be unable to complete certain steps throughout this section! Please complete the original tutorial before moving on to Extending USWDS.</p>
+    <div class="button-list">
+      <a class="button primary" href="/">Return to Learn how to use USWDS<span class="material-icons right" aria-hidden="true">arrow_forward</span></a>
+    </div>
+  </div>
   <h2><span>Part one</span> Customize card using theme settings</h2>
   <p>
     We’ll start customizing our card component by using the available theme settings.
@@ -22,7 +28,7 @@
   </div>
   <h3 class="step">Customize type settings</h3>
   <p class="step-description">
-    Next lets use the available font and typeset settings to customize how our card information is presented.
+    Next lets update the typeset of our header to use a <strong>sans</strong> font and increase the size.
   </p>
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme.scss</h4>
@@ -31,8 +37,7 @@
   $theme-card-border-color: "indigo-30",
   $theme-card-border-radius: 3,
   $theme-card-border-width: 1,</pre>
-<pre class="add">  $theme-card-font-family: "serif"
-  $theme-card-header-typeset: "sans", "xl", 2.5
+<pre class="add">  $theme-card-header-typeset: "sans" "xl" 3
 </pre><pre class="blur">);</pre>
   </div>
   <p class="step-description">
@@ -40,6 +45,6 @@
   </p>
   
   <p class="step-description">
-    But maybe there are additional changes your team would like to make that are not available in theme settings. In the next section we'll take a look at USWDS.
+    Maybe there are additional changes your team would like to make that are not available in theme settings. In the next section we'll take a look at adding custom styles to USWDS.
   </p>
 </section>

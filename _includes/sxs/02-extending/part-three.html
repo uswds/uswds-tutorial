@@ -1,0 +1,177 @@
+<section class="part three" id="part-three">
+  <h2><span>Part Three</span> Create a custom component</h2>
+  <p>In this section we'll explore extending USWDS by creating a custom <strong>testmionial</strong> component not offered by the design system.</p>
+  <h3 class="step">Create a the markup for a new component.</h3>
+  <p class="step-description">
+    Visit <strong>_includes/sxs/02-extending/testimonial.html</strong>. This will be where we will add the markup for our new component. Once the markup is filled out, it will appear beneath our custom card component!
+  </p>
+  <p class="step-description">
+    Start by adding the basic skeleton of the component. We'll need an outer div, a body, and footer section. We'll call this component <strong>ut-testimonial</strong>.
+  </p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _includes/sxs/02-extending/testimonial.html</h4>
+<pre class="add">
+  &lt;div class="ut-testimonial"&gt;
+    &lt;div class="ut-testimonial__body"&gt;&lt;/div&gt;
+    &lt;div class="ut-testimonial__footer"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+</pre>
+  </div>
+  <p class="step-description">
+    Now lets add a quote to our testimonial body.
+  </p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _includes/sxs/02-extending/testimonial.html</h4>
+<pre class="blur">&lt;div class="ut-testimonial"&gt;</pre>
+  <pre class="add">  &lt;div class="ut-testimonial__body"&gt;
+    &lt;p&gt;
+      "Wow, this component sure is great"
+    &lt;/p&gt;
+  &lt;/div&gt;</pre>
+<pre class="blur">  &lt;div class="ut-testimonial__footer"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+  </div>
+  <p class="step-description">
+    Now lets create a profile section which will feature a profile picture, name, and title.
+  </p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _includes/sxs/02-extending/testimonial.html</h4>
+<pre class="blur">&lt;div class="ut-testimonial"&gt;
+  ...
+  &lt;div class="ut-testimonial__footer"&gt;</pre>
+<pre class="add">    &lt;img src="https://doodleipsum.com/100x100/avatar-5?bg=a5a8eb&shape=circle&n=1" class="ut-testimonial__icon" alt="Profile pic"&gt;
+    &lt;div class="ut-testimonial__profile"&gt;
+      &lt;p class="ut-testimonial__profile-name"&gt;Person McGuy&lt;/p&gt;
+      &lt;p class="ut-testimonial__profile-title"&gt;USWDS User&lt;/p&gt;
+    &lt;/div&gt;
+</pre>
+<pre class="blur">&lt;/div&gt;</pre>
+  </div>
+  <p class="step-description">
+    Lastly, lets add a quotation icon for some visual flare! Visit the <a href="https://designsystem.digital.gov/components/icon/">Icon component</a> page, search for <strong>quote</strong>, and click the search result to copy the icons markup. Paste this markup directly after the opening <strong>ut-testimonial</strong> div.
+  </p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _includes/sxs/02-extending/testimonial.html</h4>
+<pre class="blur">&lt;div class="ut-testimonial"&gt;</pre>
+  <pre class="add">   &lt;svg class="usa-icon" aria-hidden="true" focusable="false" role="img"&gt;
+      &lt;use xlink:href="/assets/uswds/img/sprite.svg#format_quote"&gt;
+      &lt;/use&gt;
+  &lt;/svg&gt;</pre><pre class="blur">&lt;div class="ut-testimonial__body"&gt;&lt;/div&gt;</pre>
+  </div>
+  <h3 class="step">Add styleheet partial.</h3>
+  <p class="step-description">
+    Create a new stylesheet partial for our new component.
+  </p>
+  <div class="terminal">
+    <pre>touch assets/css/components/_ut-testimonial.scss</pre>
+  </div>
+  <p class="step-description">
+    Remember to import the new stylesheet into USWDS custom styles.
+  </p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme-custom-styles.scss</h4>
+<pre class="blur">@use "uswds-core" as *;
+  @forward "../assets/css/styles.scss";
+  @forward "../assets/css/_ut-card.scss"; 
+</pre><pre class="add">  @forward "../assets/css/_ut-testimonial.scss";</pre>
+  </div>
+  <h3 class="step">Start styling the component.</h3>
+  <p class="step-description">
+    Just like using the <strong>color()</strong> function to use USWDS color tokens, we can use <strong>units()</strong> to allow native CSS properties to make use of USWDS spacing tokens. To get our base styles for our new component, add the following styles to the new stylesheet.
+  </p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/ut-testimonial.scss</h4>
+<pre class="add">
+  @use "uswds-core" as *;
+  
+  .ut-testimonial {
+    background-color: color("indigo-10");
+    padding: units(3);
+  }
+  
+  .ut-testimonial__body p {
+    text-align: center;
+  }
+  
+  .ut-testimonial__footer {
+    display: flex;
+    flex-direction: row;
+    margin-top: units(3);
+  }
+  
+  .ut-testimonial img {
+    @include u-circle(10);
+  }
+  
+  .ut-testimonial__profile {
+    margin-left: units(3)
+  }
+  
+  .ut-testimonial__profile-name {
+    color: color("indigo-70v");
+  }
+  
+  .ut-testimonial__profile-title {
+    margin-top: units(0);
+  }
+</pre>
+  </div>
+  <p class="step-description">
+    Can you spot all the uses of USWDS tokens?
+  </p>
+  <h3 class="step">Styling the testimonial icon</h3>
+  <p class="step-description">
+    USWDS uses variables to maintain consistent styles across different definitions. Lets create a variable for our icon stroke and fill at the top of our stylesheet.
+  </p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/ut-testimonial.scss</h4>
+<pre class="blur">@use "uswds-core" as *;
+
+</pre>
+<pre class="add">$ut-testimonial-icon-color: color("indigo-30");
+
+.ut-testimonial__icon {
+  fill: $ut-testimonial-icon-color;
+  stroke: $ut-testimonial-icon-color;
+}
+</pre>
+  </div>
+  <h3 class="step">Using USWDS utility mixins.</h3>
+  <p class="step-description">
+    USWDS also offers an extensive library of utility mixins which you can use to simplify style setting. Let's use some of the typeset mixins to customize our font weight and size. It's standard convention to include your mixins at the top of each style definition.
+  </p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/ut-testimonial.scss</h4>
+<pre class="blur">.ut-testimonial__body p {
+</pre>
+<pre class="add">  @include u-font-size("heading", "xl");
+  font-weight: font-weight("bold");</pre>
+<pre class="blur">  text-align: center;
+}
+
+...
+
+.ut-testimonial__profile-title {
+  margin-top: units(0);
+</pre><pre class="add">  font-size: font-size("body", 5)</pre>
+<pre class="blur">}</pre>
+  </div>
+  <h3 class="step">Using uswds theme tokens with mixins</h3>
+  <p class="step-description">
+    Finally, lets use a combination of utility mixins and uswds theme settings to display how you can add uniformity across your project! In this example, we'll add the border settings from step one to help our new component sit nicely with the original card.
+  </p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/ut-testimonial.scss</h4>
+<pre class="blur">.ut-testimonial {</pre>
+<pre class="add">  @include u-margin-x(1);
+  @include u-border($theme-card-border-width);
+  @include u-radius($theme-card-border-radius);</pre>
+<pre class="blur">  background-color: color("indigo-10");
+  padding: units(3);
+}</pre>
+  </div>
+  <p class="step-description">
+    And voila! You've used theme settings, custom styles, USWDS tokens, and utility mixins to theme, customize, and extend USWDS into creating our very own component! Great work!
+  </p>
+</section>

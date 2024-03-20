@@ -23,9 +23,6 @@ $ut-testimonial-icon-color: color("indigo-30");
 }
 
 .ut-testimonial__footer {
-  @include u-display("flex");
-  @include u-flex("row");
-  @include u-margin-top(3);
   display: flex;
   flex-direction: row;
   margin-top: units(3);

@@ -86,7 +86,7 @@
     Create a new stylesheet partial for our new component by entering the following in the free terminal window:
   </p>
   <div class="terminal">
-    <pre>touch assets/css/components/_my-testimonial.scss</pre>
+    <pre>touch _theme/components/_my-testimonial.scss</pre>
   </div>
   <p class="step-description">
     And then we'll import this new stylesheet into our USWDS custom styles.
@@ -95,15 +95,15 @@
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme-custom-styles.scss</h4>
 <pre class="blur">@use "uswds-core" as *;
 @forward "../assets/css/styles.scss";
-@forward "/components/_my-card.scss";
-</pre><pre class="add">@forward "/components/_my-testimonial.scss";</pre>
+@forward "components/_my-card.scss";
+</pre><pre class="add">@forward "components/_my-testimonial.scss";</pre>
   </div>
   <h3 class="step">Start styling the component.</h3>
   <p class="step-description">
     Just like using the <strong>color()</strong> function to use USWDS color tokens, we can use <strong>units()</strong> and other token functions to use tokens in native CSS properties. To get our base styles for our new component, add the following styles to the new stylesheet:
   </p>
   <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/_my-testimonial.scss</h4>
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/components/_my-testimonial.scss</h4>
 <pre class="add">
 @use "uswds-core" as *;
 
@@ -154,7 +154,7 @@
     USWDS uses variables to maintain consistent styles across different definitions. Let's create a variable for our icon stroke and fill at the top of our stylesheet.
   </p>
   <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/_my-testimonial.scss</h4>
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/components/_my-testimonial.scss</h4>
 <pre class="blur">@use "uswds-core" as *;
 
 </pre>
@@ -183,7 +183,7 @@ $my-testimonial-icon-color: color("indigo-30");
     Using a combination of utility mixins and USWDS theme settings can help add uniformity across your project. In this example, we'll add the border settings and padding settings from earlier to help our new component sit nicely with the original card. The <strong>u-margin-x()</strong> mixin lets you set left and right margin at the same time.
   </p>
   <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/_my-testimonial.scss</h4>
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/components/_my-testimonial.scss</h4>
 <pre class="blur">.my-testimonial {</pre>
 <pre class="add">  @include u-border($theme-card-border-width);
   @include u-margin-x(1);
@@ -201,7 +201,7 @@ $my-testimonial-icon-color: color("indigo-30");
     Finally, let's change the color of our testimonial component. The traditional way to set background and color is to use two separate rules. If we want to use our primary colors in this component, we can use the following two rules:
   </p>
   <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/_my-testimonial.scss</h4>
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/components/_my-testimonial.scss</h4>
 <pre class="blur">.my-testimonial {
   @include u-border($theme-card-border-width);
   @include u-margin-x(1);
@@ -223,7 +223,7 @@ $my-testimonial-icon-color: color("indigo-30");
   </p>
 
   <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/_my-testimonial.scss</h4>
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/components/_my-testimonial.scss</h4>
 <pre class="blur">.my-testimonial {
   @include u-border($theme-card-border-width);
   @include u-margin-x(1);
@@ -238,7 +238,7 @@ $my-testimonial-icon-color: color("indigo-30");
     This time, when you save and compile you'll see a warning in the terminal. Let's update our code to use <strong>primary-lighter</strong> as our text color.
   </p>
   <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/_my-testimonial.scss</h4>
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/components/_my-testimonial.scss</h4>
 <pre class="blur">.my-testimonial {
   @include u-border($theme-card-border-width);
   @include u-margin-x(1);

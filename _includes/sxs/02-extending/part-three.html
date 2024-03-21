@@ -54,9 +54,9 @@
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _includes/sxs/02-extending/testimonial.html</h4>
 <pre class="blur">&lt;div class="ut-testimonial"&gt;</pre>
-  <pre class="add">   &lt;svg class="usa-icon" aria-hidden="true" focusable="false" role="img"&gt;
-      &lt;use xlink:href="/assets/uswds/img/sprite.svg#format_quote"&gt;
-      &lt;/use&gt;
+  <pre class="add">  &lt;svg class="usa-icon ut-testimonial__icon" aria-hidden="true" focusable="false" role="img"&gt;
+    &lt;use xlink:href="/assets/uswds/img/sprite.svg#format_quote"&gt;
+    &lt;/use&gt;
   &lt;/svg&gt;</pre><pre class="blur">&lt;div class="ut-testimonial__body"&gt;&lt;/div&gt;</pre>
   </div>
   <h3 class="step">Add styleheet partial.</h3>
@@ -72,9 +72,9 @@
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme-custom-styles.scss</h4>
 <pre class="blur">@use "uswds-core" as *;
-  @forward "../assets/css/styles.scss";
-  @forward "../assets/css/_ut-card.scss"; 
-</pre><pre class="add">  @forward "../assets/css/_ut-testimonial.scss";</pre>
+@forward "../assets/css/styles.scss";
+@forward "../assets/css/_ut-card.scss"; 
+</pre><pre class="add">@forward "../assets/css/_ut-testimonial.scss";</pre>
   </div>
   <h3 class="step">Start styling the component.</h3>
   <p class="step-description">
@@ -88,6 +88,11 @@
   .ut-testimonial {
     background-color: color("indigo-10");
     padding: units(3);
+  }
+
+  .ut-testimonial__icon {
+    fill: color("indigo-30");
+    stroke: color("indigo-30");
   }
   
   .ut-testimonial__body p {
@@ -122,20 +127,31 @@
   </p>
   <h3 class="step">Styling the testimonial icon</h3>
   <p class="step-description">
-    USWDS uses variables to maintain consistent styles across different definitions. Lets create a variable for our icon stroke and fill at the top of our stylesheet.
+    USWDS uses variables to maintain consistent styles across different definitions. Let's create a variable for our icon stroke and fill at the top of our stylesheet.
   </p>
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/ut-testimonial.scss</h4>
 <pre class="blur">@use "uswds-core" as *;
 
 </pre>
-<pre class="add">$ut-testimonial-icon-color: color("indigo-30");
+<pre class="add">
+$ut-testimonial-icon-color: color("indigo-30");
+</pre>
+<pre class="blur">
+
+...
 
 .ut-testimonial__icon {
+</pre>
+<pre class="remove">
+  fill: color("indigo-30");
+  stroke: color("indigo-30");
+</pre>
+<pre class="add">
   fill: $ut-testimonial-icon-color;
   stroke: $ut-testimonial-icon-color;
-}
 </pre>
+<pre class="blur">}</pre>
   </div>
   <h3 class="step">Using USWDS utility mixins.</h3>
   <p class="step-description">
@@ -145,7 +161,7 @@
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/ut-testimonial.scss</h4>
 <pre class="blur">.ut-testimonial__body p {
 </pre>
-<pre class="add">  @include u-font-size("heading", "xl");
+<pre class="add">  font-size: size("heading", "xl");
   font-weight: font-weight("bold");</pre>
 <pre class="blur">  text-align: center;
 }

@@ -18,7 +18,7 @@
 </pre>
   </div>
   <p class="step-description">
-    Now lets add a quote to our testimonial body.
+    Now let's add a quote to our testimonial body.
   </p>
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _includes/testimonial.html</h4>
@@ -33,7 +33,7 @@
 </pre>
   </div>
   <p class="step-description">
-    Now lets create a profile section which will feature a profile picture, name, and title.
+    Now let's create a profile section which will feature a profile picture, name, and title.
   </p>
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _includes/testimonial.html</h4>
@@ -49,7 +49,7 @@
 <pre class="blur">&lt;/div&gt;</pre>
   </div>
   <p class="step-description">
-    Lastly, lets add a quotation icon for some visual flare! Visit the <a href="https://designsystem.digital.gov/components/icon/">Icon component</a> page, search for <strong>quote</strong>, and click the search result to copy the icons markup. Paste this markup directly after the opening <strong>my-testimonial</strong> div.
+    Lastly, let's add a quotation icon for some visual flare! Visit the <a href="https://designsystem.digital.gov/components/icon/">Icon component</a> page, search for <strong>quote</strong>, and click the search result to copy the icons markup. Paste this markup directly after the opening <strong>my-testimonial</strong> div.
   </p>
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _includes/testimonial.html</h4>
@@ -98,59 +98,61 @@
   </div>
   <h3 class="step">Start styling the component.</h3>
   <p class="step-description">
-    Just like using the <strong>color()</strong> function to use USWDS color tokens, we can use <strong>units()</strong> to allow native CSS properties to make use of USWDS spacing tokens. To get our base styles for our new component, add the following styles to the new stylesheet.
+    Just like using the <strong>color()</strong> function to use USWDS color tokens, we can use <strong>units()</strong> and other token functions to use USWDS tokens in native CSS properties. To get our base styles for our new component, add the following styles to the new stylesheet:
   </p>
   <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/my-testimonial.scss</h4>
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/_my-testimonial.scss</h4>
 <pre class="add">
-  @use "uswds-core" as *;
-  
-  .my-testimonial {
-    background-color: color("indigo-10");
-    padding: units(3);
-  }
+@use "uswds-core" as *;
 
-  .my-testimonial__icon {
-    fill: color("indigo-30");
-    stroke: color("indigo-30");
-  }
-  
-  .my-testimonial__body p {
-    text-align: center;
-  }
-  
-  .my-testimonial__footer {
-    display: flex;
-    flex-direction: row;
-    margin-top: units(3);
-  }
-  
-  .my-testimonial img {
-    @include u-circle(10);
-  }
-  
-  .my-testimonial__profile {
-    margin-left: units(3)
-  }
-  
-  .my-testimonial__profile-name {
-    color: color("indigo-70v");
-  }
-  
-  .my-testimonial__profile-title {
-    margin-top: units(0);
-  }
+.my-testimonial {
+  background-color: color("indigo-10");
+  margin-left: units(1);
+  margin-right: units(1);
+  padding: units(2);
+}
+
+.my-testimonial__icon {
+  fill: color("indigo-30");
+  stroke: color("indigo-30");
+}
+
+.my-testimonial__body p {
+  font-size: size("heading", "xl");
+  font-weight: font-weight("bold");
+  text-align: center;
+}
+
+.my-testimonial__footer {
+  display: flex;
+  flex-direction: row;
+  margin-top: units(3);
+}
+
+.my-testimonial img {
+  @include u-circle(10);
+}
+
+.my-testimonial__profile {
+  margin-left: units(3)
+}
+
+.my-testimonial__profile-title {
+  font-size: font-size("body", 5);
+  margin-top: units(0);
+}  
 </pre>
   </div>
   <p class="step-description">
     Can you spot all the uses of USWDS tokens?
   </p>
+
   <h3 class="step">Styling the testimonial icon</h3>
   <p class="step-description">
     USWDS uses variables to maintain consistent styles across different definitions. Let's create a variable for our icon stroke and fill at the top of our stylesheet.
   </p>
   <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/my-testimonial.scss</h4>
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/_my-testimonial.scss</h4>
 <pre class="blur">@use "uswds-core" as *;
 
 </pre>
@@ -173,40 +175,80 @@ $my-testimonial-icon-color: color("indigo-30");
 </pre>
 <pre class="blur">}</pre>
   </div>
-  <h3 class="step">Using USWDS utility mixins.</h3>
+
+  <h3 class="step">Using USWDS theme tokens with mixins</h3>
   <p class="step-description">
-    USWDS also offers an extensive library of utility mixins which you can use to simplify style setting. Let's use some of the typeset mixins to customize our font weight and size. It's standard convention to include your mixins at the top of each style definition.
+    Using a combination of utility mixins and USWDS theme settings can help add uniformity across your project. In this example, we'll add the border settings and padding settings from earlier to help our new component sit nicely with the original card. The <strong>u-margin-x()</strong> mixin lets you set left and right margin at the same time.
   </p>
   <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/my-testimonial.scss</h4>
-<pre class="blur">.my-testimonial__body p {
-</pre>
-<pre class="add">  font-size: size("heading", "xl");
-  font-weight: font-weight("bold");</pre>
-<pre class="blur">  text-align: center;
-}
-
-...
-
-.my-testimonial__profile-title {
-  margin-top: units(0);
-</pre><pre class="add">  font-size: font-size("body", 5)</pre>
-<pre class="blur">}</pre>
-  </div>
-  <h3 class="step">Using uswds theme tokens with mixins</h3>
-  <p class="step-description">
-    Finally, lets use a combination of utility mixins and uswds theme settings to display how you can add uniformity across your project! In this example, we'll add the border settings from step one to help our new component sit nicely with the original card.
-  </p>
-  <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/my-testimonial.scss</h4>
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/_my-testimonial.scss</h4>
 <pre class="blur">.my-testimonial {</pre>
-<pre class="add">  @include u-margin-x(1);
-  @include u-border($theme-card-border-width);
+<pre class="add">  @include u-border($theme-card-border-width);
+  @include u-margin-x(1);
+  @include u-padding($theme-card-padding-perimeter);
   @include u-radius($theme-card-border-radius);</pre>
-<pre class="blur">  background-color: color("indigo-10");
-  padding: units(3);
+<pre class="blur">  background-color: color("indigo-10");</pre><pre class="remove">
+  margin-left: units(1);
+  margin-right: units(1);
+  padding: units(2);</pre><pre class="blur">
 }</pre>
   </div>
+
+  <h3 class="step">Color, background, and contrast</h3>
+  <p class="step-description">
+    Finally, let's change the color of our testimonial component. The traditional way to set background and color is to use two separate rules. If we want to use our primary colors in this component, we can use the following two rules:
+  </p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/_my-testimonial.scss</h4>
+<pre class="blur">.my-testimonial {
+  @include u-border($theme-card-border-width);
+  @include u-margin-x(1);
+  @include u-padding($theme-card-padding-perimeter);
+  @include u-radius($theme-card-border-radius);</pre>
+<pre class="remove">  background-color: color("indigo-10");</pre><pre class="add">
+  background-color: color("primary-dark");
+  color: color("primary-light");</pre><pre class="blur">
+}</pre>
+  </div>
+  <p class="step-description">
+    If you save and reload, you might not be sure if the colors you've added have proper color contrast. Upon closer inspection, these colors <strong>fail</strong> AA color contrast requirements! USWDS uses a color grading system. Using this system, a grade difference of 50+ ensures AA across any two color values. (You can learn more about this on our <a href="https://designsystem.digital.gov/design-tokens/color/overview/#magic-number-2">Using Color</a> page.)
+  </p>
+  <p class="step-description">
+    However, when you use theme tokens in your rules, like <strong>"primary-dark"</strong>, it's not as obvious what numerical grade you're using and it can lead to contrast errors.
+  </p>
+  <p class="step-description">
+    When we build components internally, we use a more advanced tool to automatically check color contrast. If we replace our text and background color definitions with the combined <strong>set-text-and-bg()</strong> mixin, we can not only set the background color and the text color in the same mixin, but USWDS will check the contrast and provide a compile warning if there isn't AA contrast.
+  </p>
+
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/_my-testimonial.scss</h4>
+<pre class="blur">.my-testimonial {
+  @include u-border($theme-card-border-width);
+  @include u-margin-x(1);
+  @include u-padding($theme-card-padding-perimeter);
+  @include u-radius($theme-card-border-radius);</pre>
+  <pre class="add">  @include set-text-and-bg("primary-dark", "primary-light");</pre>
+  <pre class="remove">  background-color: color("primary-dark");
+  color: color("primary-light");</pre><pre class="blur">
+}</pre>
+  </div>
+  <p class="step-description">
+    This time, when you save and compile you'll see a warning in the terminal. Let's update our code to use <strong>primary-lighter</strong> as our text color.
+  </p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/_my-testimonial.scss</h4>
+<pre class="blur">.my-testimonial {
+  @include u-border($theme-card-border-width);
+  @include u-margin-x(1);
+  @include u-padding($theme-card-padding-perimeter);
+  @include u-radius($theme-card-border-radius);</pre>
+  <pre class="remove">  @include set-text-and-bg("primary-dark", "primary-light");</pre>
+  <pre class="add">  @include set-text-and-bg("primary-dark", "primary-lighter");</pre><pre class="blur">
+}</pre>
+  </div>
+  <p class="step-description">
+    This time, we don't get a warning, and our component looks even better. Not bad!
+  </p>
   <p class="step-description">
     And voila! You've used theme settings, custom styles, USWDS tokens, and utility mixins to theme, customize, and extend USWDS into creating our very own component! Great work!
   </p>

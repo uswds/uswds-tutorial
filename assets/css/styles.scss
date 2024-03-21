@@ -45,12 +45,12 @@
   }
 }
 
-:where(html) { 
+:where(html) {
   color: var(--text-2);
   background-color: var(--surface-1);
 }
 
-:where(h1, h2, h3, h4, h5, h6, dt) { 
+:where(h1, h2, h3, h4, h5, h6, dt) {
   color: var(--text-1);
 }
 
@@ -103,7 +103,7 @@
   }
 }
 
-:where(body) { 
+:where(body) {
   min-block-size: 100%;
   scrollbar-gutter: stable both-edges;
 }
@@ -113,13 +113,13 @@
   font-weight: var(--font-weight-9);
 }
 
-:is(h1) { 
-  font-size: var(--font-size-8); 
-  max-inline-size: var(--size-header-1); 
+:is(h1) {
+  font-size: var(--font-size-8);
+  max-inline-size: var(--size-header-1);
 }
 
-:is(h2) { 
-  font-size: var(--font-size-6); 
+:is(h2) {
+  font-size: var(--font-size-6);
   max-inline-size: var(--size-header-2);
 }
 
@@ -210,10 +210,10 @@
 :is(code, kbd, samp, pre) { font-family: var(--font-mono) }
 :where(:not(pre) > code, kbd) { white-space: nowrap }
 
-:is(pre) { 
+:is(pre) {
   white-space: pre;
   min-inline-size: 0;
-  max-inline-size: max-content; 
+  max-inline-size: max-content;
 }
 
 :where(:not(pre) > code) {
@@ -244,8 +244,8 @@
   margin-block-start: var(--size-5);
 }
 
-:where(small) { 
-  font-size: max(.5em, var(--font-size-0)); 
+:where(small) {
+  font-size: max(.5em, var(--font-size-0));
   max-inline-size: var(--size-content-1);
 }
 
@@ -442,6 +442,7 @@ main  .part.intro {
 }
 
 .part.intro > h1 {
+  color: white;
   padding-top: var(--size-7)
 }
 
@@ -581,7 +582,7 @@ main p a:active {
   padding-top: var(--size-2);
 }
 
-.terminal, 
+.terminal,
 .editor {
   font-size: var(--font-size-3);
   padding: var(--size-3);

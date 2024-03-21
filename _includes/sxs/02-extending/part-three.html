@@ -1,6 +1,6 @@
 <section class="part three" id="part-three">
   <h2><span>Part Three</span> Create a custom component</h2>
-  <p>In this section we'll explore extending USWDS by creating a custom <strong>testmionial</strong> component not offered by the design system.</p>
+  <p>In this section we'll explore extending USWDS by creating a custom <strong>testimonial</strong> component not offered by the design system.</p>
   <h3 class="step">Create a the markup for a new component.</h3>
   <p class="step-description">
     Visit <strong>_includes/sxs/02-extending/testimonial.html</strong>. This will be where we will add the markup for our new component. Once the markup is filled out, it will appear beneath our custom card component!
@@ -59,7 +59,7 @@
       &lt;/use&gt;
   &lt;/svg&gt;</pre><pre class="blur">&lt;div class="ut-testimonial__body"&gt;&lt;/div&gt;</pre>
   </div>
-  <h3 class="step">Add styleheet partial.</h3>
+  <h3 class="step">Add stylesheet partial.</h3>
   <p class="step-description">
     Create a new stylesheet partial for our new component.
   </p>
@@ -73,7 +73,7 @@
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme-custom-styles.scss</h4>
 <pre class="blur">@use "uswds-core" as *;
   @forward "../assets/css/styles.scss";
-  @forward "../assets/css/_ut-card.scss"; 
+  @forward "../assets/css/_ut-card.scss";
 </pre><pre class="add">  @forward "../assets/css/_ut-testimonial.scss";</pre>
   </div>
   <h3 class="step">Start styling the component.</h3>
@@ -84,34 +84,34 @@
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/ut-testimonial.scss</h4>
 <pre class="add">
   @use "uswds-core" as *;
-  
+
   .ut-testimonial {
     background-color: color("indigo-10");
     padding: units(3);
   }
-  
+
   .ut-testimonial__body p {
     text-align: center;
   }
-  
+
   .ut-testimonial__footer {
     display: flex;
     flex-direction: row;
     margin-top: units(3);
   }
-  
+
   .ut-testimonial img {
     @include u-circle(10);
   }
-  
+
   .ut-testimonial__profile {
     margin-left: units(3)
   }
-  
+
   .ut-testimonial__profile-name {
     color: color("indigo-70v");
   }
-  
+
   .ut-testimonial__profile-title {
     margin-top: units(0);
   }

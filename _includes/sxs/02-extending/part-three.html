@@ -3,7 +3,7 @@
   <p>In this section we'll explore extending USWDS by creating a custom <strong>testimonial</strong> component not offered by the design system.</p>
   <h3 class="step">Create a the markup for a new component.</h3>
   <p class="step-description">
-    Visit <strong>_includes/testimonial.html</strong>. This will be where we will add the markup for our new component. Once the markup is filled out, it will appear beneath our custom card component!
+    Open <strong>_includes/testimonial.html</strong>. This will be where we'll add the markup for our new component. Once the markup is added, it'll appear beneath our custom card component!
   </p>
   <p class="step-description">
     Start by adding the basic skeleton of the component. We'll need an outer div, a body, and footer section. We'll call this component <strong>my-testimonial</strong>.
@@ -147,7 +147,7 @@
     Can you spot all the uses of USWDS tokens?
   </p>
 
-  <h3 class="step">Styling the testimonial icon</h3>
+  <h3 class="step">Style the testimonial icon.</h3>
   <p class="step-description">
     USWDS uses variables to maintain consistent styles across different definitions. Let's create a variable for our icon stroke and fill at the top of our stylesheet.
   </p>
@@ -176,7 +176,7 @@ $my-testimonial-icon-color: color("indigo-30");
 <pre class="blur">}</pre>
   </div>
 
-  <h3 class="step">Using USWDS theme tokens with mixins</h3>
+  <h3 class="step">Using USWDS theme tokens with mixins.</h3>
   <p class="step-description">
     Using a combination of utility mixins and USWDS theme settings can help add uniformity across your project. In this example, we'll add the border settings and padding settings from earlier to help our new component sit nicely with the original card. The <strong>u-margin-x()</strong> mixin lets you set left and right margin at the same time.
   </p>
@@ -194,7 +194,7 @@ $my-testimonial-icon-color: color("indigo-30");
 }</pre>
   </div>
 
-  <h3 class="step">Color, background, and contrast</h3>
+  <h3 class="step">Adjusting color, background, and contrast.</h3>
   <p class="step-description">
     Finally, let's change the color of our testimonial component. The traditional way to set background and color is to use two separate rules. If we want to use our primary colors in this component, we can use the following two rules:
   </p>
@@ -250,6 +250,6 @@ $my-testimonial-icon-color: color("indigo-30");
     This time, we don't get a warning, and our component looks even better. Not bad!
   </p>
   <p class="step-description">
-    And voila! You've used theme settings, custom styles, USWDS tokens, and utility mixins to theme, customize, and extend USWDS into creating our very own component! Great work!
+    And voilà! You've used theme settings, custom styles, USWDS tokens, and utility mixins to theme, customize, and extend USWDS into creating our very own component! Great work!
   </p>
 </section>

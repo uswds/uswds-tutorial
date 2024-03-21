@@ -13,6 +13,7 @@
   <p class="step-description">
     Visit the <a href="https://designsystem.digital.gov/components/card/#component-settings-card">USWDS Card component settings table</a> to see a list of available settings. Settings allow you to apply a global theme to USWDS components and styles without modifying CSS. Today's we're going to give our card a light golden look. 
   </p>
+
   <h3 class="step">Customize border settings</h3>
   <p class="step-description">
     Let's start but updating the border to remove the border and give the card a rounder border radius.
@@ -30,9 +31,10 @@
 </pre>
 <pre class="blur">);</pre>
   </div>
+
   <h3 class="step">Customize type settings</h3>
   <p class="step-description">
-    Next lets update the typesetting of our header to use a <strong>sans</strong> font, increase the size ("xl"), and use a tight line height (2).
+    Next, let's update the typesetting of our header to use a <strong>sans</strong> font, increase the size ("xl"), and use a tight line height (2).
   </p>
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme.scss</h4>
@@ -45,9 +47,51 @@
 </pre><pre class="blur">);</pre>
   </div>
   <p class="step-description">
-    Save, wait for the Sass to compile, and reload. You'll see the the updated border and font settings shape the card component! All without having to write any custom CSS.
+    Save, wait for the Sass to compile, and reload. You'll see the updated border and font settings shape the card component! All without having to write any custom CSS.
   </p>
-  
+
+  <h3 class="step">Customize perimeter padding settings</h3>
+  <p class="step-description">
+    And while we're add it, let's add a bit more padding to help the component feel a little more comfortable and less cramped.
+  </p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme.scss</h4>
+<pre class="blur">@use "uswds-core" with (
+  ...
+  $theme-border-radius-lg: 2,
+  $theme-card-border-radius: "lg",
+  $theme-card-border-width: 0,
+  $theme-card-header-typeset: ("sans", "xl", 2),
+</pre><pre class="add">  $theme-card-padding-perimeter: 4,</pre>
+  </div>
+  <p class="step-description">
+    Save and reload. Ah, that's nicer.
+  </p>
+
+
+  <h3 class="step">Customize primary color settings</h3>
+  <p class="step-description">
+    Finally, let's update our project's primary color, from blue to indigo.
+  </p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme.scss</h4>
+<pre class="blur">@use "uswds-core" with (
+  ...
+  $theme-border-radius-lg: 2,
+  $theme-card-border-radius: "lg",
+  $theme-card-border-width: 0,
+  $theme-card-header-typeset: ("sans", "xl", 2),
+  $theme-card-padding-perimeter: 4,
+
+</pre><pre class="add">  $theme-color-primary-lighter: "indigo-20v",
+  $theme-color-primary-light: "indigo-40v",
+  $theme-color-primary: "indigo-60v",
+  $theme-color-primary-dark: "indigo-70v",
+  $theme-color-primary-darker: "indigo-80v",</pre><pre class="blur">);</pre>
+  </div>
+  <p class="step-description">
+    Save and reload. You'll see the card's button has gotten a bit purple-er.
+  </p>
   <p class="step-description">
     But maybe there are additional changes your team would like to make that are not available in theme settings. In the next section we'll take a look at adding custom styles.
   </p>

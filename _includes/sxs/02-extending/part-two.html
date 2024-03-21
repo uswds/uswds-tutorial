@@ -8,15 +8,27 @@
     We'll use this class to identify our custom card component and assign custom styles.
   </p>
   <p class="step-description">
-    When adding custom classes we recommend using a two to three letter prefix to identify the organization it belongs to. USWDS primarily uses <strong>usa-</strong>. Since this is a <strong>U</strong>SWDS <strong>T</strong>utorial, lets use <strong>ut-</strong>card as our custom class.
+    When adding custom classes we recommend using a two to three letter prefix to identify the organization it belongs to. USWDS primarily uses <strong>usa-</strong>. Since this is your tutorial, lets use <strong>my-</strong>card as our custom class.
   </p>
   <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _includes/sxs/02-extending/card.html</h4>
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _includes/card.html</h4>
 <pre class="remove">&lt;div class="usa-card"&gt;</pre>
-<pre class="add">&lt;div class="usa-card ut-card"&gt;</pre>
+<pre class="add">&lt;div class="usa-card my-card"&gt;</pre>
 <pre class="blur"> &lt;div class="usa-card__container"&gt;
   &lt;div class="usa-card__header"&gt;</pre>
   </div>
+
+  <h3 class="step">Open a new terminal window.</h3>
+  <p class="step-description">
+    At this point you should already have two terminal windows open. One is serving our site and the other is compiling our stylesheets. We're going to open one more so we can add a couple new files. 
+  </p>
+  <p class="step-description">
+    Open a new terminal window and navigate to the tutorial's root directory, as before. In the following example, change <strong>path/to/uswds-tutorial</strong> to the actual path.
+  </p>
+  <div class="terminal">
+    <pre>cd path/to/uswds-tutorial</pre>
+  </div>
+
   <h3 class="step">Create a custom stylesheet for our custom card component.</h3>
   <p class="step-description">
     To help keep things organized, we'll create a custom stylesheet with styles specific to our customized card component. In later excercises, we'll use this same stylesheet to extend the card component into a new custom component. First, lets add a <strong>components</strong> directory to our css assets.
@@ -25,11 +37,12 @@
     <pre>mkdir assets/css/components</pre>
   </div>
   <p class="step-description">
-    This pattern will allow us to organize CSS partials an a logical structure. Let's now add our new <strong>ut-card</strong> stylesheet. It's standard naming convention to prefix CSS partials with an underscore.
+   Now let's add our new <strong>my-card</strong> stylesheet. It's standard naming convention to prefix CSS partials with an underscore (as we've already seen in <strong>_uswds-theme</strong> and <strong>_uswds-theme-custom-styles</strong>).
   </p>
   <div class="terminal">
-    <pre>touch assets/css/components/_ut-card.scss</pre>
+    <pre>touch assets/css/components/_my-card.scss</pre>
   </div>
+
   <h3 class="step">Import the new stylesheet into USWDS custom styles.</h3>
   <p class="step-description">
     Navigate to <strong>_theme/_uswds-theme-custom-styles.scss</strong> and import our new stylesheet into the USWDS custom styles file.
@@ -38,20 +51,21 @@
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme-custom-styles.scss</h4>
 <pre class="blur">@use "uswds-core" as *;
 @forward "../assets/css/styles.scss";  
-</pre><pre class="add">@forward "../assets/css/_ut-card.scss";</pre>
+</pre><pre class="add">@forward "../assets/css/_my-card.scss";</pre>
   </div>
   <p class="step-description">
     Once you've updated this file, you can save and close it. Since we've added our project Sass source directory to our gulpfile in the first part of the tutorial, it should already be compiling correctly!
   </p>
-  <h3 class="step">Use USWDS utilities in custom styles</h3>
   <p class="step-description">
-    Now that our stylesheet is being imported, lets write some customs styles to really make this card stand out! 
+    Now that our stylesheet is being imported, lets write some customs styles to finish up our card. 
   </p>
+
+  <h3 class="step">Use USWDS core features in custom styles</h3>
   <p class="step-description">
-    We'll want to use USWDS design tokens in our stylesheets using USWDS functions and mixins. To do this, lets add <strong>uswds-core</strong> to the top of our new stylesheet with the <strong>use</strong> Sass directive.
+    We'll want to use USWDS design tokens in our stylesheets using USWDS stylesheet features like functions and mixins. To do this, lets add <strong>uswds-core</strong> to the top of our new stylesheet with the <strong>use</strong> Sass directive.
   </p>
   <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/_ut-card.scss</h4>
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/_my-card.scss</h4>
 <pre class="add">@use "uswds-core" as *;</pre>
   </div>
   <h3 class="step">Add custom class and styles</h3>
@@ -59,8 +73,8 @@
     Next lets create a custom class for our personalized component and use some USWDS utiltities. We'll start by updating the background color of the card. We can use the <a href="https://designsystem.digital.gov/design-tokens/color/system-tokens/#using-color-tokens-2"><strong>color()</strong> function</a> to set the text and background color with USWDS <a href="https://designsystem.digital.gov/design-tokens/color/overview/">color tokens</a>.
   </p>
   <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/ut-card.scss</h4>
-<pre class="add">.ut-card .usa-card__container {
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/my-card.scss</h4>
+<pre class="add">.my-card .usa-card__container {
   background-color: color("indigo-70v");
   color: color("indigo-30");
 }</pre>
@@ -72,8 +86,8 @@
     USWDS also utilizes more advanced tools to automatically check color contrast. Replace our text and background color definitions with the combined <strong>set-text-and-bg</strong> mixin.
   </p>
   <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/ut-card.scss</h4>
-<pre class="blur">.ut-card .usa-card__container {</pre>
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/my-card.scss</h4>
+<pre class="blur">.my-card .usa-card__container {</pre>
 <pre class="remove">
   background-color: color("indigo-70v");
   color: color("indigo-30");
@@ -86,8 +100,8 @@
     If you inspect the compilation messages in the terminal, you'll actually see a warning these colors do not pass color contrast requirements! Lets use the magic number of 50+ to resolve this issue.
   </p>
   <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/ut-card.scss</h4>
-<pre class="blur">.ut-card .usa-card__container {</pre>
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/my-card.scss</h4>
+<pre class="blur">.my-card .usa-card__container {</pre>
 <pre class="remove">
   @include set-text-and-bg("indigo-70v", "indigo-30");
 </pre><pre class="add">

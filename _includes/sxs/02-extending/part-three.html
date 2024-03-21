@@ -56,10 +56,23 @@
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _includes/testimonial.html</h4>
 <pre class="blur">&lt;div class="my-testimonial"&gt;</pre>
-  <pre class="add">  &lt;svg class="usa-icon my-testimonial__icon" aria-hidden="true" focusable="false" role="img"&gt;
+  <pre class="add">  &lt;svg class="usa-icon" aria-hidden="true" focusable="false" role="img"&gt;
     &lt;use xlink:href="/assets/img/sprite.svg#format_quote"&gt;
     &lt;/use&gt;
   &lt;/svg&gt;</pre><pre class="blur">&lt;div class="my-testimonial__body"&gt;
+...</pre>
+  </div>
+  <p class="step-description">
+    Next, add a class to the svg element for styling later, as well as height and width attributes to natively define the size of the icon.
+  </p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _includes/testimonial.html</h4>
+<pre class="blur">&lt;div class="my-testimonial"&gt;</pre>
+  <pre class="remove">  &lt;svg class="usa-icon" aria-hidden="true" focusable="false" role="img"&gt;</pre>
+  <pre class="add">  &lt;svg class="usa-icon my-testimonial__icon" height="50px" width="50px" aria-hidden="true" focusable="false" role="img"&gt;</pre>
+  <pre class="blur">    &lt;use xlink:href="/assets/img/sprite.svg#format_quote"&gt;
+    &lt;/use&gt;
+  &lt;/svg&gt&lt;div class="my-testimonial__body"&gt;
 ...</pre>
   </div>
   <p class="step-description">
@@ -68,7 +81,7 @@
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _includes/testimonial.html</h4>
 <pre class="blur">&lt;div class="my-testimonial"&gt;
-  &lt;svg class="usa-icon my-testimonial__icon" aria-hidden="true" focusable="false" role="img"&gt;</pre><pre class="remove">
+  &lt;svg class="usa-icon my-testimonial__icon" height="50px" width="50px" aria-hidden="true" focusable="false" role="img"&gt;</pre><pre class="remove">
     &lt;use xlink:href="/assets/img/sprite.svg#format_quote"&gt;</pre><pre class="add">
     &lt;use xlink:href="/assets/uswds/img/sprite.svg#format_quote"&gt;</pre><pre class="blur">
     &lt;/use&gt;

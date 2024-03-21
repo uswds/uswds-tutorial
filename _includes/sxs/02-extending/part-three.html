@@ -22,13 +22,13 @@
   </p>
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _includes/testimonial.html</h4>
-<pre class="blur">&lt;div class="my-testimonial"&gt;</pre>
-  <pre class="add">  &lt;div class="my-testimonial__body"&gt;
-    &lt;p&gt;
+<pre class="blur">&lt;div class="my-testimonial"&gt;
+  &lt;div class="my-testimonial__body"&gt;</pre>
+  <pre class="add">    &lt;p&gt;
       “One of the best USWDS tutorials I’ve followed all the way to the end.”
-    &lt;/p&gt;
-  &lt;/div&gt;</pre>
-<pre class="blur">  &lt;div class="my-testimonial__footer"&gt;&lt;/div&gt;
+    &lt;/p&gt;</pre>
+<pre class="blur">   &lt;/div&gt;
+  &lt;div class="my-testimonial__footer"&gt;&lt;/div&gt;
 &lt;/div&gt;
 </pre>
   </div>
@@ -46,7 +46,9 @@
       &lt;p class="my-testimonial__profile-title"&gt;Participant&lt;/p&gt;
     &lt;/div&gt;
 </pre>
-<pre class="blur">&lt;/div&gt;</pre>
+<pre class="blur">  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
   </div>
   <p class="step-description">
     Lastly, let's add a quotation icon for some visual flare! Visit the <a href="https://designsystem.digital.gov/components/icon/">Icon component</a> page, search for <strong>quote</strong>, and click the search result to copy the icons markup. Paste this markup directly after the opening <strong>my-testimonial</strong> div.
@@ -54,10 +56,23 @@
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _includes/testimonial.html</h4>
 <pre class="blur">&lt;div class="my-testimonial"&gt;</pre>
-  <pre class="add">  &lt;svg class="usa-icon my-testimonial__icon" aria-hidden="true" focusable="false" role="img"&gt;
+  <pre class="add">  &lt;svg class="usa-icon" aria-hidden="true" focusable="false" role="img"&gt;
     &lt;use xlink:href="/assets/img/sprite.svg#format_quote"&gt;
     &lt;/use&gt;
   &lt;/svg&gt;</pre><pre class="blur">&lt;div class="my-testimonial__body"&gt;
+...</pre>
+  </div>
+  <p class="step-description">
+    Next, add a class to the svg element for styling later, as well as height and width attributes to natively define the size of the icon.
+  </p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _includes/testimonial.html</h4>
+<pre class="blur">&lt;div class="my-testimonial"&gt;</pre>
+  <pre class="remove">  &lt;svg class="usa-icon" aria-hidden="true" focusable="false" role="img"&gt;</pre>
+  <pre class="add">  &lt;svg class="usa-icon my-testimonial__icon" height="50px" width="50px" aria-hidden="true" focusable="false" role="img"&gt;</pre>
+  <pre class="blur">    &lt;use xlink:href="/assets/img/sprite.svg#format_quote"&gt;
+    &lt;/use&gt;
+  &lt;/svg&gt&lt;div class="my-testimonial__body"&gt;
 ...</pre>
   </div>
   <p class="step-description">
@@ -66,7 +81,7 @@
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _includes/testimonial.html</h4>
 <pre class="blur">&lt;div class="my-testimonial"&gt;
-  &lt;svg class="usa-icon my-testimonial__icon" aria-hidden="true" focusable="false" role="img"&gt;</pre><pre class="remove">
+  &lt;svg class="usa-icon my-testimonial__icon" height="50px" width="50px" aria-hidden="true" focusable="false" role="img"&gt;</pre><pre class="remove">
     &lt;use xlink:href="/assets/img/sprite.svg#format_quote"&gt;</pre><pre class="add">
     &lt;use xlink:href="/assets/uswds/img/sprite.svg#format_quote"&gt;</pre><pre class="blur">
     &lt;/use&gt;
@@ -81,10 +96,10 @@
 
   <h3 class="step">Add stylesheet partial.</h3>
   <p class="step-description">
-    Create a new stylesheet partial for our new component by entering the following in the free temrinal window:
+    Create a new stylesheet partial for our new component by entering the following in the free terminal window:
   </p>
   <div class="terminal">
-    <pre>touch assets/css/components/_my-testimonial.scss</pre>
+    <pre>touch _theme/components/_my-testimonial.scss</pre>
   </div>
   <p class="step-description">
     And then we'll import this new stylesheet into our USWDS custom styles.
@@ -93,15 +108,15 @@
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme-custom-styles.scss</h4>
 <pre class="blur">@use "uswds-core" as *;
 @forward "../assets/css/styles.scss";
-@forward "../assets/css/_my-card.scss"; 
-</pre><pre class="add">@forward "../assets/css/_my-testimonial.scss";</pre>
+@forward "components/_my-card.scss";
+</pre><pre class="add">@forward "components/_my-testimonial.scss";</pre>
   </div>
   <h3 class="step">Start styling the component.</h3>
   <p class="step-description">
-    Just like using the <strong>color()</strong> function to use USWDS color tokens, we can use <strong>units()</strong> and other token functions to use USWDS tokens in native CSS properties. To get our base styles for our new component, add the following styles to the new stylesheet:
+    Just like using the <strong>color()</strong> function to use USWDS color tokens, we can use <strong>units()</strong> and other token functions to use tokens in native CSS properties. To get our base styles for our new component, add the following styles to the new stylesheet:
   </p>
   <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/_my-testimonial.scss</h4>
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/components/_my-testimonial.scss</h4>
 <pre class="add">
 @use "uswds-core" as *;
 
@@ -134,13 +149,13 @@
 }
 
 .my-testimonial__profile {
-  margin-left: units(3)
+  margin-left: units(3);
 }
 
 .my-testimonial__profile-title {
   font-size: font-size("body", 5);
   margin-top: units(0);
-}  
+}
 </pre>
   </div>
   <p class="step-description">
@@ -152,7 +167,7 @@
     USWDS uses variables to maintain consistent styles across different definitions. Let's create a variable for our icon stroke and fill at the top of our stylesheet.
   </p>
   <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/_my-testimonial.scss</h4>
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/components/_my-testimonial.scss</h4>
 <pre class="blur">@use "uswds-core" as *;
 
 </pre>
@@ -181,7 +196,7 @@ $my-testimonial-icon-color: color("indigo-30");
     Using a combination of utility mixins and USWDS theme settings can help add uniformity across your project. In this example, we'll add the border settings and padding settings from earlier to help our new component sit nicely with the original card. The <strong>u-margin-x()</strong> mixin lets you set left and right margin at the same time.
   </p>
   <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/_my-testimonial.scss</h4>
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/components/_my-testimonial.scss</h4>
 <pre class="blur">.my-testimonial {</pre>
 <pre class="add">  @include u-border($theme-card-border-width);
   @include u-margin-x(1);
@@ -199,7 +214,7 @@ $my-testimonial-icon-color: color("indigo-30");
     Finally, let's change the color of our testimonial component. The traditional way to set background and color is to use two separate rules. If we want to use our primary colors in this component, we can use the following two rules:
   </p>
   <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/_my-testimonial.scss</h4>
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/components/_my-testimonial.scss</h4>
 <pre class="blur">.my-testimonial {
   @include u-border($theme-card-border-width);
   @include u-margin-x(1);
@@ -221,7 +236,7 @@ $my-testimonial-icon-color: color("indigo-30");
   </p>
 
   <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/_my-testimonial.scss</h4>
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/components/_my-testimonial.scss</h4>
 <pre class="blur">.my-testimonial {
   @include u-border($theme-card-border-width);
   @include u-margin-x(1);
@@ -236,7 +251,7 @@ $my-testimonial-icon-color: color("indigo-30");
     This time, when you save and compile you'll see a warning in the terminal. Let's update our code to use <strong>primary-lighter</strong> as our text color.
   </p>
   <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/_my-testimonial.scss</h4>
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/components/_my-testimonial.scss</h4>
 <pre class="blur">.my-testimonial {
   @include u-border($theme-card-border-width);
   @include u-margin-x(1);

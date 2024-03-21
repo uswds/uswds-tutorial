@@ -1,0 +1,13 @@
+@use "uswds-core" as *;
+
+.my-card .usa-card__container {
+    background-color: color("yellow-10");
+}
+
+.my-card .usa-card__footer {
+    margin-top: units(1);
+}
+
+.my-card .usa-card__heading {
+    font-weight: font-weight("bold");
+}

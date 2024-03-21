@@ -1,8 +1,8 @@
 @use "uswds-core" as *;
 
-$ut-testimonial-icon-color: color("indigo-30");
+$my-testimonial-icon-color: color("indigo-30");
 
-.ut-testimonial {
+.my-testimonial {
   @include u-margin-x(1);
   @include u-border($theme-card-border-width);
   @include u-radius($theme-card-border-radius);
@@ -10,37 +10,37 @@ $ut-testimonial-icon-color: color("indigo-30");
   padding: units(3);
 }
 
-.ut-testimonial__icon {
+.my-testimonial__icon {
   @include u-square(7);
-  fill: $ut-testimonial-icon-color;
-  stroke: $ut-testimonial-icon-color;
+  fill: $my-testimonial-icon-color;
+  stroke: $my-testimonial-icon-color;
 }
 
-.ut-testimonial__body p {
+.my-testimonial__body p {
   @include u-font-size("heading", "xl");
   font-weight: font-weight("bold");
   text-align: center;
 }
 
-.ut-testimonial__footer {
+.my-testimonial__footer {
   display: flex;
   flex-direction: row;
   margin-top: units(3);
 }
 
-.ut-testimonial img {
+.my-testimonial img {
   @include u-circle(10);
 }
 
-.ut-testimonial__profile {
+.my-testimonial__profile {
   margin-left: units(3);
 }
 
-.ut-testimonial__profile-name {
+.my-testimonial__profile-name {
   color: color("indigo-70v");
 }
 
-.ut-testimonial__profile-title {
+.my-testimonial__profile-title {
   margin-top: units(0);
   font-size: font-size("body", 5);
 }

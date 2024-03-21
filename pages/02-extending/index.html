@@ -1,0 +1,36 @@
+---
+layout: default
+title: USWDS Tutorial
+permalink: extend
+hero:
+  heading_alt: "Extending"
+  heading: "USWDS"
+  body: "A tutorial project to learn about customizing and extending the U.S. Web Design System"
+  button_group:
+  - label: "Start the tutorial"
+    href: "#tutorial-start"
+  - label: "View source on GitHub"
+    href: "https://github.com/uswds/uswds-tutorial/tree/02-extending"
+---
+
+{% include "uswds/banner.html" %}
+<main id="tutorial-start">
+  <div class="grid-container maxw-full">
+    <div class="grid-row">
+      {% include "sxs/02-extending/part-intro.html" %}
+      <div class="grid-col-fill">
+        {% include "sxs/02-extending/part-one.html" %}
+        {% include "sxs/02-extending/part-two.html" %}
+        {% include "sxs/02-extending/part-three.html" %}
+      </div>
+      <div class="demo-display padding-y-4 maxw-mobile-lg">
+        <div class="position-sticky top-2 padding-2 padding-left-0">
+          {% include "card.html" %}
+          {% include "testimonial.html" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% include "site/footer.html" %}
+{% include "uswds/identifier.html" %}

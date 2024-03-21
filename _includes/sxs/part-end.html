@@ -1,0 +1,30 @@
+<section class="part section-one-end" id="section-one-end">
+  <h2><span>Next steps</span>Extending USWDS</h2>
+  <p>
+    If you'd like to continue learning about  USWDS, continue to part two of this tutorial where will look deeper at customizing, adding custom styles, and extending USWDS components.
+  </p>
+
+  <p>
+    Before we go, we'll need to add a little additional functionality to our stylesheets. We'll need USWDS Utilities, USWDS Layout Grid, and both the Card and Button components for the next part of the tutorial, so let's add them now, just before custom styles. Give it a save and head on to Part Two!
+  </p>
+
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/styles.scss</h4>
+    <pre class="blur">@forward "uswds-theme";</pre><pre class="blur">
+@forward "usa-banner";</pre><pre class="add">
+@forward "usa-button";
+@forward "usa-card";</pre><pre class="blur">
+@forward "usa-identifier";</pre><pre class="add">
+@forward "usa-layout-grid";
+@forward "uswds-utilities";</pre><pre class="blur">@forward "uswds-theme-custom-styles";</pre>
+  </div>
+
+  <div class="button-list">
+    <a href="/extend" class="button primary">
+      Part two: Extending USWDS
+      <span
+      class="material-icons right"
+      aria-hidden="true">arrow_forward</span>
+    </a>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+<section class="hero">
+  <h1 class="hero-message">
+    <span>{{ hero.heading_alt }}</span>
+    <span>{{ hero.heading }}</span>
+  </h1>
+  <p class="under-hero">
+    {{ hero.body }}
+  </p>
+  {% if hero.button_group %}
+    <div class="button-list">
+
+      {% for button in hero.button_group %}
+        <a
+          class="button primary {% if secondary %}secondary{% endif %}"
+          href="{{ button.href }}">
+            {{ button.label }}
+            <span
+              class="material-icons right"
+              aria-hidden="true">arrow_forward</span>
+        </a>
+      {% endfor %}
+    </div>
+  {% endif %}
+</section>
+<picture class="promo-art">
+  <img src="https://doodleipsum.com/700x700/outline" height="800" width="800" alt="a random doodle">
+</picture>

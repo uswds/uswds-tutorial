@@ -1,5 +1,7 @@
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets");
+  eleventyConfig.addWatchTarget("./_theme/");
+  eleventyConfig.setWatchThrottleWaitTime(2000); // in milliseconds
   let pathPrefix = "/";
 
   if (process.env.BASEURL) {

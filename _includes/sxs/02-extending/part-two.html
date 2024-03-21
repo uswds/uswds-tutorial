@@ -1,0 +1,103 @@
+<section class="part two" id="part-two">
+  <h2><span>Part Two</span> Customizing card using custom styles</h2>
+  <p>
+    Using custom styles, we can customize our components beyond theme settings.
+  </p>
+  <h3 class="step">Add a custom class for our new variant.</h3>
+  <p class="step-description">
+    We'll use this class to identify our custom card component and assign custom styles.
+  </p>
+  <p class="step-description">
+    When adding custom classes we recommend using a two- to three-letter prefix for clear identification. USWDS primarily uses <strong>usa-</strong>. Since this is your tutorial, lets use <strong>my-</strong>card as our custom class.
+  </p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _includes/card.html</h4>
+<pre class="remove">&lt;div class="usa-card"&gt;</pre>
+<pre class="add">&lt;div class="usa-card my-card"&gt;</pre>
+<pre class="blur"> &lt;div class="usa-card__container"&gt;
+  &lt;div class="usa-card__header"&gt;</pre>
+  </div>
+
+  <h3 class="step">Open a new terminal window.</h3>
+  <p class="step-description">
+    At this point you should already have two terminal windows open. One is serving our site and the other is compiling our stylesheets. We're going to open one more so we can add a couple new files.
+  </p>
+  <p class="step-description">
+    Open a new terminal window and navigate to the tutorial's root directory, as before. In the following example, change <strong>path/to/uswds-tutorial</strong> to the actual path.
+  </p>
+  <div class="terminal">
+    <pre>cd path/to/uswds-tutorial</pre>
+  </div>
+
+  <h3 class="step">Create a custom stylesheet for our custom card component.</h3>
+  <p class="step-description">
+    To help keep things organized, we'll create a custom stylesheet with styles specific to our customized card component. In later exercises, we'll use this same stylesheet to extend the card component into a new custom component. First, let's add a <strong>components</strong> directory to our css assets.
+  </p>
+  <div class="terminal">
+    <pre>mkdir _theme/components</pre>
+  </div>
+  <p class="step-description">
+    Now let's add our new <strong>my-card</strong> stylesheet. It's standard naming convention to prefix SCSS partials with an underscore (as we've already seen in <strong>_uswds-theme</strong> and <strong>_uswds-theme-custom-styles</strong>).
+  </p>
+  <div class="terminal">
+    <pre>touch _theme/components/_my-card.scss</pre>
+  </div>
+
+  <h3 class="step">Import the new stylesheet into USWDS custom styles.</h3>
+  <p class="step-description">
+    Navigate to <strong>_theme/_uswds-theme-custom-styles.scss</strong> and import our new stylesheet into the USWDS custom styles file.
+  </p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme-custom-styles.scss</h4>
+<pre class="blur">@use "uswds-core" as *;
+@forward "../assets/css/styles.scss";
+</pre><pre class="add">@forward "components/_my-card.scss";</pre>
+  </div>
+  <p class="step-description">
+    Once you've updated this file, you can save and close it. Since we've added our project Sass source directory to our gulpfile in the first part of the tutorial, it should already be compiling correctly!
+  </p>
+  <p class="step-description">
+    Now that our stylesheet is being imported, lets write some customs styles to finish up our card.
+  </p>
+
+  <h3 class="step">Use USWDS core features in custom styles.</h3>
+  <p class="step-description">
+    We'll want to use USWDS design tokens in our stylesheets using USWDS style features like functions and mixins. To do this, lets add <strong>uswds-core</strong> to the top of our new stylesheet with the <strong>use</strong> Sass directive.
+  </p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/components/_my-card.scss</h4>
+<pre class="add">@use "uswds-core" as *;</pre>
+  </div>
+
+  <h3 class="step">Add custom class and styles.</h3>
+  <p class="step-description">
+    Next lets create a custom class for our personalized component and use some USWDS utilities. We'll start by updating the background color of the card. We can use the <a href="https://designsystem.digital.gov/design-tokens/color/system-tokens/#using-color-tokens-2"><strong>color()</strong> function</a> to use color tokens in our CSS rules.
+  </p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/components/_my-card.scss</h4>
+<pre class="add">.my-card .usa-card__container {
+  background-color: color("yellow-10");
+}</pre>
+  </div>
+  <p class="step-description">
+    After recompiling we can see our changes have taken effect. Let's refine this card a bit more by reducing the boldness of the header and adding bit more space before the call to action. We'll use <a href="https://designsystem.digital.gov/design-tokens/spacing-units/">units tokens</a> and <a href="https://designsystem.digital.gov/design-tokens/typesetting/font-weight/">font weight tokens</a> for this.
+  </p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/components/_my-card.scss</h4>
+<pre class="blur">.my-card .usa-card__container {
+  background-color: color("indigo-70v");
+}
+
+</pre><pre class="add">.my-card .usa-card__footer {
+    margin-top: units(1);
+}
+
+.my-card .usa-card__heading {
+    font-weight: font-weight("bold");
+}</pre>
+  </div>
+  <p class="step-description">
+    Now we're making progress. This component is looking pretty good.
+  </p>
+  <p class="step-description">In our next section, we'll take a look at using everything USWDS has to offer to create a custom component!</p>
+</section>

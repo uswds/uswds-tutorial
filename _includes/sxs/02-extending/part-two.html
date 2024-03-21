@@ -51,7 +51,7 @@
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme-custom-styles.scss</h4>
 <pre class="blur">@use "uswds-core" as *;
 @forward "../assets/css/styles.scss";
-</pre><pre class="add">@forward "../_theme/components/_my-card.scss";</pre>
+</pre><pre class="add">@forward "components/_my-card.scss";</pre>
   </div>
   <p class="step-description">
     Once you've updated this file, you can save and close it. Since we've added our project Sass source directory to our gulpfile in the first part of the tutorial, it should already be compiling correctly!
@@ -65,7 +65,7 @@
     We'll want to use USWDS design tokens in our stylesheets using USWDS style features like functions and mixins. To do this, lets add <strong>uswds-core</strong> to the top of our new stylesheet with the <strong>use</strong> Sass directive.
   </p>
   <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/_my-card.scss</h4>
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/components/_my-card.scss</h4>
 <pre class="add">@use "uswds-core" as *;</pre>
   </div>
 
@@ -74,7 +74,7 @@
     Next lets create a custom class for our personalized component and use some USWDS utilities. We'll start by updating the background color of the card. We can use the <a href="https://designsystem.digital.gov/design-tokens/color/system-tokens/#using-color-tokens-2"><strong>color()</strong> function</a> to use color tokens in our CSS rules.
   </p>
   <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/_my-card.scss</h4>
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/components/_my-card.scss</h4>
 <pre class="add">.my-card .usa-card__container {
   background-color: color("yellow-10");
 }</pre>
@@ -83,7 +83,7 @@
     After recompiling we can see our changes have taken effect. Let's refine this card a bit more by reducing the boldness of the header and adding bit more space before the call to action. We'll use <a href="https://designsystem.digital.gov/design-tokens/spacing-units/">units tokens</a> and <a href="https://designsystem.digital.gov/design-tokens/typesetting/font-weight/">font weight tokens</a> for this.
   </p>
   <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/_my-card.scss</h4>
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/components/_my-card.scss</h4>
 <pre class="blur">.my-card .usa-card__container {
   background-color: color("indigo-70v");
 }

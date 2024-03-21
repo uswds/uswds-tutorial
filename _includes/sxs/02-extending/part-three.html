@@ -81,7 +81,7 @@
 
   <h3 class="step">Add stylesheet partial.</h3>
   <p class="step-description">
-    Create a new stylesheet partial for our new component by entering the following in the free temrinal window:
+    Create a new stylesheet partial for our new component by entering the following in the free terminal window:
   </p>
   <div class="terminal">
     <pre>touch assets/css/components/_my-testimonial.scss</pre>
@@ -93,12 +93,12 @@
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme-custom-styles.scss</h4>
 <pre class="blur">@use "uswds-core" as *;
 @forward "../assets/css/styles.scss";
-@forward "../assets/css/_my-card.scss"; 
-</pre><pre class="add">@forward "../assets/css/_my-testimonial.scss";</pre>
+@forward "../_theme/components/_my-card.scss";
+</pre><pre class="add">@forward "../_theme/components/_my-testimonial.scss";</pre>
   </div>
   <h3 class="step">Start styling the component.</h3>
   <p class="step-description">
-    Just like using the <strong>color()</strong> function to use USWDS color tokens, we can use <strong>units()</strong> and other token functions to use USWDS tokens in native CSS properties. To get our base styles for our new component, add the following styles to the new stylesheet:
+    Just like using the <strong>color()</strong> function to use USWDS color tokens, we can use <strong>units()</strong> and other token functions to use tokens in native CSS properties. To get our base styles for our new component, add the following styles to the new stylesheet:
   </p>
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> assets/css/components/_my-testimonial.scss</h4>
@@ -140,7 +140,7 @@
 .my-testimonial__profile-title {
   font-size: font-size("body", 5);
   margin-top: units(0);
-}  
+}
 </pre>
   </div>
   <p class="step-description">

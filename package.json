@@ -9,7 +9,7 @@
     "test": "snyk test"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.0-canary.23",
-    "snyk": "^1.1069.0"
+    "@11ty/eleventy": "^2.0.1",
+    "snyk": "^1.1288.0"
   }
 }

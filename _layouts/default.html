@@ -6,5 +6,7 @@
 {% include "site/head.html" %}
   <body class="{{ page.body }}">
     {{ content }}
+    <!-- add uswds JS to end of page body -->
+    <script src="{{ '/assets/uswds/js/uswds.min.js' | url  }}"></script>
   </body>
 </html>

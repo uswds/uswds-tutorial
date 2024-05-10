@@ -21,3 +21,37 @@ i.e.
 */
 
 @use "uswds-core" as *;
+/*
+import project styles to connect USWDS styles and existing project styles
+*/
+@forward "../assets/css/styles.scss";
+
+/*
+add updated custom properties and assign uswds system color tokens and font family tokens
+ */
+ :root {
+   --blue-2: #{color("blue-warm-20v")};
+   --blue-3: #{color("blue-warm-30v")};
+   --blue-8: #{color("blue-warm-50v")};
+   --grape-0: #{color("violet-10v")};
+   --gray-2: #{color("gray-20")};
+   --gray-9: #{color("gray-90")};
+   --indigo-3: #{color("indigo-20v")};
+   --indigo-4: #{color("indigo-30v")};
+   --indigo-7: #{color("indigo-50v")};
+   --indigo-8: #{color("indigo-60v")};
+   --indigo-9: #{color("indigo-60v")};
+   --red-8: #{color("red-warm-50v")};
+   --red-9: #{color("red-warm-60v")};
+   --teal-1: #{color("mint-20v")};
+   --teal-3: #{color("mint-40v")};
+   --teal-5: #{color("mint-50v")};
+   --teal-7: #{color("mint-60v")};
+   --teal-9: #{color("mint-70v")};
+   --teal-2: #{color("mint-30v")};
+   --yellow-1: #{color("gold-10v")};
+   --yellow-7: #{color("gold-30v")};
+   --font-sans: #{family("sans")};
+   --font-serif: #{family("serif")};
+   --font-mono: #{family("mono")};
+ }

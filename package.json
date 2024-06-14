@@ -10,6 +10,6 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "snyk": "^1.1291.0"
+    "snyk": "^1.1291.1"
   }
 }

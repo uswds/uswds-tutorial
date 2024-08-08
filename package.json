@@ -10,8 +10,9 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "@uswds/compile": "^1.1.0",
-    "@uswds/uswds": "^3.8.1",
     "snyk": "^1.1292.1"
+  },
+  "dependencies": {
+    "@uswds/web-components": "github:uswds/uswds-next#mh/configure-package"
   }
 }

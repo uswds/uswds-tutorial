@@ -1,5 +1,9 @@
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets");
+  eleventyConfig.addPassthroughCopy({
+    "node_modules/@uswds/web-components/dist/usa-banner.js":
+      "assets/usa-banner.js",
+  });
   eleventyConfig.addWatchTarget("./_theme/");
   eleventyConfig.setWatchThrottleWaitTime(2000); // in milliseconds
   let pathPrefix = "/";

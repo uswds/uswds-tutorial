@@ -9,7 +9,7 @@
     "test": "snyk test"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy": "^3.0.0",
     "snyk": "^1.1293.1"
   }
 }

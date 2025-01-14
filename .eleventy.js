@@ -1,6 +1,7 @@
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addWatchTarget("./_theme/");
+  eleventyConfig.addWatchTarget("./assets/uswds/css");
   eleventyConfig.setWatchThrottleWaitTime(2000); // in milliseconds
   let pathPrefix = "/";
 

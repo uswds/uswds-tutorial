@@ -4,7 +4,7 @@
  * MIT License
  */
 
-:where(html) {
+ :where(html) {
   color-scheme: light;
 
   --brand: var(--pink-6);
@@ -328,7 +328,7 @@ h1 {
 .opener {
   display: grid;
   align-items: center;
-  grid-template-columns: 1fr 1fr;
+  /* grid-template-columns: 1fr 1fr; */
   background: white;
 }
 
@@ -339,14 +339,8 @@ h1 {
 }
 
 .hero-message {
-  display: grid;
-  grid-template-columns: max-content;
   color: var(--gray-9);
   line-height: var(--font-lineheight-0);
-}
-
-.hero-message > span {
-  display: block;
 }
 
 .hero-message > span:last-child {

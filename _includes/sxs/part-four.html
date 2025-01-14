@@ -1,44 +1,47 @@
 <section class="part four" id="part-four">
-  <h2><span>Part four</span> Add USWDS CSS and JavaScript to the site template</h2>
-  <p>Now that we've created the compiled CSS and JavaScript, we need to include them in our page templates.</p>
-  <h3 class="step">Add USWDS styles to the site head.</h3>
-  <p class="step-description">Add the compiled CSS before the existing site CSS.</p>
+  <h2><span>Part Four: Compose the banner</span> Add the USWDS Banner</h2>
+  <h3 class="step">Get the USWDS Banner HTML.</h3>
+  <p class="step-description">Head over to the <a href="https://designsystem.digital.gov/components/banner">USWDS Banner component page</a>. Expand the <strong>Component code</strong> accordion and copy the first section of markup, from <strong>&lt;section class="usa-banner"...&gt;</strong> to <strong>&lt;/section&gt;</strong></p>
+  <h3 class="step">Add the Banner HTML into the tutorial markup.</h3>
+  <p class="step-description">We'll paste the Banner markup into the top of our default layout, just before the content.</p>
   <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _includes/site/head.html</h4>
-    <pre class="blur">&lt;head&gt;
-  &lt;meta charset="utf-8"&gt;
-  ...
-  &lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/css/open-props.css' | url &rcub;&rcub;"&gt;</pre><pre class="add">
-  &lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/uswds/css/styles.css' | url &rcub;&rcub;"&gt;</pre><pre class="blur">
-  &lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/css/styles.css' | url  &rcub;&rcub;"&gt; 
-  ...</pre>
-    </div>
-    <h3 class="step">Add USWDS initializer to the site head.</h3>
-    <p class="step-description">Add the USWDS initialization script at the end of the page <strong>head</strong>. This script prevent flashes of unstyled content while USWDS is loading.</p>
-    <div class="editor">
-      <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _includes/site/head.html</h4>
-      <pre class="blur">&lt;head&gt;
-  &lt;meta charset="utf-8"&gt;
-  ...
-  &lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/css/open-props.css' | url &rcub;&rcub;"&gt;
-  &lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/uswds/css/styles.css' | url &rcub;&rcub;"&gt;
-  &lt;link rel="stylesheet" href="&lcub;&lcub; '/assets/css/styles.css' | url &rcub;&rcub;"&gt;</pre><pre class="add">
-  &lt;script src="&lcub;&lcub; '/assets/uswds/js/uswds-init.min.js' | url &rcub;&rcub;"&gt;&lt;/script&gt;</pre><pre class="blur">
-</head>
-</pre>
-  </div>
-  <h3 class="step">Add USWDS JavaScript to the end of the page body.</h3>
-  <p class="step-description">Finally, add the USWDS JavaScript to the end of the page <strong>body</strong>.</p>
-  <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> ./_layouts/default.html</h4>
-    <pre class="blur">...
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _layouts/default.html</h4>
+    <pre class="blur">---
+---
+      
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lcub;% include "site/head.html" %&rcub;
+  &lt;body class="&lcub;{ page.body }&rcub;">
+</pre><pre class=add>
+    &lt;section class="usa-banner" aria-label="Official website of the United States government"&gt;
+      &lt;div class="usa-accordion"&gt;
+        &lt;header class="usa-banner__header"&gt;
 
-&lt;body class="&lcub;&lcub; page.body &rcub;&rcub;"&gt;
-  &lcub;&lcub; content }}</pre><pre class="add">
-  &lt;script src="&lcub;&lcub; '/assets/uswds/js/uswds.min.js' | url &rcub;&rcub;"&gt;&lt;/script&gt;</pre><pre class="blur">
-&lt;/body&gt;
+        ...
+
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;</pre><pre class="blur">
+    &lcub;{ content }&rcub;</pre>
+  </div>
+  <h3 class="step">Update image paths.</h3>
+  <p class="step-description">Now the banner is on our page. But when you look at it <a href="http://localhost:8080/">in the browser window</a>, it won't look right. The links are broken. That's because the image path in <em>our</em> project is different from the image path in the code we copied from the USWDS website. Let's update all the image paths to our project path.</p>
+  <p class="step-description">In <strong>_layouts/default.html</strong>, search for all instances of the broken path (<strong>/assets/img</strong>) and replace each one with the our project's USWDS image path (<strong>/assets/uswds/img</strong>).</p>
+  <p class="step-description">The example shows each of these replacements. Use find/replace to replace all of them.</p>
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> index.html</h4>
+    <pre class="remove">src="/assets/img/us_flag_small.png"</pre><pre class="add">
+src="/assets/uswds/img/us_flag_small.png"
+
+</pre>
+      <pre class="remove">src="/assets/img/icon-dot-gov.svg"</pre><pre class="add">
+src="/assets/uswds/img/icon-dot-gov.svg"
+
+</pre>
+      <pre class="remove">src="/assets/img/icon-https.svg"</pre><pre class="add">
+src="/assets/uswds/img/icon-https.svg"
 </pre>
   </div>
-  <p class="step-description"><strong>Note:</strong> You've added USWDS styles and JavaScript to your project, but you shouldn't see any changes to the existing site. It still looks the same! We've designed USWDS for incremental adoption on existing sites. In most cases, you won't see the effects of USWDS code until you intentionally add USWDS components.</p>
-  <p class="step-description">At this point, you've added USWDS design system code to your project successfully! Now we can add some components.</p>
+  <p class="step-description">Once you're updated all these image paths, your banner should look pretty good!</p>
 </section>

@@ -1,6 +1,7 @@
 _site
 .sass-cache
-assets/uswds
+assets/uswds/img
+assets/uswds/fonts
 node_modules
 .gz
 .DS_Store

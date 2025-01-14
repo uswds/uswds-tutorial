@@ -10,6 +10,8 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
+    "@uswds/compile": "^1.2.1",
+    "@uswds/uswds": "^3.11.0",
     "snyk": "^1.1294.3"
   }
 }

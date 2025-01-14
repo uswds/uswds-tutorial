@@ -17,89 +17,35 @@
   $setting: value
 );</pre>
   </div>
-  <h3 class="step">Turn off compile notifications.</h3>
-  <p class="step-description">Now, let's turn off all the verbose notification messages we see each time USWDS compiles. We're reading these, right?</p>
+  <h3 class="step">Update USWDS settings.</h3>
+  <p class="step-description">We can use USWDS settings to customize our installation and our compile settings.</p>
+  <p class="step-description">While there's a comprehensive list of settings on the USWDS website at <a href="https://designsystem.digital.gov/documentation/settings/">designsystem.digital.gov/documentation/settings/</a>, we’ll just modifiy our installation a little. We’ll use Public Sans as our sans-serif font, give our banner a dark gray background color, and make it expand the full width of the page.</p>
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme.scss</h4>
     <pre class="blur">@use "uswds-core" with (</pre><pre class="remove">
   $setting: value,
   $setting: value</pre><pre class="add">
-  $theme-show-notifications: false,
+  $theme-font-type-sans: "public-sans",
+  $theme-banner-background-color: "ink",
+  $theme-banner-max-width: none
 </pre><pre class="blur">
 );</pre>
   </div>
-  <p class="step-description">Save the file. Now, when the watch script runs you won't see all the messages.</p>
-  <p class="step-description">So let's run the watch script again.</p>
+  <p class="step-description">Let's compile again to see the changes.</p>
   <div class="terminal">
     <pre>npx gulp watch</pre>
   </div>  
-  <h3 class="step">Change the project font.</h3>
-  <p class="step-description">Let's use the same fonts we started with on this project: system fonts.</p>
-  <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme.scss</h4>
-    <pre class="blur">@use "uswds-core" with (
-  $theme-show-notifications: false,</pre><pre class="add">
-  $theme-font-type-sans: "system",</pre><pre class="blur">
-);</pre>
-  </div>
-  <p class="step-description">Save, recompile, and hard reload. Looking good!</p>
-  <p class="step-description">Now, for fun, let's try using Public Sans here. It's not too different from system fonts, it looks the same on all browsers, and it's a USWDS font.</p>
-  <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme.scss</h4>
-    <pre class="blur">@use "uswds-core" with (
-  $theme-show-notifications: false,</pre><pre class="remove">
-  $theme-font-type-sans: "system",</pre><pre class="add">
-  $theme-font-type-sans: "public-sans",</pre><pre class="blur">
-);</pre>
-      </div>
-  <p class="step-description">We can also activate an extra bold font weight to better match the weight of the original fonts.</p>
-  <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme.scss</h4>
-    <pre class="blur">@use "uswds-core" with (
-  $theme-show-notifications: false,
-  $theme-font-type-sans: "public-sans",</pre><pre class="add">
-  $theme-font-weight-heavy: 900,</pre><pre class="blur">
-);</pre>
-  </div>
-  <h3 class="step">Customize the Banner.</h3>
-  <p class="step-description">Now we'll update some <a href="https://designsystem.digital.gov/documentation/settings/#banner">Banner settings</a> to better match our site. We'll give the banner a dark background, use indigo for a link color, and widen the Banner so the text starts further to the left.</p>
-  <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme.scss</h4>
-    <pre class="blur">@use "uswds-core" with (
-  $theme-show-notifications: false,
-  $theme-font-type-sans: "public-sans",
-  $theme-font-weight-heavy: 900,</pre><pre class="add">
-  $theme-banner-background-color: "ink",
-  $theme-banner-link-color: "indigo-30",
-  $theme-banner-max-width: none,</pre><pre class="blur">
-);</pre>
-  </div>
-  <h3 class="step">Customize the Identifier.</h3>
-  <p class="step-description">Finally, we'll widen the Identifier to match the Banner!</p>
-  <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme.scss</h4>
-    <pre class="blur">@use "uswds-core" with (
-  $theme-show-notifications: false,
-  $theme-font-type-sans: "public-sans",
-  $theme-font-weight-heavy: 900,
-  $theme-banner-background-color: "ink",
-  $theme-banner-link-color: "indigo-30",
-  $theme-banner-max-width: none,</pre><pre class="add">
-  $theme-identifier-max-width: none,</pre><pre class="blur">
-);</pre>
-      </div>
-  <p class="step-description">Save the settings file, wait for compile, and hard reload if needed.</p>
   <h3 class="step">Remove unnecessary styles.</h3>
-  <p class="step-description">Now we've added the Banner and Identifier, but if we look at the size of our compiled CSS, it's quite large — over 400 KB! We can greatly reduce the size by using <a href="https://designsystem.digital.gov/components/packages/">USWDS packages</a>.</p>
-  <p class="step-description">Let's open up the USWDS Sass entry point (<strong>_theme/styles.scss</strong>), remove the main <strong>uswds</strong> package, and add both the <strong>usa-banner</strong> and the <strong>usa-identifier</strong> packages.</p>
+  <p class="step-description">Now we've added the Banner and Identifier, but if we look at the size of our compiled CSS, it's quite large — over 500 KB! We can greatly reduce the size by using USWDS packages. You can learn more about packages at <a href="https://designsystem.digital.gov/components/packages/">designsystem.digital.gov/components/packages</a>, but for now, let's open up the USWDS Sass entry point (<strong>_theme/styles.scss</strong>), remove the main <strong>uswds</strong> package, and add only the <strong>usa-banner</strong> package.</p>
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/styles.scss</h4>
     <pre class="blur">@forward "uswds-theme";</pre><pre class="remove">
 @forward "uswds";</pre><pre class="add">
-@forward "usa-banner";
-@forward "usa-identifier";</pre><pre class="blur">
+@forward "usa-banner";</pre><pre class="blur">
 @forward "uswds-theme-custom-styles";</pre>
   </div>
-  <p class="step-description">After you recompile, you'll see that the CSS size drops down to 59 KB — over 80% smaller. And it compiles in less than a second!</p>
-  <p class="step-description">Congratulations! You now have a site that integrates USWDS, uses two key USWDS components, adapts USWDS to fit your project tone, and uses less extraneous code.</p>
+  <p class="step-description">After you recompile, we can see that the CSS size drops down to 15 KB — less than 3% of the original size. It compiles in less than a second, and will gzip down to 2 KB in a production environment.</p>
+  <p class="step-description"><strong>And that's how you get started with USWDS code in a project!</strong></p>
+  <p class="step-description">For a slightly more in-depth version of this tutorial, check out the USWDS Tutorial repo at <a href="https://github.com/uswds/uswds-tutorial">github.com/uswds/uswds-tutorial</a>!</p>
+  <p class="step-description">We also have getting started resources for developers at <a href="https://designsystem.digital.gov/documentation/getting-started-for-developers/">designsystem.digital.gov/documentation/getting-started-for-developers/</a></p>
 </section>

@@ -1,11 +1,9 @@
 <section class="part five" id="part-five">
-  <h2><span>Part Five: Refine</span> Customize USWDS settings</h2>
-  <p>In the final part, we'll bring it all home and customize USWDS to better fit with the original project. </p>
-  <h3 class="step">Stop the watch script.</h3>
-  <p class="step-description">Go the terminal window where the <strong>watch</strong> script is running and enter <strong>control-c</strong> to stop the script.</p>
+  <h2><span>Part Five: Refine</span> Finally, we’ll customize USWDS settings</h2>
+  <p>In the last section, we'll bring it all home by customizing and optimizing our installation for better performance. </p>
   <h3 class="step">Activate theme settings.</h3>
-  <p class="step-description">We're going to add some custom <a href="https://designsystem.digital.gov/documentation/settings/">USWDS settings</a> to our project. To do this, we're going to add them to our custom settings file: <strong>_theme/_uswds-theme.scss</strong>.</p>
-  <p class="step-description">In <strong>_theme/_uswds-theme.scss</strong>, uncomment lines 11-14</p>
+  <p class="step-description">We're going to add some custom <a href="https://designsystem.digital.gov/documentation/settings/">USWDS settings</a> to our project. To do this, we're going to add them to our custom settings file at <strong>_theme/_uswds-theme.scss</strong> by replacing the commented code with real settings.</p>
+  <p class="step-description">There's a comprehensive list of settings on the USWDS website at <a href="https://designsystem.digital.gov/documentation/settings/">designsystem.digital.gov/documentation/settings/</a>, but for now, we’ll just modifiy our installation to turn off noisy notifications, use Public Sans as our sans-serif font, give our banner a dark gray background color, and make the banner expand the full width of the page.</p>
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme.scss</h4>
     <pre class="remove">//  @use "uswds-core" with (
@@ -13,30 +11,19 @@
 //    $setting: value
 //  );</pre><pre class="add">
 @use "uswds-core" with (
-  $setting: value,
-  $setting: value
-);</pre>
-  </div>
-  <h3 class="step">Update USWDS settings.</h3>
-  <p class="step-description">We can use USWDS settings to customize our installation and our compile settings.</p>
-  <p class="step-description">While there's a comprehensive list of settings on the USWDS website at <a href="https://designsystem.digital.gov/documentation/settings/">designsystem.digital.gov/documentation/settings/</a>, we’ll just modifiy our installation a little. We’ll use Public Sans as our sans-serif font, give our banner a dark gray background color, and make it expand the full width of the page.</p>
-  <div class="editor">
-    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/_uswds-theme.scss</h4>
-    <pre class="blur">@use "uswds-core" with (</pre><pre class="remove">
-  $setting: value,
-  $setting: value</pre><pre class="add">
+  $theme-show-notifications: false,
   $theme-font-type-sans: "public-sans",
   $theme-banner-background-color: "ink",
   $theme-banner-max-width: none
-</pre><pre class="blur">
 );</pre>
   </div>
-  <p class="step-description">Let's compile again to see the changes.</p>
+  <p class="step-description">Let's compile with <strong>npx gulp compile</strong> to see these changes.</p>
   <div class="terminal">
-    <pre>npx gulp watch</pre>
+    <pre>npx gulp compile</pre>
   </div>  
-  <h3 class="step">Remove unnecessary styles.</h3>
-  <p class="step-description">Now we've added the Banner and Identifier, but if we look at the size of our compiled CSS, it's quite large — over 500 KB! We can greatly reduce the size by using USWDS packages. You can learn more about packages at <a href="https://designsystem.digital.gov/components/packages/">designsystem.digital.gov/components/packages</a>, but for now, let's open up the USWDS Sass entry point (<strong>_theme/styles.scss</strong>), remove the main <strong>uswds</strong> package, and add only the <strong>usa-banner</strong> package.</p>
+  <h3 class="step">To finish up, we’ll optimize our installation.</h3>
+  <p class="step-description">Now we've added the USWDS Banner, but the size of our compiled CSS is quite large — over 500 KB! That's becase it contains every style for every component in the design system. We can greatly reduce the size by compiling only the Banner CSS.</p>
+  <p class="step-description">To do this, we'll open up our theme's USWDS Sass entry point (<strong>_theme/styles.scss</strong>), and replace the main <strong>uswds</strong> package with the <strong>usa-banner</strong> package.</p>
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _theme/styles.scss</h4>
     <pre class="blur">@forward "uswds-theme";</pre><pre class="remove">
@@ -44,8 +31,12 @@
 @forward "usa-banner";</pre><pre class="blur">
 @forward "uswds-theme-custom-styles";</pre>
   </div>
-  <p class="step-description">After you recompile, we can see that the CSS size drops down to 15 KB — less than 3% of the original size. It compiles in less than a second, and will gzip down to 2 KB in a production environment.</p>
-  <p class="step-description"><strong>And that's how you get started with USWDS code in a project!</strong></p>
+  <p class="step-description">Let's compile again to see the changes.</p>
+  <div class="terminal">
+    <pre>npx gulp compile</pre>
+  </div>  
+  <p class="step-description">After we recompile, the CSS size drops down to 15 KB — less than 3% of the original size. It compiles in less than a second, and will gzip down to 2 KB in a production environment.</p>
+  <p class="step-description">Now we have a project that uses USWDS code, includes the USWDS Banner, and is optimized to use only the USWDS code it needs. <strong>And that’s how you get started with USWDS code in a project!</strong></p>
   <p class="step-description">For a slightly more in-depth version of this tutorial, check out the USWDS Tutorial repo at <a href="https://github.com/uswds/uswds-tutorial">github.com/uswds/uswds-tutorial</a>!</p>
   <p class="step-description">We also have getting started resources for developers at <a href="https://designsystem.digital.gov/documentation/getting-started-for-developers/">designsystem.digital.gov/documentation/getting-started-for-developers/</a></p>
 </section>

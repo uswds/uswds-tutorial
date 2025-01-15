@@ -1,10 +1,48 @@
-  <section class="part two" id="part-two">
-    <h2><span>Part Two: Add the JavaScript</span> Now, we’ll add the USWDS Banner JavaScript to our project</h2>
-    <h3 class="step">Initialize our USWDS installation.</h3>
-    <p class="step-description">Here we'll use the settings and functions we set up in the last section to initialize USWDS. This process adds USWDS assets and theme files to our project, then compiles a USWDS stylesheet.</p>
-    <p class="step-description">We'll use the <strong>npx gulp init</strong> command in the terminal to copy these assets and compile USWDS CSS.</p>
-    <div class="terminal">
-      <pre>cp node_modules/@uswds/elements/dist/components/usa-banner.js assets/uswds/js</pre>
-    </div>
-    <p class="step-description">After the script runs, we have new USWDS assets in an <strong>./assets/uswds</strong> directory, theme files in a <strong>./_theme</strong> directory, and compiled CSS in the <strong>./assets/uswds/css</strong> directory.</p>
-  </section>
+<section class="part two" id="part-two">
+  <h2><span>Part Two: Compose</span> Now, we’ll add the USWDS Elements Banner code to our project</h2>
+  <h3 class="step">Copy the JavaScript.</h3>
+  <p class="step-description">Here we'll move the newly install USWDS Elements JavaScript from the install location to our project directory.</p>
+  <p class="step-description">First we'll create a directory for this USWDS code in our project</p>
+
+  <div class="terminal">
+    <pre>mkdir assets/uswds/js</pre>
+  </div>
+
+  <p class="step-description">Then we’ll copy the files.</p>
+
+  <div class="terminal">
+    <pre>cp node_modules/@uswds/elements/dist/components/usa-banner.js assets/uswds/js</pre>
+  </div>
+
+  <h3 class="step">Add USWDS Elements JavaScript to the end of the page body.</h3>
+  <p class="step-description">We’ll add the Banner JavaScript (<strong>usa-banner.js</strong>) to the end of the page <strong>body</strong>.</p>
+
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> ./_layouts/default.html</h4>
+    <pre class="blur">...
+
+&lt;body class="&lcub;&lcub; page.body &rcub;&rcub;"&gt;
+  &lcub;&lcub; content &rcub;&rcub;</pre><pre class="add">
+  &lt;script src="/assets/uswds/js/dist/components/usa-banner.js" type="module"&gt;&lt;/script&gt;</pre><pre class="blur">
+&lt;/body&gt;
+</pre>
+  </div>
+
+  <h3 class="step">Finally, we’ll add USWDS Elements markup to the page body.</h3>
+  <p class="step-description">Instead of copying 93 lines of code from the USWDS website, we'll add one simple line of markup (<strong>&lt;usa-banner&gt;&lt;/usa-banner&gt;</strong>) to our default layout.</p>
+
+  <div class="editor">
+    <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> ./_layouts/default.html</h4>
+    <pre class="blur">...
+
+&lt;body class="&lcub;&lcub; page.body &rcub;&rcub;"&gt;</pre><pre class="add">
+  &lt;usa-banner&gt;&lt;/usa-banner&gt;</pre><pre class="blur">
+  &lcub;&lcub; content &rcub;&rcub;
+  &lt;script src="/assets/uswds/js/dist/components/usa-banner.js" type="module"&gt;&lt;/script&gt;
+&lt;/body&gt;
+</pre>
+  </div>
+
+  <p class="step-description">When we <a href="/">load the page in a new window</a> we'll see the new banner.</strong> And that's all it takes!</p>
+
+</section>

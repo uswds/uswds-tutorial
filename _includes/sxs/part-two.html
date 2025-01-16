@@ -1,8 +1,8 @@
 <section class="part two" id="part-two">
-  <h2><span>Part Two: Compose</span> Now, we’ll add the USWDS Elements Banner code to our project</h2>
+  <h2><span>Compose</span> Now, we’ll add the USWDS Elements Banner code to our project</h2>
   <h3 class="step">Copy the JavaScript.</h3>
-  <p class="step-description">Here we'll move the newly install USWDS Elements JavaScript from the install location to our project directory.</p>
-  <p class="step-description">First we'll create a directory for this USWDS code in our project</p>
+  <p class="step-description">Here we'll move the newly installed USWDS Elements JavaScript from the installation location to our project directory.</p>
+  <p class="step-description">We’ll do this by creating a directory for this USWDS code in our project</p>
 
   <div class="terminal">
     <pre>mkdir assets/uswds/js</pre>
@@ -14,8 +14,10 @@
     <pre>cp node_modules/@uswds/elements/dist/components/usa-banner.js assets/uswds/js</pre>
   </div>
 
+  <p class="step-description">Now that we've added the files to our project, we just have to add them to our page templates.</p>
+
   <h3 class="step">Add USWDS Elements JavaScript to the end of the page body.</h3>
-  <p class="step-description">We’ll add the Banner JavaScript (<strong>usa-banner.js</strong>) to the end of the page <strong>body</strong>.</p>
+  <p class="step-description">We’ll add it before the closing <strong>body</strong> tag in our default page layout with a <strong>script</strong> element.</p>
 
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> ./_layouts/default.html</h4>
@@ -28,8 +30,8 @@
 </pre>
   </div>
 
-  <h3 class="step">Finally, we’ll add USWDS Elements markup to the page body.</h3>
-  <p class="step-description">Instead of copying 93 lines of code from the USWDS website, we'll add one simple line of markup (<strong>&lt;usa-banner&gt;&lt;/usa-banner&gt;</strong>) to our default layout.</p>
+  <h3 class="step">Finally, we’ll add USWDS Elements markup to the page body as well.</h3>
+  <p class="step-description">Instead of copying 93 lines of code from the USWDS website, we'll add one simple line of markup — <strong>usa-banner</strong> opening and closing tags (<strong>&lt;usa-banner&gt;&lt;/usa-banner&gt;</strong>) — to our default layout.</p>
 
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> ./_layouts/default.html</h4>
@@ -43,6 +45,6 @@
 </pre>
   </div>
 
-  <p class="step-description">When we <a href="/">load the page in a new window</a> we'll see the new banner.</strong> And that's all it takes!</p>
+  <p class="step-description">When we save and scroll to the top of the page we'll see the new banner.</strong> And that's all it takes to install a simple USWDS Banner into any project with USWDS Elements!</p>
 
 </section>

@@ -6,20 +6,21 @@
     <pre>npm install @uswds/uswds @uswds/compile --save-dev</pre>
   </div>
   <h3 class="step">Add a gulpfile to create your compile settings.</h3>
-  <p class="step-description">In this step, we’ll follow the USWDS compiler’s README to add what's called a "gulpfile" — instructions that tell the USWDS compiler how we’d like to use it.</p>
+  <p class="step-description">In this step, we’ll follow the instructions you can find in the USWDS compiler’s README to add what's called a "gulpfile" — instructions that tell the USWDS compiler how we’d like to use it.</p>
+  <p class="step-description">Today, we’ll create this gulpfile with the <strong>touch</strong> command in the terminal.</p>
   <div class="terminal">
     <pre>touch gulpfile.js</pre>
   </div>
   <h3 class="step">In a text editor, open this new gulpfile we created, and import the USWDS compiler package.</h3>
-  <p class="step-description">This connects our gulpfile to <a href="https://github.com/uswds/uswds-gulp/tree/jm-gulp-4#functions">the USWDS compiler and its functions</a>.</p>
+  <p class="step-description">This connects our gulpfile to <a href="https://github.com/uswds/uswds-gulp/tree/jm-gulp-4#functions">the USWDS compiler and its functions</a>. We’ll do this with a line of JavaScript.</p>
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> gulpfile.js</h4>
     <pre class="add">const uswds = require('@uswds/compile');</pre>
   </div>
-  <h3 class="step">Set the proper USWDS version and path settings.</h3>
-  <p class="step-description">We're going to tell the compiler to use USWDS 3.x with a setting.</p>
-  <p class="step-description">We'll also tell the compiler where to save USWDS source files, and the CSS we compile.</p>
-  <p class="step-description">Today, we'll set the destination of our USWDS theme files to the <strong>./_theme</strong> directory, and the destination of our other USWDS assets, like CSS, fonts, images, and JavaScript to an <strong>./assets/uswds</strong> directory.</p>
+  <h3 class="step">Now, let’s set the proper USWDS version and path settings.</h3>
+  <p class="step-description">We're going to use a setting to tell the compiler to use USWDS 3.x.</p>
+  <p class="step-description">We'll also use settings to tell the compiler where to save USWDS source files, and the CSS we’ll compile.</p>
+  <p class="step-description">Today, we'll set the destination of our USWDS theme files to the <strong>_theme</strong> directory, and the destination of our other USWDS assets, like CSS, fonts, images, and JavaScript to the <strong>assets/uswds</strong> directory.</p>
 <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> gulpfile.js</h4>
     <pre class="blur">const uswds = require('@uswds/compile');
@@ -33,7 +34,7 @@ uswds.paths.dist.img = './assets/uswds/img';
 uswds.paths.dist.fonts = './assets/uswds/fonts';
 uswds.paths.dist.js = './assets/uswds/js';</pre>
   </div>
-  <h3 class="step">Finally, define the USWDS compile functions we want to use.</h3>
+  <h3 class="step">Finally, we’ll define the USWDS compile functions we want to use.</h3>
   <p class="step-description">The USWDS compiler has a number of <a href="https://github.com/uswds/uswds-gulp/tree/jm-gulp-4#functions">functions</a> available. To use these functions, we need to "export" them in a format we document in the compiler's README. We'll use these two newly defined functions — <strong>init</strong>, and <strong>compile</strong> — when we run the compiler in the next parts.</p>
   <p class="step-description">After adding these functions, we can save and close the gulpfile.</p>
   <div class="editor">

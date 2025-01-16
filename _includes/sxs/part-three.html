@@ -2,7 +2,7 @@
   <h2><span>Compose the assets</span> Add USWDS CSS and JavaScript our templates</h2>
   <p>So, now that we've created the compiled CSS and JavaScript, we need to include them in our page templates.</p>
   <h3 class="step">Add USWDS styles to the site head.</h3>
-  <p class="step-description">Add the compiled CSS before the existing site CSS.</p>
+  <p class="step-description">Add a link to the the compiled USWDS CSS before the existing site CSS.</p>
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> _includes/site/head.html</h4>
     <pre class="blur">&lt;head&gt;
@@ -28,7 +28,7 @@
 </pre>
   </div>
   <h3 class="step">Add USWDS JavaScript to the end of the page body.</h3>
-  <p class="step-description">Finally, we’ll add the main USWDS JavaScript (<strong>uswds.min.js</strong>) to the end of the page <strong>body</strong>.</p>
+  <p class="step-description">Finally, we’ll add the main USWDS JavaScript (<strong>uswds.min.js</strong>) to the end of the page <strong>body</strong> with another <strong>script</strong> tag.</p>
   <div class="editor">
     <h4 class="filename"><span class="material-icons" aria-hidden="true">description</span> ./_layouts/default.html</h4>
     <pre class="blur">...
@@ -39,6 +39,6 @@
 &lt;/body&gt;
 </pre>
   </div>
-  <p class="step-description">We've added USWDS styles and JavaScript to your project, but we don't see any <em>changes</em> to the existing site. This is because we've designed USWDS to keep its styles to itself. In most cases, you won't see the effects of adding USWDS code until you intentionally add a USWDS component.</p>
+  <p class="step-description">We've added USWDS styles and JavaScript to our project, but we don't see any <em>changes</em> to our site. This is because we've designed USWDS to keep its styles to itself. In most cases, you won't see the effects of adding USWDS code until you intentionally add a USWDS component.</p>
   <p class="step-description">Which is just what we'll do now, by adding the USWDS Banner.</p>
 </section>

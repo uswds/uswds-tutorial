@@ -329,7 +329,7 @@ h1 {
   display: grid;
   align-items: center;
   /* grid-template-columns: 1fr 1fr; */
-  background: white;
+  background: var(--red-0);
 }
 
 .hero {
@@ -344,11 +344,11 @@ h1 {
 }
 
 .hero-message > span:last-child {
-  color: var(--indigo-7);
+  color: var(--gray-9);
 }
 
 .under-hero {
-  color: var(--gray-7);
+  color: var(--red-7);
   font-size: var(--font-size-4);
   margin-block-end: var(--size-3);
 }
@@ -416,7 +416,7 @@ h1 {
 
 main {
   padding: 0;
-  background-color: var(--yellow-7);
+  background-color: var(--green-7);
   color: var(--gray-9);
 }
 
@@ -459,7 +459,7 @@ h2 > span {
   display: block;
   font-weight: normal;
   font-size: var(--font-size-4);
-  color: var(--red-9);
+  color: var(--yellow-1);
   margin-bottom: var(--size-5);
   padding-bottom: var(--size-2);
   text-transform: uppercase;

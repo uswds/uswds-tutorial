@@ -2,19 +2,19 @@
   <h2><span>Compose</span> Now, we’ll add the USWDS Elements Banner code to our project</h2>
   <h3 class="step">Copy the JavaScript.</h3>
   <p class="step-description">Here we'll move the newly installed USWDS Elements JavaScript from the installation location to our project directory.</p>
-  <p class="step-description">We’ll do this by creating a directory for this USWDS code in our project</p>
+  <p class="step-description">We’ll do this by creating a directory for this USWDS code in our project, using the <strong>mkdir</strong> command in the terminal. But there are many ways to make a directory!</p>
 
   <div class="terminal">
     <pre>mkdir assets/uswds/js</pre>
   </div>
 
-  <p class="step-description">Then we’ll copy the files.</p>
+  <p class="step-description">Then we’ll copy the files, for simplicity, using the terminal as before, but you can always just drag and drop.</p>
 
   <div class="terminal">
     <pre>cp -r node_modules/@uswds/elements/dist assets/uswds/js</pre>
   </div>
 
-  <p class="step-description">Now that we've added the files to our project, we just have to add them to our page templates.</p>
+  <p class="step-description">We’ve just added the USWDS Elements JavaScript to our new project directory. Now we have to add a link to this code in our project template.</p>
 
   <h3 class="step">Add USWDS Elements JavaScript to the end of the page body.</h3>
   <p class="step-description">We’ll add it before the closing <strong>body</strong> tag in our default page layout with a <strong>script</strong> element.</p>

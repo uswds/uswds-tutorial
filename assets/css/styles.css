@@ -333,7 +333,7 @@ h1 {
 }
 
 .hero {
-  padding: var(--size-10);
+  padding: var(--size-8) var(--size-11);
   display: grid;
   gap: var(--size-5);
 }
@@ -422,8 +422,8 @@ main {
 
 main .part {
   border-left: var(--border-size-5) solid var(--yellow-7);
-  padding: 0 var(--size-8) var(--size-10) var(--size-10);
-  padding-left: calc(var(--size-10) - var(--border-size-5));
+  padding: 0 var(--size-11) var(--size-10) var(--size-12);
+  padding-left: calc(var(--size-11) - var(--border-size-5));
   counter-reset: steps-primary;
 }
 
@@ -437,7 +437,7 @@ main  .part.intro {
 
 .part.intro > h1 {
   color: white;
-  padding-top: var(--size-7)
+  padding-top: var(--size-6)
 }
 
 .part.intro > h1 + h2 {
@@ -468,7 +468,7 @@ h2 > span {
 }
 
 main .part.one {
-  padding-top: var(--size-5);
+  padding-top: 0;
   border-left-color: var(--gray-9);
 }
 

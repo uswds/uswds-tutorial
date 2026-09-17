@@ -30,7 +30,7 @@
           <ul id="{{ button_id }}" class="usa-nav__submenu">
             {% for subsection in item.contents %}
             <li class="usa-nav__submenu-item">
-              <a href="#">{{ subsection }}</a>
+              <a href="{{ subsection.href | default: '#' }}">{{ subsection.text | default: subsection }}</a>
             </li>
             {% endfor %}
           </ul>

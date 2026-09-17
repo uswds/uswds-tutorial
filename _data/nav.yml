@@ -6,9 +6,12 @@ primary:
       - Consultations
   - name: Community
     contents:
-      - Slack
-      - GitHub
-      - Newsgroups and listserv
+      - text: GitHub Discussions
+        href: https://github.com/uswds/uswds/discussions
+      - text: Contributing
+        href: https://designsystem.digital.gov/about/contribute/
+      - text: Community guidelines
+        href: https://designsystem.digital.gov/about/community/#community-conduct
   - name: Contact
 
 secondary:

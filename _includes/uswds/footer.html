@@ -18,7 +18,7 @@
                   <ul class="usa-list usa-list--unstyled">
                     {% for subsection in item.contents %}
                     <li class="usa-footer__secondary-link">
-                      <a href="javascript:void(0);">{{ subsection }}</a>
+                      <a href="{{ subsection.href | default: 'javascript:void(0);' }}">{{ subsection.text | default: subsection }}</a>
                     </li>
                     {% endfor %}
                   </ul>
